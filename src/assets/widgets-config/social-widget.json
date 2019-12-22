@@ -1,0 +1,54 @@
+{
+  "description": "Social Buttons widget. Configure the buttons for the various social media platforms.",
+  "modelJson": {
+  },
+  "jsonFields": [
+    {
+      "key" : "message",
+      "type": "input",
+      "templateOptions": {
+        "label": "Message",
+        "placeholder": "Follow me!"
+      }
+    },
+    {
+    "key": "list",
+    "type": "array",
+    "fieldArray": {
+      "fieldGroupClassName": "row",
+      "templateOptions": {
+        "label": "Add Social Button"
+      },
+      "fieldGroup": [{
+          "key": "url",
+          "type": "input",
+          "templateOptions": {
+            "label": "URL"
+          }
+        },
+        {
+          "key": "icon",
+          "type": "input",
+          "templateOptions": {
+            "label": "Icon"
+          }
+        },
+        {
+          "key": "label",
+          "type": "input",
+          "templateOptions": {
+            "label": "Label"
+          }
+        },
+        {
+          "key": "color",
+          "type": "input",
+          "templateOptions": {
+            "label": "Color"
+          }
+        }
+      ]
+    }
+  }
+]
+}

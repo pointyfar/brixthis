@@ -1,0 +1,42 @@
+{
+  "notes" : [
+    "[Docs Reference](https://gohugo.io/content-management/taxonomies#configuring-taxonomies)"
+  ],
+  "destination" : "configDir/_default/taxonomies.(json/yaml/toml)",
+  "modelJson": {
+
+  },
+  "jsonFields": [
+    {
+      "key": "values",
+      "type": "array",
+      "fieldArray": {
+        "wrappers": ["panel"],
+        "fieldGroup": [{
+            "key": "key",
+            "type": "input",
+            "templateOptions": {
+              "label": "Taxonomy",
+              "placeholder": "tag",
+              "description": "Taxonomy is a categorization that can be used to classify content",
+              "required": true
+            }
+          },
+          {
+            "key": "value",
+            "type": "input",
+            "templateOptions": {
+              "label": "Plural",
+              "placeholder": "tags",
+              "description": "Plural form",
+              "required": true
+            }
+          }
+        ],
+        "templateOptions": {
+          "label": "Add taxonomy"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "notes": [
+    "[Docs Reference](https://gohugo.io/getting-started/configuration/#configure-file-caches)",
+    "Since Hugo 0.52 you can configure more than just the cacheDir."
+  ],
+  "destination" : "configDir/_default/caches.(json/yaml/toml)",
+  "modelJson": {
+  },
+  "jsonFields": [
+    {
+      "key" : "getjson",
+      "wrappers": ["panel"],
+      "templateOptions": {
+        "label": "getjson"        
+      },
+      "fieldGroup": [
+        {
+          "key" : "dir",
+          "type": "input",
+          "templateOptions": {
+            "label": "dir",
+            "placeholder": ":cacheDir/:project"
+          }
+        },
+        {
+          "key" : "maxAge",
+          "type": "input",
+          "templateOptions": {
+            "label": "maxAge",
+            "type": "number",
+            "placeholder": -1
+          }
+        }
+      ]
+    },
+    {
+      "key" : "getcsv",
+      "wrappers": ["panel"],
+      "templateOptions": {
+        "label": "getcsv"
+      },
+      "fieldGroup": [
+        {
+          "key" : "dir",
+          "type": "input",
+          "templateOptions": {
+            "label": "dir",
+            "placeholder": ":cacheDir/:project"
+          }
+        },
+        {
+          "key" : "maxAge",
+          "type": "input",
+          "templateOptions": {
+            "label": "maxAge",
+            "type": "number",
+            "placeholder": -1
+          }
+        }
+      ]
+    },
+    {
+      "key" : "images",
+      "wrappers": ["panel"],
+      "templateOptions": {
+        "label": "images"
+      },
+      "fieldGroup": [
+        {
+          "key" : "dir",
+          "type": "input",
+          "templateOptions": {
+            "label": "dir",
+            "placeholder": ":cacheDir/:project"
+          }
+        },
+        {
+          "key" : "maxAge",
+          "type": "input",
+          "templateOptions": {
+            "label": "maxAge",
+            "type": "number",
+            "placeholder": -1
+          }
+        }
+      ]
+    },
+    {
+      "key" : "assets",
+      "wrappers": ["panel"],
+      "templateOptions": {
+        "label": "assets"
+      },
+      "fieldGroup": [
+        {
+          "key" : "dir",
+          "type": "input",
+          "templateOptions": {
+            "label": "dir",
+            "placeholder": ":cacheDir/:project"
+          }
+        },
+        {
+          "key" : "maxAge",
+          "type": "input",
+          "templateOptions": {
+            "label": "maxAge",
+            "type": "number",
+            "placeholder": -1
+          }
+        }
+      ]
+    }
+  ]
+}

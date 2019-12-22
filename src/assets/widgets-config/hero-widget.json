@@ -1,0 +1,24 @@
+{
+  "description" : "Hero Image widget. Use this to add a hero image to your page.",
+  "modelJson" : {
+  },
+  "jsonFields" : [
+    {
+      "key" : "background",
+      "type": "input",
+      "templateOptions": {
+        "label": "Hero Image",
+        "description": "Path to hero image",
+        "placeholder": "img/hero-image.png"
+      }
+    },
+    {
+      "key": "bgislight",
+      "type": "checkbox",
+      "templateOptions": {
+        "label" : "Is hero image light-colored?",
+        "description": "This information is used to determine color of text overlay."
+      }
+    }
+  ]
+}

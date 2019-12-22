@@ -1,0 +1,24 @@
+{
+  "notes" : [
+    ""
+  ],
+  "destination" : "",
+  "modelJson": {
+  },
+  "jsonFields": [
+    {
+      "key": "mainSections",
+      "type": "array",
+      "fieldArray": {
+        "type": "input",
+        "templateOptions": {
+          "label": "Add sections to include (on menu)"
+        }
+      }
+    }
+  ]
+
+
+
+  
+}

@@ -1,0 +1,31 @@
+{
+  "description": "Placeholder widget. Recommend configuring different background colors for each placeholder to visualize more easily.",
+  "modelJson" : {
+    "label": "Placeholder Label",
+    "background": "#FFBB00",
+    "color": "black"
+  },
+  "jsonFields" : [
+    {
+      "key" : "label",
+      "type": "input",
+      "templateOptions": {
+        "label": "Placeholder"
+      }
+    },
+    {
+      "key" : "background",
+      "type": "input",
+      "templateOptions": {
+        "label": "Background Color"
+      }
+    },
+    {
+      "key" : "color",
+      "type": "input",
+      "templateOptions": {
+        "label": "Text Color"
+      }
+    }
+  ]
+}

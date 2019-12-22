@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg1004"
+   version="1.1"
+   viewBox="0 0 50 50"
+   height="50"
+   width="50">
+  <defs
+     id="defs998" />
+  <metadata
+     id="metadata1001">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-50.324255,-78.250562)"
+     id="layer1">
+    <g
+       transform="translate(0.58604357,-1.654528)"
+       id="g1577">
+      <g
+         transform="translate(1.4830637,4.4788162)"
+         id="g1677">
+        <g
+           aria-label="b"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:3.70416665px;font-family:'Chela One';-inkscape-font-specification:'Chela One';text-align:justify;letter-spacing:0.8942917px;word-spacing:0px;text-anchor:start;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           id="text853"
+           transform="matrix(3.8037199,0,0,3.8037199,-141.0951,-228.67033)">
+          <path
+             d="m 52.793699,83.323507 v 1.382889 q 0.578556,-0.705556 1.439333,-0.705556 0.874889,0 1.382889,0.564444 0.508,0.550334 0.508,1.524 v 2.201334 q 0,1.27 -0.931333,2.229555 -0.931333,0.959556 -2.201333,0.959556 -1.044223,0 -1.707445,-0.620889 -0.649111,-0.635 -0.649111,-1.411111 v -4.995333 q 0,-1.171223 -0.225778,-1.947334 l -0.08467,-0.268111 q 0.05644,-0.07055 0.155222,-0.183444 0.112889,-0.112889 0.465667,-0.296334 0.352777,-0.197555 0.733777,-0.197555 1.114778,0 1.114778,1.763889 z m 1.157111,6.364111 v -2.596445 q 0,-0.776111 -0.254,-1.030111 -0.254,-0.268111 -0.903111,-0.268111 v 2.921 q 0,0.973667 1.157111,0.973667 z"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;font-family:'Chela One';-inkscape-font-specification:'Chela One';fill:#1a1a1a;fill-opacity:1;stroke-width:0.26458332px"
+             id="path1613" />
+        </g>
+        <g
+           aria-label="x"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:3.70416665px;font-family:'Chela One';-inkscape-font-specification:'Chela One';text-align:justify;letter-spacing:0.8942917px;word-spacing:0px;text-anchor:start;fill:#782144;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           id="text857"
+           transform="matrix(3.8037199,0,0,3.8037199,-141.0951,-228.67033)">
+          <path
+             d="m 59.601446,84.960396 q 0.324556,-0.959556 1.284111,-0.959556 1.340556,0 1.340556,1.453444 0,1.326445 -1.044223,2.257778 0.889,0.536222 0.889,1.933222 0,0.620889 0.239889,1.016 l 0.07056,0.141111 q -0.141111,0.239889 -0.522111,0.465667 -0.381,0.211667 -0.762,0.211667 -1.199445,0 -1.199445,-1.524 0,-0.691445 -0.324555,-1.016 -0.324556,-0.324556 -0.973667,-0.592667 v 0.606778 q 0,1.227667 0.606778,1.566333 -0.324556,0.959556 -1.298222,0.959556 -0.635,0 -0.987778,-0.366889 -0.338667,-0.381 -0.338667,-1.086556 0,-1.171222 0.945445,-2.144889 -0.790222,-0.522111 -0.790222,-1.707444 0,-0.846667 -0.239889,-1.326444 l -0.08467,-0.169334 0.183444,-0.183444 q 0.112889,-0.112889 0.451556,-0.296333 0.338667,-0.197556 0.663222,-0.197556 0.606778,0 0.889,0.409222 0.296333,0.409222 0.296333,1.354667 0,0.747889 0.409223,1.072444 0.310444,0.254 0.903111,0.465667 v -0.903111 q 0,-0.522111 -0.155222,-0.874889 -0.141112,-0.366889 -0.296334,-0.465667 z"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;font-family:'Chela One';-inkscape-font-specification:'Chela One';fill:#782144;fill-opacity:1;stroke-width:0.26458332px"
+             id="path1610" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

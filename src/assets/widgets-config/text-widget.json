@@ -1,0 +1,22 @@
+{
+  "description": "Text widget. Add text to your page, eg copyright notice.",
+  "modelJson" : {
+  },
+  "jsonFields" : [
+    {
+      "key" : "title",
+      "type": "input",
+      "templateOptions": {
+        "label": "Title"
+      }
+    },
+    {
+      "key" : "content",
+      "type": "textarea",
+      "templateOptions": {
+        "label": "Content",
+        "rows": 5
+      }
+    }
+  ]
+}

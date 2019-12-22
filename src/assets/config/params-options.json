@@ -1,0 +1,86 @@
+{
+  "notes" : [
+    ""
+  ],
+  "destination" : "configDir/_default/params.(json/yaml/toml)",
+  "modelJson": {
+    "subtitle": "My Awesome Site",
+    "brandImage": "",
+    "scss": {
+      "brandFont": "'Oswald', sans-serif",
+      "primary": "CadetBlue",
+      "primaryInvert": "#fff",
+      "footnote": "FOOTNOTE: ",
+      "linkColor": "navy"
+    }
+  },
+  "jsonFields": [
+    {
+      "key": "copyright",
+      "type": "input",
+      "templateOptions": {
+        "label": "Copyright",
+        "placeholder": "© 2018 Myself",
+        "description": "Copyright note"
+      }
+    },
+    {
+      "key": "subtitle",
+      "type": "input",
+      "templateOptions": {
+        "label": "Subtitle",
+        "placeholder": "My Awesome Site",
+        "description": "Site subtitle"
+      }
+    },
+    {
+      "key": "mainSections",
+      "type": "array",
+      "fieldArray": {
+        "type": "input",
+        "templateOptions": {
+          "label": "Add sections to include (on menu)"
+        }
+      }
+    },
+    {
+      "key": "options",
+      "wrappers": ["panel"],
+      "templateOptions": {
+        "label": "Configurable Options"
+      },
+      "fieldGroup": [
+        {
+          "key": "brandImage",
+          "type": "input",
+          "templateOptions": {
+            "label": "Brand Image",
+            "placeholder": "img/awesome-logo.png",
+            "description": "Image to feature on hero on homepage"
+          }
+        },
+        {
+          "key": "enableSearch",
+          "wrappers": ["panel"],
+          "templateOptions": {
+            "label": "Configure search feature"
+          },
+          "fieldGroup": [
+            {
+              "key": "enable",
+              "type": "checkbox",
+              "templateOptions": {
+                "label": "Enable search feature ",
+                "description": "Make sure to configure output formats for home to include JSON, and to position the search widget."
+              }
+            }
+            
+          ]
+        }
+        
+        
+      ]
+    }
+    
+  ]
+}
