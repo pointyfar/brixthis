@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
+import { UtilitiesService } from './../../services/utilities.service';
 
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {FormControl} from '@angular/forms';
@@ -26,13 +27,14 @@ export class OutputComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<OutputComponent>,
+    private _us: UtilitiesService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
   ngOnInit() {
     this.note = this.data.note? this.data.note : "";
 
-    let config = stripNulls({...this.data.site});
+    let config = this._us.stripNulls({...this.data.site});
     
 
     let params = {};
@@ -41,7 +43,7 @@ export class OutputComponent implements OnInit {
     }
 
     if(params['params']){
-      config['params'] = stripNulls({...params['params']})
+      config['params'] = this._us.stripNulls({...params['params']})
     }
     
     this.jsonFormat = this.cleanResult(config);
@@ -171,27 +173,3 @@ export class OutputComponent implements OnInit {
     }
   }
 
-
-  function stripNulls(o) {
-    
-  let newObj = JSON.parse(JSON.stringify(o));
-  for (var k in newObj) {
-    if(newObj[k] === false) {
-      continue
-    } else if (!newObj[k] || ((typeof newObj[k]) !== "object")) {
-      if ( !newObj[k]) {
-        // if null
-        delete newObj[k]
-        continue
-      } else {
-        continue 
-      }
-    }
-    // The property is an object
-    newObj[k] = stripNulls(newObj[k]); // <-- Make a recursive call on the nested object
-    if (Object.keys(newObj[k]).length === 0) {
-      delete newObj[k]; // The object had no properties, so delete that property
-    }
-  }
-  return newObj
-  }

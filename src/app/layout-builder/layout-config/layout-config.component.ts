@@ -144,7 +144,7 @@ export class LayoutConfigComponent implements OnInit {
   getWidgetsResults(){
     let params = {...this.params};
 
-    params['widgets'] = this.formatWidgetsConfig(this.layoutWidgetsResult);
+    params['widgets'] = this._us.formatWidgetsConfig(this.layoutWidgetsResult);
     
     const dialogRef = this.dialog.open(OutputComponent, {
       width: '1000px',
@@ -158,34 +158,6 @@ export class LayoutConfigComponent implements OnInit {
     })
   }
   
-  formatWidgetsConfig(widgetConf: any) {
-
-    let list = [];
-    for (let i = 0; i < widgetConf.length; i++) {
-
-      let f = {};
-      f['widgetName'] = widgetConf[i]['name'];
-      f['class'] = widgetConf[i]['class'];
-
-      /** Section Widget **/
-      if (widgetConf[i].hasOwnProperty('children')) {
-        if (widgetConf[i]['children'].length > 0) {
-          f['items'] = this.formatWidgetsConfig(widgetConf[i]['children']);
-        }
-        f['flex'] = widgetConf[i]['flex'];
-        f['type'] = "section"
-        f['config'] = widgetConf[i]['result']
-      } else { /** Functional Widget **/
-        f['config'] = widgetConf[i]['result'];
-        f['type'] = "widget"
-
-      }
-      list.push(f)
-    }
-    
-    return list
-
-  }
   
   
   /**  
