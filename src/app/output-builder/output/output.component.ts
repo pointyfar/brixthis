@@ -30,8 +30,6 @@ export class OutputComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.data);
-
     this.note = this.data.note? this.data.note : "";
 
     let config = stripNulls({...this.data.site});
@@ -95,8 +93,6 @@ export class OutputComponent implements OnInit {
         }
       }
     }
-
-    console.log(result)
 
     return result
   }

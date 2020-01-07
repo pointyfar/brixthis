@@ -45,7 +45,6 @@ export class FormComponent implements OnInit {
     }
   }
   cancel(): void {
-    console.log(this.form)
     this.form.reset(this.original)
     this.dialogRef.close();
   }

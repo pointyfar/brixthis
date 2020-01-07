@@ -125,7 +125,6 @@ export class MainLayoutComponent implements OnInit {
     }(key, sr['config']);
     
     copyObj(config,this.configResult)
-    console.log(this.configResult)
   }
 
 

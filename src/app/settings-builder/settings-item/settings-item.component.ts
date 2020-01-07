@@ -90,7 +90,6 @@ export class SettingsItemComponent implements OnInit {
   }
   
   configured(c:any){
-    console.log(c)
     let e = {};
     e['id'] = this.id;
     

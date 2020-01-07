@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
 import { UtilitiesService } from './../../services/utilities.service';
-import { SharedService } from './../../services/shared.service';
 import { MatDialog } from '@angular/material';
 import { WidgetItem } from './../models/widget.item';
 import { FormComponent } from './../../output-builder/form/form.component';
@@ -102,7 +101,7 @@ export class LayoutConfigComponent implements OnInit {
       }
     }
     this.emitlayoutWidgetsResult(this.params)
-    console.log(this.params)
+
   }
   
   getWidgetsList(url:string) {
@@ -144,7 +143,7 @@ export class LayoutConfigComponent implements OnInit {
    */   
   getWidgetsResults(){
     let params = {...this.params};
-    console.log("THIS CORRECT", params)
+
     params['widgets'] = this.formatWidgetsConfig(this.layoutWidgetsResult);
     
     const dialogRef = this.dialog.open(OutputComponent, {
@@ -250,7 +249,7 @@ export class LayoutConfigComponent implements OnInit {
   }
 
   emitlayoutWidgetsResult(e){
-    console.log(e)
+    
     if(e) {
       
     }

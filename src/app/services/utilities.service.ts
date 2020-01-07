@@ -73,7 +73,7 @@ export class UtilitiesService {
 
   mapConfigResult(config){
 
-    console.log(config)
+    console.log("for checking: mapConfigResult", config)
     return config
     
   }
