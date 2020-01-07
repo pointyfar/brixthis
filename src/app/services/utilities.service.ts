@@ -47,6 +47,75 @@ export class UtilitiesService {
     return Observable.throw(errMsg);
   }
   
+  stripNulls(o) {
+    
+  let newObj = JSON.parse(JSON.stringify(o));
+  for (var k in newObj) {
+    if(newObj[k] === false) {
+      continue
+    } else if (!newObj[k] || ((typeof newObj[k]) !== "object")) {
+      if ( !newObj[k]) {
+        // if null
+        delete newObj[k]
+        continue
+      } else {
+        continue 
+      }
+    }
+    // The property is an object
+    newObj[k] = this.stripNulls(newObj[k]); // <-- Make a recursive call on the nested object
+    if (Object.keys(newObj[k]).length === 0) {
+      delete newObj[k]; // The object had no properties, so delete that property
+    }
+  }
+  return newObj
+  }
+
+  mapConfigResult(config){
+
+    console.log(config)
+    return config
+    
+  }
+
+  formatWidgetsConfig(widgetConf: any) {
+    
+    let list = [];
+    for (let i = 0; i < widgetConf.length; i++) {
+
+      let f = {};
+      f['widgetName'] = widgetConf[i]['name'];
+      f['class'] = widgetConf[i]['class'];
+
+      /** Section Widget **/
+      if (widgetConf[i].hasOwnProperty('children')) {
+        if (widgetConf[i]['children'].length > 0) {
+          f['items'] = this.formatWidgetsConfig(widgetConf[i]['children']);
+        }
+        f['flex'] = widgetConf[i]['flex'];
+        f['type'] = "section"
+        f['config'] = widgetConf[i]['result']
+      } else { /** Functional Widget **/
+        f['config'] = widgetConf[i]['result'];
+        f['type'] = "widget"
+
+      }
+      list.push(f)
+    }
+    return list
+
+  }
+  
+}
+
+function copyObj(src){
+  let dest = {};
+  for(let k in src) {
+    if(src.hasOwnProperty(k)){
+      dest[k] = src[k]
+    }
+  }
+  return dest
 }
 
 function mapWidgetItem( wi: any ):any[] {

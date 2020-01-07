@@ -2,7 +2,7 @@
   "notes" : [
     ""
   ],
-  "destination" : "configDir/_default/params.(json/yaml/toml)",
+  "destination" : "",
   "modelJson": {
     "subtitle": "My Awesome Site",
     "brandImage": "",

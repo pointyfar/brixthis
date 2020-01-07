@@ -1,1 +1,62 @@
-<p>main-layout works!</p>
+<mat-toolbar class="header" fxFlexLayout="row">
+  <div fxFlexFill fxLayoutAlign="space-around center" fxLayout="row">
+    <div fxLayoutAlign="baseline" fxLayout="row" fxFlex="auto">
+      <a routerLink="/" target="_self">
+        <img
+            *ngIf="assetsBasePath"
+            src="{{assetsBasePath}}img/brixthis.png" 
+            style="height:22px; padding:0 12px 0px 0;">
+      </a>
+    </div>
+    <div fxLayoutAlign="baseline" fxFlex="auto">Layout Builder</div>
+    <div fxFlex="flex"></div>
+    <div fxLayoutAlign="baseline" fxFlex="auto">
+      <button 
+        mat-icon-button
+        (click)="launchResults()"
+        color="primary">
+        <i class="fas fa-2x fa-save"></i>
+      </button>
+      <a 
+        href="https://github.com/pointyfar/hubrix" 
+        mat-icon-button 
+        color="primary">
+        <i class="fab fa-2x fa-github"></i>
+      </a>
+      <button 
+        *ngIf="helpText"
+  
+        mat-icon-button 
+        color="primary">
+        <i class="fas fa-2x fa-info-circle"></i>
+      </button>
+    </div>
+    
+  </div>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <mat-tab-group>
+<!--      <mat-tab label="About">
+        
+      </mat-tab>-->
+      <mat-tab label="Build Layout">
+        <bx-layout-config
+         [layoutWidgetsSource]="layoutWidgetsSource"
+         [layoutConfigSource]="layoutConfigSource"
+         [layoutWidgetsResult]="layoutWidgetsResult"
+         [layoutConfigResult]="layoutConfigResult"
+         >
+        </bx-layout-config>
+      </mat-tab>
+      <mat-tab label="Configure Settings">
+        <bx-settings-config
+          [settingsSource]="settingsSource"
+          (settingsResult)="processSettingsResult($event)"
+          >
+        </bx-settings-config>
+      </mat-tab>
+    </mat-tab-group>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

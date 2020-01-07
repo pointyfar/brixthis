@@ -1,1 +1,20 @@
-<p>settings-config works!</p>
+<div fxLayout="column" fxLayoutAlign="center stretch" >
+<div *ngIf="helpText" fxLayout="row wrap" fxFlexFill>
+  <markdown>{{ helpText }}</markdown>
+</div>
+<div *ngIf="settingsConfigFilesDone" fxLayout="row wrap" fxFlexFill >
+  <div *ngFor="let confile of settingsConfigFiles; let i = index" 
+        fxFlex="{{ bare ? 100 : 50}}" 
+        fxLayout="row wrap"
+        style="padding:.5rem;">
+    <bx-settings-item
+        fxFlexFill
+        [configFile]="confile" 
+        (itemResult)="emitConfigValue($event)"
+        [id]="i"
+        [bare]="bare"
+    >
+    </bx-settings-item>
+  </div>
+</div>
+</div>

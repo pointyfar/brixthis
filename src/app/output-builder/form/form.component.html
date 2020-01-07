@@ -1,1 +1,20 @@
-<p>form works!</p>
+<div class="dialog-container">
+  <h3 *ngIf="title">{{title}}</h3>
+  <div class="dialog-body">
+    <div *ngIf="notes">
+      <div *ngFor="let line of notes">
+        {{line}}
+      </div>
+      <hr>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="saveForm()">
+      <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form">
+      </formly-form>
+    </form>
+  </div>
+  <div class="dialog-buttons" mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="saveForm()" [disabled]="!form.valid">Save</button>
+    <button mat-raised-button color="primary" (click)="cancel()">Cancel</button>
+    <div class="message" *ngIf="!form.valid">Please fill out the required fields (*)</div>
+  </div>
+</div>
