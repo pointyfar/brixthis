@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { OutputComponent } from './../output-builder/output/output.component';
 import { UtilitiesService } from './../services/utilities.service';
+import deepcopy from "ts-deepcopy";
 
 
 @Component({
@@ -72,16 +73,17 @@ export class MainLayoutComponent implements OnInit {
    */   
   launchResults() {
     
-    let result = {...this.configResult};
+    /**
+     * Assemble main config object:
+     * result = top-level / Hugo options
+     * params = {widgets, styles, options}
+     */
+    let result = deepcopy(this.configResult);
     let params = {};
         params['widgets'] = this._us.formatWidgetsConfig(this.layoutWidgetsResult);
-    
-    for(let k in this.layoutConfigResult){
-      if(this.layoutConfigResult.hasOwnProperty(k)){
-        params[k] = this.layoutConfigResult[k]
-      }
-    }
 
+    params = {...params, ...this.layoutConfigResult}
+    
     this.dialog.open(OutputComponent, {
       width: '1000px',
       height: '500px',
@@ -106,37 +108,33 @@ export class MainLayoutComponent implements OnInit {
    */   
   processSettingsResult(sr){
     
-    let config = {};
-    let key = sr['key'];
+    let config = mapToKey(sr['key'], sr['config']);
+    this.configResult = {... this.configResult, ...config}
     
-    
-    /* Copy x['config'] to result['key'] */     
-    config = function(k, c){
-      let result = {};
-      if(k.length === 0) {
-        copyObj(c, result)
-      } else {
-        for(let i = 0; i < k.length; i++ ){
-          result[k[i]] = {};
-          copyObj(c, result[k[i]])
-        }
-      }
-      return result
-    }(key, sr['config']);
-    
-    copyObj(config,this.configResult)
   }
-
-
 }
 
 
-function copyObj(src, dest){
-  
-  for(let k in src) {
-    if(src.hasOwnProperty(k)){
-      dest[k] = src[k]
+/**
+ * Takes (key, object), and returns { key: object }
+ * @param key 
+ * @param obj 
+ */
+function mapToKey(key, obj){
+  let result = {};
+  /**
+  * If no key value: top level object
+  * therefore return copy of object
+  * Otherwise return result.
+  */
+  if(key.length === 0) {
+    result = deepcopy(obj)
+  } else {
+    for(let i = 0; i < key.length; i++ ){
+      result[key[i]] = {};
+      result[key[i]] = deepcopy(obj)
     }
   }
-  return dest
+  console.log(result)
+  return result
 }

@@ -6,6 +6,7 @@ import {FormControl} from '@angular/forms';
 import * as yamljs from 'yamljs';
 import * as tomlify from 'tomlify-j0.4';
 import * as FileSaver from 'file-saver/src/FileSaver';
+import deepcopy from "ts-deepcopy";
 
 @Component({
   selector: 'bx-output',
@@ -39,7 +40,7 @@ export class OutputComponent implements OnInit {
 
     let params = {};
     if(this.data.params) {
-      params['params'] = this.data.params
+      params['params'] = deepcopy(this.data.params)
     }
 
     if(params['params']){
@@ -52,14 +53,7 @@ export class OutputComponent implements OnInit {
   }
 
   processParams(params){
-    let result = {};
-
-    for(let k in params){
-      if(params.hasOwnProperty(k)){
-        result[k] = {...params[k]}
-      }
-    }
-
+    let result = deepcopy(params)
     return result;
   }
 
@@ -83,7 +77,7 @@ export class OutputComponent implements OnInit {
     for(let k in config){
       if(config.hasOwnProperty(k)){
         if((typeof config[k]) !== "object"){
-          result[k] = config[k]
+          result[k] = deepcopy(config[k])
         }
       }
     }
@@ -91,7 +85,7 @@ export class OutputComponent implements OnInit {
     for(let k in config){
       if(config.hasOwnProperty(k)){
         if((typeof config[k]) === "object"){
-          result[k] = config[k]
+          result[k] = deepcopy(config[k])
         }
       }
     }

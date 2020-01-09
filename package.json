@@ -35,6 +35,7 @@
     "ngx-markdown": "^8.2.1",
     "rxjs": "~6.4.0",
     "tomlify-j0.4": "^3.0.0",
+    "ts-deepcopy": "^0.1.4",
     "tslib": "^1.10.0",
     "yamljs": "^0.3.0",
     "zone.js": "~0.9.1"

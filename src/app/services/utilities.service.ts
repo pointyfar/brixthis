@@ -108,16 +108,6 @@ export class UtilitiesService {
   
 }
 
-function copyObj(src){
-  let dest = {};
-  for(let k in src) {
-    if(src.hasOwnProperty(k)){
-      dest[k] = src[k]
-    }
-  }
-  return dest
-}
-
 function mapWidgetItem( wi: any ):any[] {
   let items = [];
   
