@@ -47,7 +47,7 @@
         <ng-template ngFor let-wid [ngForOf]="groupedWidgets" let-i="index" [ngForTrackBy]="trackByFn">
           <!--<mat-expansion-panel [expanded]="i == 0">-->
           <mat-expansion-panel [expanded]="i != 0">
-            <mat-expansion-panel-header>
+            <mat-expansion-panel-header collapsedHeight="48px" expandedHeight="48px">
               <mat-panel-title>
                 {{wid.group}}
               </mat-panel-title>
