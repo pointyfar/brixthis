@@ -1,5 +1,5 @@
 <div fxFlexFill flexLayout="row" fxLayoutGap="10px" style="padding:.5rem;">
-  <div fxFlex="30">
+  <div fxFlex="200px">
     <div>
       <mat-accordion>
       <mat-expansion-panel>
@@ -47,31 +47,45 @@
         <ng-template ngFor let-wid [ngForOf]="groupedWidgets" let-i="index" [ngForTrackBy]="trackByFn">
           <!--<mat-expansion-panel [expanded]="i == 0">-->
           <mat-expansion-panel [expanded]="i != 0">
-            <mat-expansion-panel-header collapsedHeight="48px" expandedHeight="48px">
+            <mat-expansion-panel-header collapsedHeight="32px" expandedHeight="32px">
               <mat-panel-title>
                 {{wid.group}}
               </mat-panel-title>
             </mat-expansion-panel-header>
-              
-            <div class="ngx-dnd-container widget-list"
-              ngxDroppable="widgetlist"
-              [model]="wid.items"
-              copy="true"
-              >
-              <div class="ngx-dnd-item widget-list-item"
-              *ngFor="let item of wid.items"
-              [ngxDraggable]="item.draggable"
-              [model]="item"
-              >
-                <div class="widget-icon">
-                  <div *ngIf="item.svg; else elseIconBlock">
-                    <img attr.src="{{item.svg}}">
+
+            <div style="width:auto;" >
+              <!-- fxLayoutGap="10px grid" -->
+              <div
+                  style="width: auto"
+                  fxLayout="row wrap"
+                  class="ngx-dnd-container widget-list"
+                  ngxDroppable="widgetlist"
+                  [model]="wid.items"
+                  copy="true"
+                  >
+                <div 
+                    fxFlex="50"
+                    class="ngx-dnd-item widget-list-item"
+                    *ngFor="let item of wid.items"
+                    [ngxDraggable]="item.draggable"
+                    [model]="item"
+                    >
+                  <div fxFlexFill style="font-size:smaller;">
+                    <div 
+                        matTooltip="{{item.label}}"
+                        class="widget-icon"
+                        >
+                      <div
+                          *ngIf="item.svg; else elseIconBlock"
+                          >
+                        <img attr.src="{{item.svg}}">
+                      </div>
+                      <ng-template #elseIconBlock>
+                        <div><i class="{{item.icon}}"></i></div>
+                      </ng-template>
+                    </div>
                   </div>
-                  <ng-template #elseIconBlock>
-                    <div><i class="{{item.icon}}"></i></div>
-                  </ng-template>
                 </div>
-                <div class="widget-item">{{item.label}}</div>
               </div>
             </div>
           </mat-expansion-panel>
@@ -80,7 +94,7 @@
     </div>
   </div>
   
-  <div fxFlex="70">
+  <div fxFlex>
     <mat-card class="main-drop">
       <mat-card-title>
         <div class="title-text" fxFlexFill fxFlexLayout="row" fxLayoutAlign="space-between center">
