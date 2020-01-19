@@ -98,7 +98,8 @@
       "class": "widget",
       "inputType": "content",
       "icon": "fas fa-dragon",
-      "image": "assets/img/svg/placeholder.svg",
+      "svg": "assets/img/icons/placeholder.png",
+      "image": "assets/img/svg/w-placeholder.svg",
       "content": "assets/widgets-placeholders/lorem.md",
       "formConfig": "assets/widgets-config/placeholder-widget.json"
     },
@@ -108,6 +109,7 @@
       "class": "widget",
       "inputType": "content",
       "icon": "fas fa-search",
+      "svg": "assets/img/icons/search.png",
       "group": "feature widgets",
       "formConfig": "assets/widgets-config/search-widget.json"
     },
@@ -117,6 +119,7 @@
       "class": "widget",
       "inputType": "content",
       "icon": "fas fa-flag",
+      "svg": "assets/img/icons/hero.png",
       "group": "main",
       "formConfig": "assets/widgets-config/hero-widget.json"
     },
@@ -126,6 +129,7 @@
       "class": "widget nav-container",
       "inputType": "content",
       "icon": "fas fa-ellipsis-v",
+      "svg": "assets/img/icons/nav.png",
       "group": "main",
       "formConfig": "assets/widgets-config/navbar-widget.json"
     },
@@ -135,6 +139,7 @@
       "class": "widget",
       "inputType": "content",
       "icon": "fas fa-user",
+      "svg": "assets/img/icons/author.png",
       "group": "feature widgets",
       "formConfig": "assets/widgets-config/author-widget.json"
     },
@@ -144,6 +149,7 @@
       "class": "widget",
       "inputType": "content",
       "icon": "fas fa-thumbs-up",
+      "svg": "assets/img/icons/social.png",
       "group": "feature widgets",
       "formConfig": "assets/widgets-config/social-widget.json"
     },
@@ -152,6 +158,7 @@
       "label": "Tag Cloud Widget",
       "class": "widget",
       "inputType": "content",
+      "svg": "assets/img/icons/tags.png",
       "icon": "fas fa-tag",
       "group": "feature widgets",
       "formConfig": "assets/widgets-config/tagcloud-widget.json"
@@ -162,6 +169,7 @@
       "class": "widget",
       "inputType": "content",
       "icon": "fas fa-link",
+      "svg": "assets/img/icons/urls.png",
       "group": "feature widgets",
       "formConfig": "assets/widgets-config/links-widget.json"
     },
@@ -171,6 +179,7 @@
       "class": "widget",
       "inputType": "content",
       "icon": "fas fa-quote-left",
+      "svg": "assets/img/icons/text.png",
       "group": "feature widgets",
       "formConfig": "assets/widgets-config/text-widget.json"
     },
@@ -180,6 +189,7 @@
       "class": "widget",
       "inputType": "content",
       "icon": "fas fa-file-alt",
+      "svg": "assets/img/icons/content.png",
       "group": "main",
       "formConfig": "assets/widgets-config/main-widget.json"
     },
@@ -189,6 +199,7 @@
       "class": "widget",
       "inputType": "content",
       "icon": "fas fa-image",
+      "svg": "assets/img/icons/img.png",
       "group": "feature widgets",
       "formConfig": "assets/widgets-config/image-widget.json"
     },
@@ -196,7 +207,7 @@
     
     {
       "name": "one",
-      "label": "Structure: Single Column",
+      "label": "Single Column",
       "class": "column is-full row",
       "parent": true,
       "inputType": "section",
@@ -204,7 +215,7 @@
       "removeOnSpill": true,
       "group": "structure",
       "icon": "view_compact",
-      "svg": "assets/img/svg/row-1.svg#layer1",
+      "svg": "assets/img/icons/col-1.png",
       "draggable": "['maindroppable']",
       "droppable": "dragtest",
       "formConfig": "assets/widgets-config/container-widget.json",
@@ -227,11 +238,52 @@
       ]
 
     },
-    
+    {
+      "name": "half-half",
+      "label": "Two-Column 50-50",
+      "class": "column is-full row",
+      "parent": true,
+      "inputType": "section",
+      "flex": 100,
+      "draggable": "['maindroppable']",
+      "group": "structure",
+      "svg": "assets/img/icons/col-2-50.png",
+      "icon": "view_compact",
+      "formConfig": "assets/widgets-config/container-widget.json",
+      "children": [
+        {
+          "name": "half",
+          "label": "50",
+          "class": "column is-one-half",
+          "parent": true,
+          "inputType": "section",
+          "flex": 50,
+          "group": "structure",
+          "draggable": false,
+          "removeable": false,
+          "icon": "view_compact",
+          "formConfig": "assets/widgets-config/container-widget.json"
+        },
+        {
+          "name": "half",
+          "label": "50",
+          "class": "column is-one-half",
+          "parent": true,
+          "inputType": "section",
+          "flex": 50,
+          "group": "structure",
+          "draggable": false,
+          "removeable": false,
+          "icon": "view_compact",
+          "formConfig": "assets/widgets-config/container-widget.json"
+        }
+      ]
+
+    },
     
     {
       "name": "one-three",
-      "label": "Structure: Two-Column 25-75",
+      "label": "Two-Column 25-75",
       "class": "column is-full row",
       "parent": true,
       "inputType": "section",
@@ -239,7 +291,7 @@
       "removeOnSpill": true,
       "group": "structure",
       "icon": "view_compact",
-      "svg": "assets/img/svg/row-13.svg#layer1",
+      "svg": "assets/img/icons/col-2-25.png",
       "draggable": "['maindroppable']",
       "droppable": "dragtest",
       "formConfig": "assets/widgets-config/container-widget.json",
@@ -280,14 +332,14 @@
     
     {
       "name": "one-two",
-      "label": "Structure: Two-Column 33-66",
+      "label": "Two-Column 33-66",
       "class": "column is-full row",
       "parent": true,
       "inputType": "section",
       "flex": 100,
       "group": "structure",
       "draggable": "['maindroppable']",
-      "svg": "assets/img/svg/row-12.svg",
+      "svg": "assets/img/icons/col-2-33.png",
       "icon": "view_compact",
       "formConfig": "assets/widgets-config/container-widget.json",
       "children": [
@@ -323,61 +375,20 @@
 
     },
     
-        {
-          "name": "half-half",
-          "label": "Structure: Two-Column 50-50",
-          "class": "column is-full row",
-          "parent": true,
-          "inputType": "section",
-          "flex": 100,
-          "draggable": "['maindroppable']",
-          "group": "structure",
-          "svg": "assets/img/svg/row-11.svg",
-          "icon": "view_compact",
-          "formConfig": "assets/widgets-config/container-widget.json",
-          "children": [
-            {
-              "name": "half",
-              "label": "50",
-              "class": "column is-one-half",
-              "parent": true,
-              "inputType": "section",
-              "flex": 50,
-              "group": "structure",
-              "draggable": false,
-              "removeable": false,
-              "icon": "view_compact",
-              "formConfig": "assets/widgets-config/container-widget.json"
-            },
-            {
-              "name": "half",
-              "label": "50",
-              "class": "column is-one-half",
-              "parent": true,
-              "inputType": "section",
-              "flex": 50,
-              "group": "structure",
-              "draggable": false,
-              "removeable": false,
-              "icon": "view_compact",
-              "formConfig": "assets/widgets-config/container-widget.json"
-            }
-          ]
-
-        },
+        
         
         
 
         {
           "name": "two-one",
-          "label": "Structure: Two-Column 66-33",
+          "label": "Two-Column 66-33",
           "class": "column is-full row",
           "parent": true,
           "inputType": "section",
           "flex": 100,
           "group": "structure",
           "draggable": "['maindroppable']",
-          "svg": "assets/img/svg/row-21.svg",
+          "svg": "assets/img/icons/col-2-66.png",
           "icon": "view_compact",
           "formConfig": "assets/widgets-config/container-widget.json",
           "children": [
@@ -413,14 +424,14 @@
         },
     {
       "name": "three-one",
-      "label": "Structure: Two-Column 75-25",
+      "label": "Two-Column 75-25",
       "class": "column is-full row",
       "parent": true,
       "inputType": "section",
       "flex": 100,
       "group": "structure",
       "draggable": "['maindroppable']",
-      "svg": "assets/img/svg/row-31.svg",
+      "svg": "assets/img/icons/col-2-75.png",
       "icon": "view_compact",
       "formConfig": "assets/widgets-config/container-widget.json",
       "children": [
@@ -457,7 +468,7 @@
     
     {
       "name": "one-one-one",
-      "label": "Structure: Three-Column 33-33-33",
+      "label": "Three-Column 33-33-33",
       "class": "column is-full row",
       "parent": true,
       "inputType": "section",
@@ -465,7 +476,7 @@
       "removeOnSpill": true,
       "group": "structure",
       "icon": "view_compact",
-      "svg": "assets/img/svg/row-111.svg#layer1",
+      "svg": "assets/img/icons/col-3.png",
       "draggable": "['maindroppable']",
       "droppable": "dragtest",
       "formConfig": "assets/widgets-config/container-widget.json",

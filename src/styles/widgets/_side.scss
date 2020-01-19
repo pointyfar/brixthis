@@ -7,21 +7,13 @@
   }
 
   .ngx-dnd-item {
-    //border: 1px solid map-get($mat-grey, 800);
-    //background-color: rgba(map-get($dark-primary, 300), 0.25);
-    //background: rgba(black, .25);
-    //border-radius: 0.25rem;
-    
-    // box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 
-    //             0 2px 2px 0 rgba(0,0,0,.14), 
-    //             0 1px 5px 0 rgba(0,0,0,.12);
-    // border-radius: 4px;
-    //
     display: flex;
     flex-direction: row;
     align-items:center;
-    margin: 0;
-    padding: 0.75rem 1.5rem;
+    margin: 0px;
+    padding: 0;
+
+    //padding: 0.75rem 1.5rem;
     &:hover {
       //border: 1px solid map-get($mat-grey, 900);
       background-color: rgba(black, 0.10)
@@ -33,13 +25,14 @@
     display: flex;
     flex-direction: row;
     align-items: stretch;
+    padding: 0.5rem;
     .widget-icon {
       margin-right: 0.5rem;
       flex: 0 0 initial;
       display: flex;
       align-items: center;
       justify-content: center;
-      max-width:40px;
+      width: 100%;
       min-width:25px;
       * {
         width: 100%;

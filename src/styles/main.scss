@@ -2,6 +2,7 @@
 @import 'widgets/side';
 @import 'widgets/dash';
 @import 'widgets/widget';
+@import 'widgets/palette';
 
 body,
 html {
@@ -21,6 +22,7 @@ bt-main-layout {
   height: 100%;
   overflow: auto;
 }
+
 mat-toolbar {
   border: 0px solid blue;
   flex: 1 0 initial;
@@ -34,6 +36,11 @@ mat-sidenav-container {
   flex: 2 0 auto;
 }
 
+.mat-drawer-container {
+  background-color: white;
+
+}
+
 mat-sidenav-content {
   padding: 0;
   border: 0px solid hotpink;
@@ -42,9 +49,25 @@ mat-sidenav-content {
 
 
 div.mat-expansion-panel-body {
-  padding: 0;
+  padding: 0 8px 8px 8px;
 }
 
+mat-expansion-panel-header.mat-expansion-panel-header {
+  padding: 0 16px;
+}
+
+button.mat-button, 
+button.mat-raised-button,
+mat-expansion-panel,
+mat-expansion-panel-header,
+mat-accordion.mat-accordion, 
+mat-expansion-panel.mat-expansion-panel,
+mat-accordion.mat-accordion mat-expansion-panel.mat-expansion-panel:first-of-type,
+mat-accordion.mat-accordion mat-expansion-panel.mat-expansion-panel:last-of-type,
+mat-card.mat-card
+{
+  border-radius: 0 ;//!important;
+}
 
 .router-container {
   padding: 1rem;
@@ -58,4 +81,12 @@ div.mat-expansion-panel-body {
   border: 0px solid pink;
   min-width: 200px;
   
+}
+
+/* unvisited link */
+a:link ,
+a:visited ,
+a:hover ,
+a:active {
+  color: rgba(map-get($dark-primary,500),1);
 }
