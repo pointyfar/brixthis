@@ -104,17 +104,23 @@
           [model]="row"
           >
           <!-- --------------- ROW LABELS --------------- -->
-          <div class="section-label">
-            <div class="label">
-              <span *ngIf="row.removeable" ngxDragHandle><i class="fas fa-grip-vertical"></i></span>
-              <span *ngIf="!row.removeable" ngxDragHandle></span>
-              <div class="label-text">{{row.label}}</div>
+          <div class="section-label-wrapper">
+            <div class="section-label-indicator">
+              <i class="fas fa-ellipsis-h"></i>
             </div>
-            <div class="settings">
-              <button mat-icon-button (click)="getContainerConfigSettings($event, row)"><i class="fas fa-2x fa-cog"></i></button>
-              <button *ngIf="row.removeable" mat-icon-button color="warn" (click)="removeFromLayout($event, i, false, false)"><i class="fas fa-2x fa-trash-alt"></i></button>
+            <div class="section-label">
+              <div class="label">
+                <span *ngIf="row.removeable" ngxDragHandle><i class="fas fa-grip-vertical"></i></span>
+                <span *ngIf="!row.removeable" ngxDragHandle></span>
+                <div class="label-text">{{row.label}}</div>
+              </div>
+              <div class="settings">
+                <button mat-icon-button (click)="getContainerConfigSettings($event, row)"><i class="fas fa-2x fa-cog"></i></button>
+                <button *ngIf="row.removeable" mat-icon-button color="warn" (click)="removeFromLayout($event, i, false, false)"><i class="fas fa-2x fa-trash-alt"></i></button>
+              </div>
             </div>
           </div>
+          
           <!-- --------------- END ROW LABELS --------------- -->
           
           <!-- --------------- ROW COLS --------------- -->

@@ -43,45 +43,74 @@
       border: 1px solid map-get($dark-primary,500);
       //border: 2px solid map-get($dark-primary,500);
       background-color: rgba(map-get($dark-primary,700),1);
+
       
-      .section-label {
+      .section-label-indicator {
+        height: 1rem;
+        display: block;
+        text-align: center;
+      }
+      .section-label-wrapper {
         background-color: rgba(map-get($mat-grey,200),1);
-        
         display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        justify-content: center;
-        border: 0 solid pink;
-        padding: 0.5rem;
-        margin: 0;
+        flex-direction: column;
+        align-items: center stretch;
+        width: auto;
+        position: relative;
 
-        .label {
-          border: 0 solid red;
-          flex: 1 1 auto;
-          display: flex;
-          margin: auto;
-
-          i {
-            margin-right: 0.5rem;
-          }
-
-          .label-text {
-            border: 0 solid orange;
-            align-items: center;
-            flex: 1 1 auto;
+        &:hover {
+          .section-label {
+            max-height: 200px;
+            opacity: 1;
           }
         }
-
-        .settings {
-          flex: 0 1 auto;
+    
+        
+        .section-label {
+          position: absolute;
+          left: 0; right:0;
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          -webkit-transition: max-height, 0.1s opacity 0.3s;
+          -moz-transition: max-height 0.1s, opacity 0.3s;
+          transition: max-height 0.1s, opacity 0.3s;
+          
+          background-color: rgba(map-get($mat-grey,200),1);
+          align-self: stretch;  
           display: flex;
-          align-items: center;
           flex-direction: row;
+          align-items: stretch;
           justify-content: center;
-
-          button.mat-button {
-            min-width: 3rem;
+          .label {
+            padding: 0 1rem;
+            flex: 1 1 auto;
+            display: flex;
+            margin: auto;
+  
+            i {
+              margin-right: 0.5rem;
+            }
+  
+            .label-text {
+              border: 0 solid orange;
+              align-items: center;
+              flex: 1 1 auto;
+            }
           }
+  
+          .settings {
+            flex: 0 1 auto;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+  
+            button.mat-button {
+              min-width: 3rem;
+            }
+          }
+
         }
 
         button.mat-button {
