@@ -14,6 +14,7 @@ import { NgxDnDModule } from "@swimlane/ngx-dnd";
 
 import { FormComponent } from "./output-builder/form/form.component";
 import { OutputComponent } from "./output-builder/output/output.component";
+import { DialogComponent } from "./output-builder/dialog/dialog.component";
 import { LayoutConfigComponent } from "./layout-builder/layout-config/layout-config.component";
 import { LayoutItemComponent } from "./layout-builder/layout-item/layout-item.component";
 import { SettingsItemComponent } from "./settings-builder/settings-item/settings-item.component";
@@ -25,6 +26,7 @@ import { MainLayoutComponent } from "./main-layout/main-layout.component";
   declarations: [
     FormComponent,
     OutputComponent,
+    DialogComponent,
     LayoutConfigComponent,
     LayoutItemComponent,
     SettingsItemComponent,
@@ -52,6 +54,7 @@ import { MainLayoutComponent } from "./main-layout/main-layout.component";
   entryComponents: [
     FormComponent,
     OutputComponent,
+    DialogComponent,
     MainLayoutComponent,
     SettingsConfigComponent
   ]

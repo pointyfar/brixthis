@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { OutputComponent } from './../output-builder/output/output.component';
+import { DialogComponent } from './../output-builder/dialog/dialog.component';
 import { UtilitiesService } from './../services/utilities.service';
 import deepcopy from "ts-deepcopy";
 
@@ -15,7 +16,10 @@ export class MainLayoutComponent implements OnInit {
   widgetsPath: string;
   configPath: string;
   assetsBasePath: string;
+  
   helpTextSource: string;
+  helpTextReady = false;
+  helpText = "";
 
   layoutWidgetsSource: string ; 
   layoutConfigSource: string;
@@ -37,7 +41,7 @@ export class MainLayoutComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.initValues()
+    this.initValues();
   }
   
   /**  
@@ -57,10 +61,11 @@ export class MainLayoutComponent implements OnInit {
     
     this.layoutSource = bxconfig['layoutSource'];
     this.settingsSource = bxconfig['settingsSource'];
-
+    
     this.layoutWidgetsSource = bxconfig['layoutWidgetsSource'];
     this.layoutConfigSource = bxconfig['layoutConfigSource'];
-
+    
+    this.getHelpText(bxconfig['helpTextSource']);
     
     //this._ss.structuresPath = bxconfig['structuresPath'];
     
@@ -97,6 +102,33 @@ export class MainLayoutComponent implements OnInit {
     })
     
 
+  }
+
+
+  getHelpText(url:string){
+    this._us.getText(url)
+        .subscribe(
+          help => {
+            this.helpText = help;
+          },
+          err => { console.log("Error getting help text from ", url )},
+          () => {
+            this.helpTextReady = true;
+          }
+        )
+  }
+
+  launchHelp(m){
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '1000px',
+      height: '90%',
+      data: {
+        title: "Help",
+        text: this.helpText,
+        markdownify: true
+      }
+    });
+    
   }
   
   

@@ -107,23 +107,10 @@ export class LayoutConfigComponent implements OnInit {
   ngOnInit() {
     this.layoutWidgetsResult.push(this.pw)
 
-    this.getHelpText(this.helpTextSource);
     this.getWidgetsList(this.layoutWidgetsSource);
     this.getLayoutConfigOptions(this.layoutConfigSource);
   }
 
-  getHelpText(url:string){
-    this._us.getText(url)
-        .subscribe(
-          help => {
-            this.helpText = help;
-          },
-          err => { console.log("Error getting help text from ", url )},
-          () => {
-            this.helpTextReady = true;
-          }
-        )
-  }
    
   /**
    * get the config definition for the (theme-specific) custom config options.
