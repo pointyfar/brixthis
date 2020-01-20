@@ -19,13 +19,13 @@
     </div>
     
     
-    <h2>Configure</h2>
+    <h3>Configure</h3>
     <div>
       <mat-accordion>
       <mat-expansion-panel expanded="true">
-        <mat-expansion-panel-header>
+        <mat-expansion-panel-header collapsedHeight="32px" expandedHeight="32px">
           <mat-panel-title>
-            Theme Options
+            Settings
           </mat-panel-title>
         </mat-expansion-panel-header>
             <bx-settings-config
@@ -41,7 +41,7 @@
       </mat-accordion>
     </div>
     
-    <h2>Build</h2>
+    <h3>Build</h3>
     <div *ngIf="isReady">
       <mat-accordion multi="true">
         <ng-template ngFor let-wid [ngForOf]="groupedWidgets" let-i="index" [ngForTrackBy]="trackByFn">
@@ -64,7 +64,7 @@
                   copy="true"
                   >
                 <div 
-                    fxFlex="50"
+                    fxFlex="33"
                     class="ngx-dnd-item widget-list-item"
                     *ngFor="let item of wid.items"
                     [ngxDraggable]="item.draggable"
@@ -98,9 +98,8 @@
     <mat-card class="main-drop">
       <mat-card-title>
         <div class="title-text" fxFlexFill fxFlexLayout="row" fxLayoutAlign="space-between center">
-          <div>
-            Drag widgets here
-          </div>
+          <div style="font-size: smaller;">Drag widgets here</div>
+          
           <div>
             <button mat-raised-button color="primary" (click)="getWidgetsResults()">Layout Config</button>
             
@@ -169,13 +168,13 @@
                       </div>
                       <!-- --------------- END WIDGET LABELS --------------- -->
                       <bx-layout-item  
+                      [image]="item.image"
+                      [contentUrl]="item.content"
+                      [qpath]="item.formConfig" 
+                      [title]="item.label"  
+                      (widgetConfig)="attachConfig($event, item)" 
+                      (removeWidget)="removeFromLayout($event, i, j, k)"
                         >
-                        <!--[image]="item.image"
-                        [contentUrl]="item.content"
-                        [qpath]="item.formConfig" 
-                        [title]="item.label"  
-                        (widgetConfig)="attachConfig($event, item)" 
-                        (removeWidget)="removeFromLayout($event, i, j, k)"-->
                       </bx-layout-item>
                     </div>
                 </div>

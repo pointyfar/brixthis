@@ -6,6 +6,8 @@ Each configuration object can be saved individually to your [`configDir`](https:
 
 ---
 
+<!--more-->
+
 ## Layout Builder 
 
 ### Widgets Introduction

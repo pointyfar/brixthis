@@ -7,7 +7,7 @@
             "url": "assets/config/params-styles.json"
         },
         {
-            "label": "Theme", 
+            "label": "Options", 
             "key": ["options"], 
             "url": "assets/config/params-options.json"
         }

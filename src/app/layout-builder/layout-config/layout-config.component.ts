@@ -13,7 +13,7 @@ import { OutputComponent } from './../../output-builder/output/output.component'
 })
 export class LayoutConfigComponent implements OnInit {
   
-  @Input() public helpText: string;
+  @Input() public helpTextSource: string;
 
   @Input() public layoutConfigSource: string;
   @Input() public layoutWidgetsSource: string;
@@ -24,7 +24,9 @@ export class LayoutConfigComponent implements OnInit {
   
   @Output() removeWidget = new EventEmitter<any>();
   
-  
+  helpTextReady = false;
+  helpText = "";
+
   configFilesDone = false;
   configFiles = [];
   xconfigFiles = [
@@ -56,6 +58,46 @@ export class LayoutConfigComponent implements OnInit {
   containerWidgetConfig = {};
   containerWidgetForm = "";
 
+  pw = {
+    name: "one",
+    label: "Structure: Single Column",
+    class: "column is-full row",
+    content: "",
+    parent: true,
+    inputType: "section",
+    flex: 100,
+    removeOnSpill: true,
+    removeable: true,
+    group: "structure",
+    icon: "view_compact",
+    image: "",
+    svg: "assets/img/svg/row-1.svg#layer1",
+    draggable: "['maindroppable']",
+    droppable: "dragtest",
+    formConfig: "assets/widgets-config/container-widget.json",
+    children: [
+      {
+        children: [],
+        content: "",
+        name: "full",
+        label: "Full",
+        class: "column is-full",
+        parent: true,
+        inputType: "section",
+        flex: 100,
+        group: "structure",
+        icon: "view_compact",
+        removeOnSpill: false,
+        removeable: false,
+        draggable: "[]",
+        droppable: "['default']",
+        image: "",
+        formConfig: "assets/widgets-config/container-widget.json"
+
+      }
+    ]
+  }
+
   constructor(
     public dialog: MatDialog,
     private _us: UtilitiesService
@@ -63,12 +105,25 @@ export class LayoutConfigComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.layoutWidgetsResult.push(this.pw)
 
+    this.getHelpText(this.helpTextSource);
     this.getWidgetsList(this.layoutWidgetsSource);
     this.getLayoutConfigOptions(this.layoutConfigSource);
   }
 
-
+  getHelpText(url:string){
+    this._us.getText(url)
+        .subscribe(
+          help => {
+            this.helpText = help;
+          },
+          err => { console.log("Error getting help text from ", url )},
+          () => {
+            this.helpTextReady = true;
+          }
+        )
+  }
    
   /**
    * get the config definition for the (theme-specific) custom config options.

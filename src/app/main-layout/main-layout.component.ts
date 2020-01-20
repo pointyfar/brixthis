@@ -15,7 +15,7 @@ export class MainLayoutComponent implements OnInit {
   widgetsPath: string;
   configPath: string;
   assetsBasePath: string;
-  helpPath: string;
+  helpTextSource: string;
 
   layoutWidgetsSource: string ; 
   layoutConfigSource: string;
@@ -52,7 +52,8 @@ export class MainLayoutComponent implements OnInit {
     
     this.configPath = bxconfig['configPath'];
     this.widgetsPath = bxconfig['widgetsPath'];
-    this.helpPath = bxconfig['helpPath'];
+    
+    this.helpTextSource = bxconfig['helpTextSource'];
     
     this.layoutSource = bxconfig['layoutSource'];
     this.settingsSource = bxconfig['settingsSource'];

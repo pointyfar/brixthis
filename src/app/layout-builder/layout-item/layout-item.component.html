@@ -1,1 +1,20 @@
-<p>layout-item works!</p>
+<mat-card class="widget-card" *ngIf="qReady">
+  <img  *ngIf="image" mat-card-image attr.src="{{image}}">
+  <mat-card-content>
+    <div *ngIf="model">
+      <markdown>{{description}}</markdown>
+      <div class="widget-model">
+        <pre>{{model | json}}</pre>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="openDialog()">
+      Configure
+    </button>
+    <button mat-button color="warn" (click)="removeWidgetEvent($event)">
+      <i class="fas fa-2x fa-trash-alt"></i>
+    </button>
+    
+  </mat-card-actions>
+</mat-card>
