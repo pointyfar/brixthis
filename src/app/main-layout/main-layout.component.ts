@@ -145,6 +145,17 @@ export class MainLayoutComponent implements OnInit {
     this.configResult = {... this.configResult, ...config}
     
   }
+
+  removeFromLayout(e) {
+    if(e.k === false) {
+      /* structure widget */
+      this.layoutWidgetsResult.splice(e.i,1);
+    } else {
+      /* feature widget */
+      this.layoutWidgetsResult[e.i]['children'][e.j]['children'].splice(e.k,1);
+    }
+    
+  }
 }
 
 

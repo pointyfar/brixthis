@@ -187,7 +187,7 @@ export class LayoutConfigComponent implements OnInit {
    * @return {type}   description   
    */   
   removeFromLayout(e,i,j,k) {
-    let r = {e,i,j,k}
+    let r = {e,i,j,k};
     this.removeWidget.emit(r)
   }
   
