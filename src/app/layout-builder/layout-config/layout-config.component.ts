@@ -77,7 +77,20 @@ export class LayoutConfigComponent implements OnInit {
     formConfig: "assets/widgets-config/container-widget.json",
     children: [
       {
-        children: [],
+        children: [
+          {
+            "name": "widget-placeholder",
+            "label": "Placeholder Widget",
+            "group": "placeholder",
+            "class": "widget",
+            "inputType": "content",
+            "icon": "fas fa-dragon",
+            "svg": "assets/img/icons/placeholder.png",
+            "image": "assets/img/svg/w-placeholder.svg",
+            "content": "assets/widgets-placeholders/lorem.md",
+            "formConfig": "assets/widgets-config/placeholder-widget.json"
+          }
+        ],
         content: "",
         name: "full",
         label: "Full",
@@ -311,19 +324,6 @@ export class LayoutConfigComponent implements OnInit {
     })
 
     return processed
-  }
-  
-  launchHelp(m){
-    /*const dialogRef = this.dialog.open(DialogComponent, {
-      width: '1000px',
-      height: '90%',
-      data: {
-        title: "Help",
-        text: this.helpText,
-        markdownify: m
-      }
-    });*/
-    
   }
 
 }

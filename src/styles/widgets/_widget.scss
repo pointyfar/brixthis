@@ -39,8 +39,14 @@
     justify-content: center;
     align-items: center;
   }
+
 }
 
+.widget-model {
+  overflow-x: auto;
+  padding: 0.25rem;
+  background-color: rgba(map-get($mat-grey, 100),1);
+}
 .widget-card {
   margin: .5rem;
 }
