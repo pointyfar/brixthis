@@ -15,60 +15,6 @@ html {
   border: 0px solid violet;
 }
 
-bt-main-layout {
-  display: flex;
-  flex-direction: column;
-  border: 0px dashed orange;
-  height: 100%;
-  overflow: auto;
-}
-
-mat-toolbar {
-  border: 0px solid blue;
-  flex: 1 0 initial;
-  min-height: 60px;
-}
-
-mat-sidenav-container {
-  display: flex;
-  border: 0px dashed green;
-  padding: 0;
-  flex: 2 0 auto;
-}
-
-.mat-drawer-container {
-  background-color: white;
-
-}
-
-mat-sidenav-content {
-  padding: 0;
-  border: 0px solid hotpink;
-  margin: 0;
-}
-
-
-div.mat-expansion-panel-body {
-  padding: 0 8px 8px 8px;
-}
-
-mat-expansion-panel-header.mat-expansion-panel-header {
-  padding: 0 16px;
-}
-
-button.mat-button, 
-button.mat-raised-button,
-mat-expansion-panel,
-mat-expansion-panel-header,
-mat-accordion.mat-accordion, 
-mat-expansion-panel.mat-expansion-panel,
-mat-accordion.mat-accordion mat-expansion-panel.mat-expansion-panel:first-of-type,
-mat-accordion.mat-accordion mat-expansion-panel.mat-expansion-panel:last-of-type,
-mat-card.mat-card
-{
-  border-radius: 0 ;//!important;
-}
-
 .router-container {
   padding: 1rem;
 }
@@ -83,10 +29,15 @@ mat-card.mat-card
   
 }
 
-/* unvisited link */
+.information {
+  background-color: rgba(map-get($custom-accent,500),0.5);
+  padding: 1.5rem;
+}
+
+
 a:link ,
 a:visited ,
 a:hover ,
 a:active {
-  color: rgba(map-get($dark-primary,500),1);
+  color: rgba(map-get($custom-primary,500),1);
 }

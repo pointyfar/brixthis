@@ -4,10 +4,10 @@
     <h3>Configure</h3>
     <div>
       <mat-accordion>
-      <mat-expansion-panel expanded="true">
+      <mat-expansion-panel expanded="false">
         <mat-expansion-panel-header collapsedHeight="32px" expandedHeight="32px">
           <mat-panel-title>
-            Settings
+            Custom Settings
           </mat-panel-title>
         </mat-expansion-panel-header>
             <bx-settings-config
@@ -79,8 +79,8 @@
   <div fxFlex>
     <mat-card class="main-drop">
       <mat-card-title>
-        <div class="title-text" fxFlexFill fxFlexLayout="row" fxLayoutAlign="space-between center">
-          <div style="font-size: smaller;">Drag widgets here</div>
+        <div fxFlexFill fxFlexLayout="row" fxLayoutAlign="space-between center">
+          <div class="mat-h3 drag-area-title">Drag widgets here</div>
           
           <div>
             <button mat-raised-button color="primary" (click)="getWidgetsResults()">Layout Config</button>

@@ -1,11 +1,109 @@
 @import '~@angular/material/theming';
 @import 'widgets/palette';
-@include mat-core();
-$dark-primary: mat-palette($lapis-lazuli);
-$dark-accent: mat-palette($straw);
-$dark-warn: mat-palette($cedar-chest);
-$dark-theme: mat-light-theme($dark-primary, $dark-accent, $dark-warn);
-@include angular-material-theme($dark-theme);
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Roboto, sans-serif',
+  $headline: mat-typography-level(22px, 40px, 700),
+  $body-1: mat-typography-level(12px, 22px, 400)
+);
+
+$accent-typography: mat-typography-config(
+  $font-family: 'Oswald, sans-serif',
+  $headline: mat-typography-level(22px, 40px, 700),
+  $body-1: mat-typography-level(12px, 22px, 400)
+);
+
+@include mat-core($custom-typography);
+
+$custom-primary: mat-palette($lapis-lazuli);
+$custom-accent: mat-palette($straw);
+$custom-warn: mat-palette($cedar-chest);
+$custom-theme: mat-light-theme($custom-primary, $custom-accent, $custom-warn);
+
 $font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif !default;
+$font-accent: 'Oswald', $font-family-sans-serif;
 
 
+@include angular-material-theme($custom-theme);
+@include mat-toolbar-typography($accent-typography);
+
+
+.mat-typography {
+    h1, h2, h3, h4, h5, h6,
+    .mat-tab-label-content,
+    .mat-title, .drag-area-title, .toolbar-title    
+    {
+      font-family: $font-accent;
+      text-transform: uppercase;
+      font-weight: normal;
+      font-stretch: normal;
+    }
+    .drag-area-title, .toolbar-title {
+      margin: 0;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      margin: 1.5rem 0 .5rem;
+     }
+  
+  
+  }
+  
+  bt-main-layout {
+    display: flex;
+    flex-direction: column;
+    border: 0px dashed orange;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  mat-toolbar {
+    border: 0px solid blue;
+    flex: 1 0 initial;
+    min-height: 60px;
+    font-family: $font-accent;
+
+  }
+  
+  mat-sidenav-container {
+    display: flex;
+    border: 0px dashed green;
+    padding: 0;
+    flex: 2 0 auto;
+  }
+  
+  .mat-drawer-container {
+    background-color: white;
+  
+  }
+  
+  mat-sidenav-content {
+    padding: 0;
+    border: 0px solid hotpink;
+    margin: 0;
+  }
+  
+  
+  div.mat-expansion-panel-body {
+    padding: 0 8px 8px 8px;
+  }
+  
+  mat-expansion-panel-header.mat-expansion-panel-header {
+    padding: 0 16px;
+  }
+  
+  button.mat-button, 
+  button.mat-raised-button,
+  mat-expansion-panel,
+  mat-expansion-panel-header,
+  mat-accordion.mat-accordion, 
+  mat-expansion-panel.mat-expansion-panel,
+  mat-accordion.mat-accordion mat-expansion-panel.mat-expansion-panel:first-of-type,
+  mat-accordion.mat-accordion mat-expansion-panel.mat-expansion-panel:last-of-type,
+  mat-card.mat-card
+  {
+    font-size: mat-font-size($custom-typography, body-1);
+    font-family: mat-font-family($custom-typography);
+    border-radius: 0 ;//!important;
+  }
+  

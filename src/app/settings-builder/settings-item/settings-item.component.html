@@ -6,7 +6,7 @@
 <ng-template #detailedLayout>
 <div fxLayout="row" fxFlexFill fxLayoutAlign="center stretch" class="config-file">
   <mat-card fxFlex fxLayout="column">
-    <mat-card-title>{{configFile.label}}</mat-card-title>
+    <mat-card-title class="mat-title">{{configFile.label}}</mat-card-title>
     <mat-card-content fxFlex>
       <markdown ngPreserveWhitespaces>
         {{configFile.description}}
