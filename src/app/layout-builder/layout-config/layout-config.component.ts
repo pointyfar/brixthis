@@ -79,16 +79,14 @@ export class LayoutConfigComponent implements OnInit {
       {
         children: [
           {
-            "name": "widget-placeholder",
-            "label": "Placeholder Widget",
-            "group": "placeholder",
+            "name": "widget-hero",
+            "label": "Hero Widget",
             "class": "widget",
             "inputType": "content",
-            "icon": "fas fa-dragon",
-            "svg": "assets/img/icons/placeholder.png",
-            "image": "assets/img/svg/w-placeholder.svg",
-            "content": "assets/widgets-placeholders/lorem.md",
-            "formConfig": "assets/widgets-config/placeholder-widget.json"
+            "icon": "fas fa-flag",
+            "svg": "assets/img/icons/hero.png",
+            "group": "main",
+            "formConfig": "assets/widgets-config/hero-widget.json"
           }
         ],
         content: "",

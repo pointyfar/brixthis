@@ -61,6 +61,7 @@ export class LayoutItemComponent implements OnInit {
             .subscribe(x => {
               result = x;  
               this.res = x;
+              this.model = this._us.stripNulls(this.model)
               },
               err => {console.log(err)},
               () => {
