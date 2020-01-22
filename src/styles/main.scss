@@ -41,3 +41,7 @@ a:hover ,
 a:active {
   color: rgba(map-get($custom-primary,500),1);
 }
+
+code {
+  color: rgba(map-get($custom-warn,500),1);
+}

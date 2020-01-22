@@ -246,10 +246,10 @@ export class LayoutConfigComponent implements OnInit {
     let input = model['result'] ? model['result'] : container['modelJson'];
 
     const dialogRef = this.dialog.open(FormComponent, {
-      width: '1000px',
-      height: '90%',
+      width: '500px',
+      height: '500px',
       data: {
-        title: "Configure Site Params",
+        title: "Configure Section Class",
         inputModel: input,
         jsonSchemaFields: container['jsonFields']
       }
