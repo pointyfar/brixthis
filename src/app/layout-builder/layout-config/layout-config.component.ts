@@ -29,24 +29,13 @@ export class LayoutConfigComponent implements OnInit {
 
   configFilesDone = false;
   configFiles = [];
-  xconfigFiles = [
-    {
-      label: "Styles", 
-      key:["styles"], 
-      url: "assets/config/params-styles.json"
-    },
-    {
-      label: "Theme", 
-      url: "assets/config/params-options.json"
-    }
-  ];
+
   configFile:any = {};
-  configParams = "/assets/config/params.json"
   
   params = {};
   result = {};
 
-  droppableItemClass = (item: any) => `${item.class} ${item.inputType}`;
+  droppableItemClass = (item: any) => `${item.class}`;
 
   widgets: WidgetItem[] = [];
   groupedWidgets: any[] = [];
@@ -74,7 +63,7 @@ export class LayoutConfigComponent implements OnInit {
     svg: "assets/img/svg/row-1.svg#layer1",
     draggable: "['maindroppable']",
     droppable: "dragtest",
-    formConfig: "assets/widgets-config/container-widget.json",
+    formConfig: "assets/bx/layouts-widgets/container-widget.json",
     children: [
       {
         children: [
@@ -86,7 +75,7 @@ export class LayoutConfigComponent implements OnInit {
             "icon": "fas fa-flag",
             "svg": "assets/img/icons/hero.png",
             "group": "main",
-            "formConfig": "assets/widgets-config/hero-widget.json"
+            "formConfig": "assets/bx/layouts-widgets/hero-widget.json"
           }
         ],
         content: "",
@@ -103,7 +92,7 @@ export class LayoutConfigComponent implements OnInit {
         draggable: "[]",
         droppable: "['default']",
         image: "",
-        formConfig: "assets/widgets-config/container-widget.json"
+        formConfig: "assets/bx/layouts-widgets/container-widget.json"
 
       }
     ]

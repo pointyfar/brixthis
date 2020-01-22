@@ -1,15 +1,14 @@
 {
-    "help" : "",
     "items" : [
         {
             "label": "Styles", 
             "key": ["styles"], 
-            "url": "assets/config/params-styles.json"
+            "url": "assets/bx/layouts-config/params-styles.json"
         },
         {
             "label": "Options", 
             "key": ["options"], 
-            "url": "assets/config/params-options.json"
+            "url": "assets/bx/layouts-config/params-options.json"
         }
     ]
 }

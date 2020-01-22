@@ -117,7 +117,6 @@ function mapWidgetItem( wi: any ):any[] {
     item['name'] = wi.widgets[i].name ? wi.widgets[i].name : "widget";
     item['label'] = wi.widgets[i].label ? wi.widgets[i].label : "widget";
     item['class'] = wi.widgets[i].class ? wi.widgets[i].class : "widget";
-    item['inputType'] = wi.widgets[i].inputType ? wi.widgets[i].inputType : "widget";
     item['icon'] = wi.widgets[i].icon ? wi.widgets[i].icon : "widgets";
     item['svg'] = wi.widgets[i].svg ? wi.widgets[i].svg : "";
     item['group'] = wi.widgets[i].group ? wi.widgets[i].group : "ungrouped";

@@ -1,207 +1,122 @@
 {
   "groups" : [],
-  "help" : "assets/widgets-config/help.md",
-  
-  "config-help" : "Save each config file individually to your [`configDir`](https://gohugo.io/getting-started/configuration/), or navigate to the 'Results' tab to download as a single file.",
-  
-  "config-items" : [
-    {
-      "label": "General",
-      "key" : [],
-      "url" : "assets/config/config.json"
-    },
-    {
-      "label": "Blackfriday",
-      "key" : ["blackfriday"],
-      "url" : "assets/config/blackfriday.json"
-    },
-    {
-      "label": "Caches",
-      "key" : ["caches"],
-      "url" : "assets/config/caches.json"
-    },
-    {
-      "label": "Frontmatter",
-      "key" : ["frontmatter"],
-      "url" : "assets/config/frontmatter.json"
-    },
-    {
-      "label": "Imaging",
-      "key" : ["imaging"],
-      "url" : "assets/config/imaging.json"
-    },
-    {
-      "label": "Menus",
-      "key" : ["menus"],
-      "dynamic": true,
-      "url" : "assets/config/menus.json"
-    },
-    {
-      "label": "Module",
-      "key" : ["module"],
-      "url" : "assets/config/module.json"
-    },
-    {
-      "label": "MediaTypes",
-      "key" : ["mediaTypes"],
-      "dynamic": true,
-      "url" : "assets/config/mediatypes.json"
-    },
-
-    {
-      "label": "Outputs",
-      "key" : ["outputs"],
-      "dynamic": true,
-      "url" : "assets/config/outputs.json"
-    },
-    {
-      "label": "Output Formats",
-      "key" : ["outputFormats"],
-      "dynamic": true,
-      "url" : "assets/config/output-formats.json"
-    },
-    {
-      "label": "Permalinks",
-      "key" : ["permalinks"],
-      "dynamic": true,
-      "url" : "assets/config/permalinks.json"
-    },
-    {
-      "label": "Related",
-      "key" : ["related"],
-      "url" : "assets/config/related.json"
-    },
-    {
-      "label": "Sitemap",
-      "key" : ["sitemap"],
-      "url" : "assets/config/sitemap.json"
-    },
-    {
-      "label": "Taxonomies",
-      "key" : ["taxonomies"],
-      "dynamic": true,
-      "url" : "assets/config/taxonomies.json"
-    }
-  ],
   "widget-groups" : [
     "structure",
     "placeholder",
     "main",
     "feature widgets"
   ],
-  "widget-help" : "assets/widgets-config/help.md",
   "widgets" : [
     {
       "name": "widget-placeholder",
       "label": "Placeholder Widget",
       "group": "placeholder",
       "class": "widget",
-      "inputType": "content",
+      "DELETE__inputType": "content",
       "icon": "fas fa-dragon",
-      "svg": "assets/img/icons/placeholder.png",
-      "image": "assets/img/svg/w-placeholder.svg",
+      "svg": "assets/bx/layouts-widgets/img/placeholder.png",
       "content": "assets/widgets-placeholders/lorem.md",
-      "formConfig": "assets/widgets-config/placeholder-widget.json"
+      "formConfig": "assets/bx/layouts-widgets/placeholder-widget.json"
     },
     {
       "name": "widget-search",
       "label": "Search Widget",
       "class": "widget",
-      "inputType": "content",
+      "DELETE__inputType": "content",
       "icon": "fas fa-search",
-      "svg": "assets/img/icons/search.png",
+      "svg": "assets/bx/layouts-widgets/img/search.png",
       "group": "feature widgets",
-      "formConfig": "assets/widgets-config/search-widget.json"
+      "formConfig": "assets/bx/layouts-widgets/search-widget.json"
     },
     {
       "name": "widget-hero",
       "label": "Hero Widget",
       "class": "widget",
-      "inputType": "content",
+      "DELETE__inputType": "content",
       "icon": "fas fa-flag",
-      "svg": "assets/img/icons/hero.png",
+      "svg": "assets/bx/layouts-widgets/img/hero.png",
       "group": "main",
-      "formConfig": "assets/widgets-config/hero-widget.json"
+      "formConfig": "assets/bx/layouts-widgets/hero-widget.json"
     },
     {
       "name": "widget-navigation",
       "label": "Navigation",
       "class": "widget nav-container",
-      "inputType": "content",
+      "DELETE__inputType": "content",
       "icon": "fas fa-ellipsis-v",
-      "svg": "assets/img/icons/nav.png",
+      "svg": "assets/bx/layouts-widgets/img/nav.png",
       "group": "main",
-      "formConfig": "assets/widgets-config/navbar-widget.json"
+      "formConfig": "assets/bx/layouts-widgets/navbar-widget.json"
     },
     {
       "name": "widget-author",
       "label": "Author Widget",
       "class": "widget",
-      "inputType": "content",
+      "DELETE__inputType": "content",
       "icon": "fas fa-user",
-      "svg": "assets/img/icons/author.png",
+      "svg": "assets/bx/layouts-widgets/img/author.png",
       "group": "feature widgets",
-      "formConfig": "assets/widgets-config/author-widget.json"
+      "formConfig": "assets/bx/layouts-widgets/author-widget.json"
     },
     {
       "name": "widget-social",
       "label": "Social Buttons Widget",
       "class": "widget",
-      "inputType": "content",
+      "DELETE__inputType": "content",
       "icon": "fas fa-thumbs-up",
-      "svg": "assets/img/icons/social.png",
+      "svg": "assets/bx/layouts-widgets/img/social.png",
       "group": "feature widgets",
-      "formConfig": "assets/widgets-config/social-widget.json"
+      "formConfig": "assets/bx/layouts-widgets/social-widget.json"
     },
     {
       "name": "widget-tags",
       "label": "Tag Cloud Widget",
       "class": "widget",
-      "inputType": "content",
-      "svg": "assets/img/icons/tags.png",
+      "DELETE__inputType": "content",
+      "svg": "assets/bx/layouts-widgets/img/tags.png",
       "icon": "fas fa-tag",
       "group": "feature widgets",
-      "formConfig": "assets/widgets-config/tagcloud-widget.json"
+      "formConfig": "assets/bx/layouts-widgets/tagcloud-widget.json"
     },
     {
       "name": "widget-links",
       "label": "Links Widget",
       "class": "widget",
-      "inputType": "content",
+      "DELETE__inputType": "content",
       "icon": "fas fa-link",
-      "svg": "assets/img/icons/urls.png",
+      "svg": "assets/bx/layouts-widgets/img/urls.png",
       "group": "feature widgets",
-      "formConfig": "assets/widgets-config/links-widget.json"
+      "formConfig": "assets/bx/layouts-widgets/links-widget.json"
     },
     {
       "name": "widget-text",
       "label": "Text Widget",
       "class": "widget",
-      "inputType": "content",
+      "DELETE__inputType": "content",
       "icon": "fas fa-quote-left",
-      "svg": "assets/img/icons/text.png",
+      "svg": "assets/bx/layouts-widgets/img/text.png",
       "group": "feature widgets",
-      "formConfig": "assets/widgets-config/text-widget.json"
+      "formConfig": "assets/bx/layouts-widgets/text-widget.json"
     },
     {
       "name": "widget-content",
       "label": "Main Content Widget",
       "class": "widget",
-      "inputType": "content",
+      "DELETE__inputType": "content",
       "icon": "fas fa-file-alt",
-      "svg": "assets/img/icons/content.png",
+      "svg": "assets/bx/layouts-widgets/img/content.png",
       "group": "main",
-      "formConfig": "assets/widgets-config/main-widget.json"
+      "formConfig": "assets/bx/layouts-widgets/main-widget.json"
     },
     {
       "name": "widget-image",
       "label": "Image Widget",
       "class": "widget",
-      "inputType": "content",
+      "DELETE__inputType": "content",
       "icon": "fas fa-image",
-      "svg": "assets/img/icons/img.png",
+      "svg": "assets/bx/layouts-widgets/img/img.png",
       "group": "feature widgets",
-      "formConfig": "assets/widgets-config/image-widget.json"
+      "formConfig": "assets/bx/layouts-widgets/image-widget.json"
     },
     
     
@@ -210,29 +125,29 @@
       "label": "Single Column",
       "class": "column is-full row",
       "parent": true,
-      "inputType": "section",
+      "DELETE__inputType": "section",
       "flex": 100,
       "removeOnSpill": true,
       "group": "structure",
       "icon": "view_compact",
-      "svg": "assets/img/icons/col-1.png",
+      "svg": "assets/bx/layouts-widgets/img/col-1.png",
       "draggable": "['maindroppable']",
       "droppable": "dragtest",
-      "formConfig": "assets/widgets-config/container-widget.json",
+      "formConfig": "assets/bx/layouts-widgets/container-widget.json",
       "children": [
         {
           "name": "full",
           "label": "Full",
           "class": "column is-full",
           "parent": true,
-          "inputType": "section",
+          "DELETE__inputType": "section",
           "flex": 100,
           "group": "structure",
           "icon": "view_compact",
           "removeOnSpill": false,
           "removeable": false,
           "draggable": "[]",
-          "formConfig": "assets/widgets-config/container-widget.json"
+          "formConfig": "assets/bx/layouts-widgets/container-widget.json"
 
         }
       ]
@@ -243,39 +158,39 @@
       "label": "Two-Column 50-50",
       "class": "column is-full row",
       "parent": true,
-      "inputType": "section",
+      "DELETE__inputType": "section",
       "flex": 100,
       "draggable": "['maindroppable']",
       "group": "structure",
-      "svg": "assets/img/icons/col-2-50.png",
+      "svg": "assets/bx/layouts-widgets/img/col-2-50.png",
       "icon": "view_compact",
-      "formConfig": "assets/widgets-config/container-widget.json",
+      "formConfig": "assets/bx/layouts-widgets/container-widget.json",
       "children": [
         {
           "name": "half",
           "label": "50",
           "class": "column is-one-half",
           "parent": true,
-          "inputType": "section",
+          "DELETE__inputType": "section",
           "flex": 50,
           "group": "structure",
           "draggable": false,
           "removeable": false,
           "icon": "view_compact",
-          "formConfig": "assets/widgets-config/container-widget.json"
+          "formConfig": "assets/bx/layouts-widgets/container-widget.json"
         },
         {
           "name": "half",
           "label": "50",
           "class": "column is-one-half",
           "parent": true,
-          "inputType": "section",
+          "DELETE__inputType": "section",
           "flex": 50,
           "group": "structure",
           "draggable": false,
           "removeable": false,
           "icon": "view_compact",
-          "formConfig": "assets/widgets-config/container-widget.json"
+          "formConfig": "assets/bx/layouts-widgets/container-widget.json"
         }
       ]
 
@@ -286,29 +201,29 @@
       "label": "Two-Column 25-75",
       "class": "column is-full row",
       "parent": true,
-      "inputType": "section",
+      "DELETE__inputType": "section",
       "flex": 100,
       "removeOnSpill": true,
       "group": "structure",
       "icon": "view_compact",
-      "svg": "assets/img/icons/col-2-25.png",
+      "svg": "assets/bx/layouts-widgets/img/col-2-25.png",
       "draggable": "['maindroppable']",
       "droppable": "dragtest",
-      "formConfig": "assets/widgets-config/container-widget.json",
+      "formConfig": "assets/bx/layouts-widgets/container-widget.json",
       "children": [
         {
           "name": "one-quarter",
           "label": "25",
           "class": "column is-one-quarter",
           "parent": true,
-          "inputType": "section",
+          "DELETE__inputType": "section",
           "flex": 25,
           "group": "structure",
           "icon": "view_compact",
           "removeOnSpill": false,
           "removeable": false,
           "draggable": "[]",
-          "formConfig": "assets/widgets-config/container-widget.json"
+          "formConfig": "assets/bx/layouts-widgets/container-widget.json"
 
         },
         {
@@ -316,7 +231,7 @@
           "label": "75",
           "class": "column is-three-quarter",
           "parent": true,
-          "inputType": "section",
+          "DELETE__inputType": "section",
           "flex": 75,
           "group": "structure",
           "droppable": "droptest",
@@ -324,7 +239,7 @@
           "removeOnSpill": false,
           "removeable": false,
           "icon": "view_compact",
-          "formConfig": "assets/widgets-config/container-widget.json"
+          "formConfig": "assets/bx/layouts-widgets/container-widget.json"
         }
       ]
 
@@ -335,40 +250,40 @@
       "label": "Two-Column 33-66",
       "class": "column is-full row",
       "parent": true,
-      "inputType": "section",
+      "DELETE__inputType": "section",
       "flex": 100,
       "group": "structure",
       "draggable": "['maindroppable']",
-      "svg": "assets/img/icons/col-2-33.png",
+      "svg": "assets/bx/layouts-widgets/img/col-2-33.png",
       "icon": "view_compact",
-      "formConfig": "assets/widgets-config/container-widget.json",
+      "formConfig": "assets/bx/layouts-widgets/container-widget.json",
       "children": [
         {
           "name": "one-third",
           "label": "33",
           "class": "column is-one-third",
           "parent": true,
-          "inputType": "section",
+          "DELETE__inputType": "section",
           "flex": 25,
           "group": "structure",
           "icon": "view_compact",
           "removeOnSpill": false,
           "removeable": false,
           "draggable": false,
-          "formConfig": "assets/widgets-config/container-widget.json"
+          "formConfig": "assets/bx/layouts-widgets/container-widget.json"
         },
         {
           "name": "two-third",
           "label": "66",
           "class": "column is-two-third",
           "parent": true,
-          "inputType": "section",
+          "DELETE__inputType": "section",
           "flex": 75,
           "group": "structure",
           "draggable": false,
           "removeable": false,
           "icon": "view_compact",
-          "formConfig": "assets/widgets-config/container-widget.json"
+          "formConfig": "assets/bx/layouts-widgets/container-widget.json"
         }
 
       ]
@@ -384,40 +299,40 @@
           "label": "Two-Column 66-33",
           "class": "column is-full row",
           "parent": true,
-          "inputType": "section",
+          "DELETE__inputType": "section",
           "flex": 100,
           "group": "structure",
           "draggable": "['maindroppable']",
-          "svg": "assets/img/icons/col-2-66.png",
+          "svg": "assets/bx/layouts-widgets/img/col-2-66.png",
           "icon": "view_compact",
-          "formConfig": "assets/widgets-config/container-widget.json",
+          "formConfig": "assets/bx/layouts-widgets/container-widget.json",
           "children": [
             {
               "name": "two-third",
               "label": "66",
               "class": "column is-two-third",
               "parent": true,
-              "inputType": "section",
+              "DELETE__inputType": "section",
               "flex": 75,
               "group": "structure",
               "draggable": false,
               "removeable": false,
               "icon": "view_compact",
-              "formConfig": "assets/widgets-config/container-widget.json"
+              "formConfig": "assets/bx/layouts-widgets/container-widget.json"
             },
             {
               "name": "one-third",
               "label": "33",
               "class": "column is-one-third",
               "parent": true,
-              "inputType": "section",
+              "DELETE__inputType": "section",
               "flex": 25,
               "group": "structure",
               "icon": "view_compact",
               "removeOnSpill": false,
               "removeable": false,
               "draggable": false,
-              "formConfig": "assets/widgets-config/container-widget.json"
+              "formConfig": "assets/bx/layouts-widgets/container-widget.json"
             }
           ]
 
@@ -427,40 +342,40 @@
       "label": "Two-Column 75-25",
       "class": "column is-full row",
       "parent": true,
-      "inputType": "section",
+      "DELETE__inputType": "section",
       "flex": 100,
       "group": "structure",
       "draggable": "['maindroppable']",
-      "svg": "assets/img/icons/col-2-75.png",
+      "svg": "assets/bx/layouts-widgets/img/col-2-75.png",
       "icon": "view_compact",
-      "formConfig": "assets/widgets-config/container-widget.json",
+      "formConfig": "assets/bx/layouts-widgets/container-widget.json",
       "children": [
         {
           "name": "three-quarter",
           "label": "75",
           "class": "column is-three-quarter",
           "parent": true,
-          "inputType": "section",
+          "DELETE__inputType": "section",
           "flex": 75,
           "group": "structure",
           "draggable": false,
           "removeable": false,
           "icon": "view_compact",
-          "formConfig": "assets/widgets-config/container-widget.json"
+          "formConfig": "assets/bx/layouts-widgets/container-widget.json"
         },
         {
           "name": "one-quarter",
           "label": "25",
           "class": "column is-one-quarter",
           "parent": true,
-          "inputType": "section",
+          "DELETE__inputType": "section",
           "flex": 25,
           "group": "structure",
           "icon": "view_compact",
           "removeOnSpill": false,
           "removeable": false,
           "draggable": false,
-          "formConfig": "assets/widgets-config/container-widget.json"
+          "formConfig": "assets/bx/layouts-widgets/container-widget.json"
         }
       ]
 
@@ -471,29 +386,29 @@
       "label": "Three-Column 33-33-33",
       "class": "column is-full row",
       "parent": true,
-      "inputType": "section",
+      "DELETE__inputType": "section",
       "flex": 100,
       "removeOnSpill": true,
       "group": "structure",
       "icon": "view_compact",
-      "svg": "assets/img/icons/col-3.png",
+      "svg": "assets/bx/layouts-widgets/img/col-3.png",
       "draggable": "['maindroppable']",
       "droppable": "dragtest",
-      "formConfig": "assets/widgets-config/container-widget.json",
+      "formConfig": "assets/bx/layouts-widgets/container-widget.json",
       "children": [
         {
           "name": "one-third",
           "label": "33",
           "class": "column is-one-third",
           "parent": true,
-          "inputType": "section",
+          "DELETE__inputType": "section",
           "flex": 33.3,
           "group": "structure",
           "icon": "view_compact",
           "removeOnSpill": false,
           "removeable": false,
           "draggable": "[]",
-          "formConfig": "assets/widgets-config/container-widget.json"
+          "formConfig": "assets/bx/layouts-widgets/container-widget.json"
 
         },
         {
@@ -501,14 +416,14 @@
           "label": "33",
           "class": "column is-one-third",
           "parent": true,
-          "inputType": "section",
+          "DELETE__inputType": "section",
           "flex": 33.3,
           "group": "structure",
           "icon": "view_compact",
           "removeOnSpill": false,
           "removeable": false,
           "draggable": "[]",
-          "formConfig": "assets/widgets-config/container-widget.json"
+          "formConfig": "assets/bx/layouts-widgets/container-widget.json"
 
         },
         {
@@ -516,14 +431,14 @@
           "label": "33",
           "class": "column is-one-third",
           "parent": true,
-          "inputType": "section",
+          "DELETE__inputType": "section",
           "flex": 33.3,
           "group": "structure",
           "icon": "view_compact",
           "removeOnSpill": false,
           "removeable": false,
           "draggable": "[]",
-          "formConfig": "assets/widgets-config/container-widget.json"
+          "formConfig": "assets/bx/layouts-widgets/container-widget.json"
 
         }
       ]

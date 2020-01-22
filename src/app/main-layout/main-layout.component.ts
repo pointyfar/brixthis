@@ -54,18 +54,14 @@ export class MainLayoutComponent implements OnInit {
     const abp = bxconfig['assetsBasePath'];
     this.assetsBasePath = abp.slice(-1) == "/" ? abp : abp + "/";
     
-    this.configPath = bxconfig['configPath'];
-    this.widgetsPath = bxconfig['widgetsPath'];
-    
     this.helpTextSource = bxconfig['helpTextSource'];
+    this.getHelpText(bxconfig['helpTextSource']);
     
-    this.layoutSource = bxconfig['layoutSource'];
     this.settingsSource = bxconfig['settingsSource'];
     
     this.layoutWidgetsSource = bxconfig['layoutWidgetsSource'];
     this.layoutConfigSource = bxconfig['layoutConfigSource'];
     
-    this.getHelpText(bxconfig['helpTextSource']);
     
     //this._ss.structuresPath = bxconfig['structuresPath'];
     
@@ -179,6 +175,5 @@ function mapToKey(key, obj){
       result[key[i]] = deepcopy(obj)
     }
   }
-  console.log(result)
   return result
 }

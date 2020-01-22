@@ -75,7 +75,6 @@ export class LayoutItemComponent implements OnInit {
 
   getQuestions(){
     let url = this.qpath;
-    
     this._us.getUrl(url)
         .subscribe(
           r => {
