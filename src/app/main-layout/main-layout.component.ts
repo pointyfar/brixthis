@@ -114,14 +114,14 @@ export class MainLayoutComponent implements OnInit {
         )
   }
 
-  launchHelp(m){
+  launchHelp(m?: boolean){
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '1000px',
       height: '90%',
       data: {
         title: "Help",
         text: this.helpText,
-        markdownify: true
+        markdownify: (m ? m : true)
       }
     });
     

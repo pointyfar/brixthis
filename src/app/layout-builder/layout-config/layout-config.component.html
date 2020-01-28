@@ -26,7 +26,7 @@
     <h3>Build</h3>
     <div *ngIf="isReady">
       <mat-accordion multi="true">
-        <ng-template ngFor let-wid [ngForOf]="groupedWidgets" let-i="index" [ngForTrackBy]="trackByFn">
+        <ng-template ngFor let-wid [ngForOf]="groupedWidgets" let-i="index">
           <!--<mat-expansion-panel [expanded]="i == 0">-->
           <mat-expansion-panel [expanded]="i != 0">
             <mat-expansion-panel-header collapsedHeight="32px" expandedHeight="32px">

@@ -12,8 +12,8 @@ export class SettingsConfigComponent implements OnInit {
 
   @Output() settingsResult = new EventEmitter<any>();
 
-  private settingsConfigFiles = [];
-  private settingsConfigFilesDone = false;
+  settingsConfigFiles = [];
+  settingsConfigFilesDone = false;
 
   helpText = "";
 
