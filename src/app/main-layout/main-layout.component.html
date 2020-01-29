@@ -1,11 +1,12 @@
 <mat-toolbar class="header" fxFlexLayout="row" class="mat-typography">
   <div fxFlexFill fxLayoutAlign="space-around center" fxLayout="row">
-    <div fxLayoutAlign="baseline" fxLayout="row" fxFlex="auto">
-      <a routerLink="/" target="_self">
+    <div fxLayoutAlign="center center" fxLayout="column" fxFlex="auto">
+      <a href="/" target="_self" style="line-height: 0;">
         <img
             *ngIf="assetsBasePath"
-            src="{{assetsBasePath}}img/brixthis.png" 
-            style="height:22px; padding:0 12px 0px 0;">
+            src="{{assetsBasePath}}img/bricks/bxbrixthis.png" 
+            class="logo"
+            style="height:30px; padding:0 6px 0px 0;">
       </a>
     </div>
     <div fxLayoutAlign="baseline" fxFlex="auto" ><h1 class="toolbar-title">Layout Builder</h1></div>

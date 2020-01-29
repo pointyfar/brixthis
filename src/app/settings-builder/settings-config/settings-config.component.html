@@ -5,6 +5,7 @@
 <div *ngIf="settingsConfigFilesDone" fxLayout="row wrap" fxFlexFill >
   <div *ngFor="let confile of settingsConfigFiles; let i = index" 
         fxFlex="{{ bare ? 100 : 50}}" 
+        fxFlex.lt-sm="100"
         fxFlex.gt-md="{{ bare ? 100 : 33 }}"
         fxFlex.gt-lg="{{ bare ? 100 : 25 }}"
         fxLayout="row wrap"
