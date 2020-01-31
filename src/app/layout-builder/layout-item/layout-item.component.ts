@@ -10,7 +10,7 @@ import { FormComponent } from './../../output-builder/form/form.component';
   encapsulation: ViewEncapsulation.Emulated
 })
 export class LayoutItemComponent implements OnInit {
-  data = "hello";
+  data = 'hello';
   qReady = false;
 
   @Input() public qpath: string;
@@ -20,16 +20,16 @@ export class LayoutItemComponent implements OnInit {
   @Output() widgetConfig = new EventEmitter<any>();
   @Output() removeWidget = new EventEmitter<any>();
 
-  description = "";
+  description = '';
   model: any = {};
   formFields: FormlyFieldConfig[] = [];
 
-  jsonSchemaFields:FormlyFieldConfig[] = [];
+  jsonSchemaFields: FormlyFieldConfig[] = [];
   res: any = {};
   hasResult = false;
 
   constructor(
-    private _us: UtilitiesService,
+    private _US: UtilitiesService,
     public dialog: MatDialog
   ) { }
 
@@ -37,9 +37,9 @@ export class LayoutItemComponent implements OnInit {
     this.getQuestions();
   }
 
-  widgetConfigured(c:any){
-    let e = {config: c}
-    if(c) {
+  widgetConfigured(c: any) {
+    const e = {config: c};
+    if (c) {
       this.widgetConfig.emit(e);
     }
   }
@@ -49,9 +49,9 @@ export class LayoutItemComponent implements OnInit {
       width: '1000px',
       height: '500px',
       data: {
-        inputModel: this.model, 
-        inputFields: this.formFields, 
-        jsonSchemaFields: this.jsonSchemaFields, 
+        inputModel: this.model,
+        inputFields: this.formFields,
+        jsonSchemaFields: this.jsonSchemaFields,
         result: this.res,
         title: `Configure ${this.title}`
       }
@@ -59,23 +59,23 @@ export class LayoutItemComponent implements OnInit {
     let result;
     dialogRef.afterClosed()
             .subscribe(x => {
-              result = x;  
+              result = x;
               this.res = x;
-              this.model = this._us.stripNulls(this.model)
+              this.model = this._US.stripNulls(this.model);
               },
-              err => {console.log(err)},
+              err => {console.log(err); },
               () => {
-                this.widgetConfigured(result)
-                if(result) {
+                this.widgetConfigured(result);
+                if (result) {
                   this.hasResult = true;
                 }
               }
             );
   }
 
-  getQuestions(){
-    let url = this.qpath;
-    this._us.getUrl(url)
+  getQuestions() {
+    const url = this.qpath;
+    this._US.getUrl(url)
         .subscribe(
           r => {
             this.model = r.modelJson;
@@ -83,7 +83,7 @@ export class LayoutItemComponent implements OnInit {
             this.jsonSchemaFields = r.jsonFields;
           },
           err => {
-            console.log('error:', err)
+            console.log('error:', err);
           },
           () => {
             this.qReady = true;
@@ -91,9 +91,9 @@ export class LayoutItemComponent implements OnInit {
         );
   }
 
-  removeWidgetEvent(e){
+  removeWidgetEvent(e) {
     this.removeWidget.emit(e);
-    
+
   }
 
   }

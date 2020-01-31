@@ -10,33 +10,33 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 })
 export class FormComponent implements OnInit {
   form = new FormGroup({});
-  
+
   original = {};
-  
+
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[] = [];
 
   model: any = {};
-  
-  title = "";
+
+  title = '';
   notes = [];
-  
+
   constructor(
     public dialogRef: MatDialogRef<FormComponent>,
-            @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    
+
   }
-  
+
 
   ngOnInit() {
-    this.model = this.data.inputModel
-    this.original = {...this.data.inputModel}
-    this.fields = this.data.jsonSchemaFields
-    this.title = this.data.title
+    this.model = this.data.inputModel;
+    this.original = {...this.data.inputModel};
+    this.fields = this.data.jsonSchemaFields;
+    this.title = this.data.title;
     this.notes = this.data.notes;
   }
-  saveForm(){
+  saveForm() {
     if (this.form.valid) {
       this.data.result = this.form.value;
       this.dialogRef.close(this.form.value);
@@ -45,7 +45,7 @@ export class FormComponent implements OnInit {
     }
   }
   cancel(): void {
-    this.form.reset(this.original)
+    this.form.reset(this.original);
     this.dialogRef.close();
   }
 }

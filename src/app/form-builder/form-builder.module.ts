@@ -14,7 +14,7 @@ import { PanelWrapperComponent } from './panel-wrapper/panel-wrapper.component';
   ],
   imports: [
     CommonModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
     MaterialModule,
     FormlyMaterialModule,

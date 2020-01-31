@@ -12,7 +12,13 @@ import { OutputComponent } from './../../output-builder/output/output.component'
   encapsulation: ViewEncapsulation.Emulated
 })
 export class LayoutConfigComponent implements OnInit {
-  
+
+  constructor(
+    public dialog: MatDialog,
+    private _US: UtilitiesService
+
+  ) { }
+
   @Input() public helpTextSource: string;
 
   @Input() public layoutConfigSource: string;
@@ -20,141 +26,136 @@ export class LayoutConfigComponent implements OnInit {
 
   @Input() public layoutWidgetsResult: any[] = [];
   @Input() public layoutConfigResult: any = {};
-  
-  
+
+
   @Output() removeWidget = new EventEmitter<any>();
-  
+
   helpTextReady = false;
-  helpText = "";
+  helpText = '';
 
   configFilesDone = false;
   configFiles = [];
 
-  configFile:any = {};
-  
+  configFile: any = {};
+
   params = {};
   result = {};
-
-  droppableItemClass = (item: any) => `${item.class}`;
 
   widgets: WidgetItem[] = [];
   groupedWidgets: any[] = [];
   structuresWidgets: any[] = [];
   contentsWidgets: any[] = [];
-  
+
   isReady = false;
-  
+
   containerWidgetConfig = {};
-  containerWidgetForm = "";
+  containerWidgetForm = '';
 
   pw = {
-    name: "one",
-    label: "Structure: Single Column",
-    class: "column is-full row",
-    content: "",
+    name: 'one',
+    label: 'Structure: Single Column',
+    class: 'column is-full row',
+    content: '',
     parent: true,
-    inputType: "section",
+    inputType: 'section',
     flex: 100,
     removeOnSpill: true,
     removeable: true,
-    group: "structure",
-    icon: "view_compact",
-    image: "",
-    svg: "assets/img/svg/row-1.svg#layer1",
-    draggable: "['maindroppable']",
-    droppable: "dragtest",
-    formConfig: "assets/bx/layouts-widgets/container-widget.json",
+    group: 'structure',
+    icon: 'view_compact',
+    image: '',
+    svg: 'assets/img/svg/row-1.svg#layer1',
+    draggable: '[\'maindroppable\']',
+    droppable: 'dragtest',
+    formConfig: 'assets/bx/layouts-widgets/container-widget.json',
     children: [
       {
         children: [
           {
-            "name": "widget-hero",
-            "label": "Hero Widget",
-            "class": "widget",
-            "inputType": "content",
-            "icon": "fas fa-flag",
-            "svg": "assets/img/icons/hero.png",
-            "group": "main",
-            "formConfig": "assets/bx/layouts-widgets/hero-widget.json"
+            name: 'widget-hero',
+            label: 'Hero Widget',
+            class: 'widget',
+            inputType: 'content',
+            icon: 'fas fa-flag',
+            svg: 'assets/img/icons/hero.png',
+            group: 'main',
+            formConfig: 'assets/bx/layouts-widgets/hero-widget.json'
           }
         ],
-        content: "",
-        name: "full",
-        label: "Full",
-        class: "column is-full",
+        content: '',
+        name: 'full',
+        label: 'Full',
+        class: 'column is-full',
         parent: true,
-        inputType: "section",
+        inputType: 'section',
         flex: 100,
-        group: "structure",
-        icon: "view_compact",
+        group: 'structure',
+        icon: 'view_compact',
         removeOnSpill: false,
         removeable: false,
-        draggable: "[]",
-        droppable: "['default']",
-        image: "",
-        formConfig: "assets/bx/layouts-widgets/container-widget.json"
+        draggable: '[]',
+        droppable: '[\'default\']',
+        image: '',
+        formConfig: 'assets/bx/layouts-widgets/container-widget.json'
 
       }
     ]
-  }
+  };
 
-  constructor(
-    public dialog: MatDialog,
-    private _us: UtilitiesService
-
-  ) { }
+  droppableItemClass = (item: any) => `${item.class}`;
 
   ngOnInit() {
-    this.layoutWidgetsResult.push(this.pw)
+    this.layoutWidgetsResult.push(this.pw);
 
     this.getWidgetsList(this.layoutWidgetsSource);
     this.getLayoutConfigOptions(this.layoutConfigSource);
   }
 
-   
+
   /**
    * get the config definition for the (theme-specific) custom config options.
    * @param url - url for the config definition
    */
-  getLayoutConfigOptions(url:string){
-    this._us.getUrl(url)
+  getLayoutConfigOptions(url: string) {
+    this._US.getUrl(url)
         .subscribe(
           config => {
-            for(let i = 0; i < config["items"].length; i++){
-              this.configFiles.push(config["items"][i])
+            for (const i of config.items.length ) {
+              this.configFiles.push(config.items[i]);
             }
           },
-          err => {console.log("Error getting layoutConfigSource", err)},
+          err => {console.log('Error getting layoutConfigSource', err); },
           () => {
             this.configFilesDone = true;
           }
-        )
+        );
   }
-  
-  configResult(e){
-    if(e['key']) {
-      this.params[e['key']] = e['config'];
-      this.layoutConfigResult[e['key']] = e['config'];
-    } 
-    else {
-      for(let key in e['config']) {
-        this.params[key] = e['config'][key]
-        this.layoutConfigResult[key] = e['config'][key];
+
+  configResult(e) {
+    if (e.key) {
+      this.params[e.key] = e.config;
+      this.layoutConfigResult[e.key] = e.config;
+    } else {
+      for (const key in e.config) {
+        if ( e.config.hasOwnProperty(key) ) {
+          this.params[key] = e.config[key];
+          this.layoutConfigResult[key] = e.config[key];
+        }
       }
     }
-    this.emitlayoutWidgetsResult(this.params)
+    this.emitlayoutWidgetsResult(this.params);
 
   }
-  
-  getWidgetsList(url:string) {
-    this._us.getWidgetsConfig(url)
+
+  getWidgetsList(url: string) {
+    this._US.getWidgetsConfig(url)
         .subscribe(
           config => {
             this.widgets = config.widgets;
             this.groupedWidgets = this.processWidgets(config.widgets, config.groups);
           },
           err => {
-            console.log(err)
+            console.log(err);
           },
         () => {
           this.isReady = true;
@@ -162,155 +163,155 @@ export class LayoutConfigComponent implements OnInit {
       )
       ;
   }
-  
-  
-  /**  
-   * removeFromLayout - Trigger to emit coordinates of item to remove
-   *    
-   * @param  {type} e event
-   * @param  {type} i coordinate
-   * @param  {type} j coordinate
-   * @param  {type} k coordinate
-   * @return {type}   description   
-   */   
-  removeFromLayout(e,i,j,k) {
-    let r = {e,i,j,k};
-    this.removeWidget.emit(r)
-  }
-  
-  
-  /**  
-   * getWidgetsResults - output the configuration results for the widgets only
-   *    
-   */   
-  getWidgetsResults(){
-    let params = {...this.params};
 
-    params['widgets'] = this._us.formatWidgetsConfig(this.layoutWidgetsResult);
-    
+
+  /**
+   * removeFromLayout - Trigger to emit coordinates of item to remove
+   *
+   * @param   e event
+   * @param   i coordinate
+   * @param   j coordinate
+   * @param   k coordinate
+   * @return  description
+   */
+  removeFromLayout(e, i, j, k) {
+    const r = {e, i, j, k};
+    this.removeWidget.emit(r);
+  }
+
+
+  /**
+   * getWidgetsResults - output the configuration results for the widgets only
+   *
+   */
+  getWidgetsResults() {
+    const params = {...this.params};
+
+    params['widgets'] = this._US.formatWidgetsConfig(this.layoutWidgetsResult);
+
     const dialogRef = this.dialog.open(OutputComponent, {
       width: '1000px',
       height: '500px',
       data: {
         site: params,
-        file: ["params"], 
-        note: "Notes"
-        
+        file: ['params'],
+        note: 'Notes'
+
       }
-    })
+    });
   }
-  
-  
-  
-  /**  
-   * getContainerConfigSettings - Get the container configuration options. 
+
+
+
+  /**
+   * getContainerConfigSettings - Get the container configuration options.
    * Triggered by cog icon button on row containers.
    * Once done, launchContainerSettings().
-   *    
-   * @param  {type} e event
-   * @param  {type} m config of config item model
-   */   
-  getContainerConfigSettings(_e, m){
-    if(!this.containerWidgetForm || (this.containerWidgetForm !== m['formConfig'])) {
-      this._us.getUrl(m['formConfig'])
+   *
+   * @param  e event
+   * @param  m config of config item model
+   */
+  getContainerConfigSettings(e, m) {
+    if (!this.containerWidgetForm || (this.containerWidgetForm !== m.formConfig)) {
+      this._US.getUrl(m.formConfig)
       .subscribe(
         c => {
-          this.containerWidgetConfig = {...c}
+          this.containerWidgetConfig = {...c};
         },
         err => {
-          console.log("Error getting Container Config", err)
+          console.log('Error getting Container Config', err);
         },
         () => {
-          this.containerWidgetForm = {...m['formConfig']}
-          this.launchContainerSettings(this.containerWidgetConfig, m)
+          this.containerWidgetForm = {...m.formConfig};
+          this.launchContainerSettings(this.containerWidgetConfig, m);
         }
-      )
+      );
     } else {
-      this.launchContainerSettings(this.containerWidgetConfig, m)
+      this.launchContainerSettings(this.containerWidgetConfig, m);
     }
-    
+
   }
-  
+
   launchContainerSettings(container, model) {
-    let input = model['result'] ? model['result'] : container['modelJson'];
+    const input = model.result ? model.result : container.modelJson;
 
     const dialogRef = this.dialog.open(FormComponent, {
       width: '500px',
       height: '500px',
       data: {
-        title: "Configure Section Class",
+        title: 'Configure Section Class',
         inputModel: input,
-        jsonSchemaFields: container['jsonFields']
+        jsonSchemaFields: container.jsonFields
       }
     });
-    
+
     dialogRef.afterClosed()
             .subscribe(result => {
-                if(result) {
-                  model['result'] = result
-                } 
+                if (result) {
+                  model.result = result;
+                }
               },
-              err => {console.log(err)},
+              err => {console.log(err); },
               () => {
               }
             );
-    
+
   }
-  
-  
+
+
   attachConfig(e, m) {
     m.result = e.config;
   }
 
-  emitlayoutWidgetsResult(e){
-    
-    if(e) {
-      
+  emitlayoutWidgetsResult(e) {
+
+    if (e) {
+
     }
   }
 
-  processWidgets(w, s){
-    let groups = [];
-    let processed = [];
-    
-    for (let i=0; i<w.length; i++) {
-      let g = ""
-      
-      if(w[i].hasOwnProperty('group')) {
-        g = w[i]['group']; 
+  processWidgets(w, s) {
+    const groups = [];
+    const processed = [];
+
+    for (const i of w.length) {
+      let g = '';
+
+      if (w[i].hasOwnProperty('group')) {
+        g = w[i].group;
       } else {
-        g = "ungrouped";
+        g = 'ungrouped';
       }
 
-      if( groups.indexOf(g) >= 0 ){
-        for(let j = 0; j< processed.length; j++){
-          if(processed[j]['group'] === g){
-            processed[j]['items'].push(w[i])
+      if ( groups.indexOf(g) >= 0 ) {
+        for (const j of processed) {
+          if (processed[j].group === g) {
+            processed[j].items.push(w[i]);
           }
         }
       } else {
         groups.push(g);
-        let item = [w[i]];
+        const item = [w[i]];
         processed.push({group: g, items: item});
       }
     }
-    processed.sort((a,b) => { 
+    processed.sort((a, b) => {
       let val = 0;
-      let ai = s.indexOf(a.group);
-      let bi = s.indexOf(b.group);
+      const ai = s.indexOf(a.group);
+      const bi = s.indexOf(b.group);
       if (ai < 0 ) {
         if ( bi < 0 ) {
-          val = a.group < b.group ? -1 : 0 
-        } else { val = -1 }
+          val = a.group < b.group ? -1 : 0;
+        } else { val = -1; }
       } else {
         if ( bi < 0  ) {
-          val = -1
-        } else { val = ai < bi ? -1 : 0 }
+          val = -1;
+        } else { val = ai < bi ? -1 : 0; }
       }
-      return val
-    })
+      return val;
+    });
 
-    return processed
+    return processed;
   }
 
 }

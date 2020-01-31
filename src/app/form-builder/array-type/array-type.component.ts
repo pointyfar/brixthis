@@ -28,7 +28,7 @@ import { FieldArrayType, FormlyFormBuilder } from '@ngx-formly/core';
         <button mat-raised-button type="button" (click)="add()">{{field.fieldArray.templateOptions.label}}</button>
       </div>
     </div>
-    
+
 
   `,
 })

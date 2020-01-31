@@ -2,21 +2,21 @@ import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
-  selector: 'hg-dialog',
+  selector: 'bx-dialog',
   templateUrl: './dialog.component.html',
   encapsulation: ViewEncapsulation.Emulated
 })
 export class DialogComponent implements OnInit {
-  
-  title: "";
-  text: "";
+
+  title: '';
+  text: '';
   markdownify: true;
-  
+
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
-            @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    
+
   }
 
 
@@ -24,7 +24,7 @@ export class DialogComponent implements OnInit {
     this.title = this.data.title;
     this.text = this.data.text;
     this.markdownify = this.data.markdownify;
-    
+
   }
 
 }
