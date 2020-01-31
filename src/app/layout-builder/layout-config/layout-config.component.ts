@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
 import { UtilitiesService } from './../../services/utilities.service';
 import { MatDialog } from '@angular/material';
-import { WidgetItem } from './../../shared/models/widget-item';
+import { WidgetItem } from '../../shared/models/widget.item';
 //import { WidgetItem } from './../../shared/models/widget-item';
 import { FormComponent } from './../../output-builder/form/form.component';
 import { OutputComponent } from './../../output-builder/output/output.component';

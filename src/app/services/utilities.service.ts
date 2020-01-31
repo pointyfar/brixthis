@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 /*import { FormlyFieldConfig } from '@ngx-formly/core';*/
 import { Observable, forkJoin, throwError } from 'rxjs';
 import { map, mergeMap, switchMap } from 'rxjs/operators';
-import { WidgetItem } from './../shared/models/widget-item';
+import { WidgetItem } from '../shared/models/widget.item';
 
 
 @Injectable({providedIn: 'root'})
