@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { OutputComponent } from './../output-builder/output/output.component';
 import { DialogComponent } from './../output-builder/dialog/dialog.component';
-import { UtilitiesService } from './../services/utilities.service';
+import { UtilitiesService } from '../shared/services/utilities.service';
 import deepcopy from 'ts-deepcopy';
 
 

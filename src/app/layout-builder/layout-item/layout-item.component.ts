@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input, EventEmitter, Output } from '@angular/core';
-import { UtilitiesService } from './../../services/utilities.service';
+import { UtilitiesService } from '../../shared/services/utilities.service';
 import { MatDialog } from '@angular/material';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { FormComponent } from './../../output-builder/form/form.component';

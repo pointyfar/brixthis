@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
-import { UtilitiesService } from './../../services/utilities.service';
+import { UtilitiesService } from '../../shared/services/utilities.service';
 
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {FormControl} from '@angular/forms';

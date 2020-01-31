@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Input, EventEmitter, Output } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { UtilitiesService } from './../../services/utilities.service';
+import { UtilitiesService } from '../../shared/services/utilities.service';
 import { OutputComponent } from './../../output-builder/output/output.component';
 import { FormComponent } from './../../output-builder/form/form.component';
 

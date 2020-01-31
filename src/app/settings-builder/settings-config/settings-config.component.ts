@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, ViewEncapsulation, EventEmitter } from '@angular/core';
-import { UtilitiesService } from './../../services/utilities.service';
+import { UtilitiesService } from '../../shared/services/utilities.service';
 
 @Component({
   selector: 'bx-settings-config',

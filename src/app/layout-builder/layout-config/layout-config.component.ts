@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
-import { UtilitiesService } from './../../services/utilities.service';
+import { UtilitiesService } from '../../shared/services/utilities.service';
 import { MatDialog } from '@angular/material';
 import { WidgetItem } from '../../shared/models/widget.item';
 //import { WidgetItem } from './../../shared/models/widget-item';
