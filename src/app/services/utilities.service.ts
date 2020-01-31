@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 /*import { FormlyFieldConfig } from '@ngx-formly/core';*/
 import { Observable, forkJoin, throwError } from 'rxjs';
 import { map, mergeMap, switchMap } from 'rxjs/operators';
-/*import { WidgetItem } from './../layout-buildermodels/widget.item';*/
+import { WidgetItem } from './../shared/models/widget-item';
 
 
 @Injectable({providedIn: 'root'})
@@ -83,20 +83,20 @@ export class UtilitiesService {
     const list = [];
     for (const i of widgetConf) {
 
-      const f = {} as any;
-      f.widgetName = widgetConf[i].name;
-      f.class = widgetConf[i].class;
+      const f = <any>{};
+      f.widgetName = i.name;
+      f.class = i.class;
 
       /* Section Widget */
-      if (widgetConf[i].hasOwnProperty('children')) {
-        if (widgetConf[i].children.length > 0) {
-          f.items = this.formatWidgetsConfig(widgetConf[i].children);
+      if (i.hasOwnProperty('children')) {
+        if (i.children.length > 0) {
+          f.items = this.formatWidgetsConfig(i.children);
         }
-        f.flex = widgetConf[i].flex;
+        f.flex = i.flex;
         f.type = 'section';
-        f.config = widgetConf[i].result;
+        f.config = i.result;
       } else { /* Functional Widget */
-        f.config = widgetConf[i].result;
+        f.config = i.result;
         f.type = 'widget';
 
       }
@@ -109,33 +109,33 @@ export class UtilitiesService {
 }
 
 function mapWidgetItem( wi: any ): any[] {
-  const items = [];
+  let items = [];
 
   for (const i of wi.widgets) {
-    const item = {} as any;
+    const item = <WidgetItem>{};
 
-    item.name = wi.widgets[i].name ? wi.widgets[i].name : 'widget';
-    item.label = wi.widgets[i].label ? wi.widgets[i].label : 'widget';
-    item.class = wi.widgets[i].class ? wi.widgets[i].class : 'widget';
-    item.icon = wi.widgets[i].icon ? wi.widgets[i].icon : 'widgets';
-    item.svg = wi.widgets[i].svg ? wi.widgets[i].svg : '';
-    item.group = wi.widgets[i].group ? wi.widgets[i].group : 'ungrouped';
-    item.formConfig = wi.widgets[i].formConfig ? wi.widgets[i].formConfig : '';
-    item.draggable = (wi.widgets[i].draggable != null) ? wi.widgets[i].draggable : '[\'contents\']';
-    item.droppable = (wi.widgets[i].droppable != null) ? wi.widgets[i].droppable : '[\'default\']';
-    item.removeOnSpill = (wi.widgets[i].removeOnSpill != null) ? wi.widgets[i].removeOnSpill : true;
-    item.removeable = (wi.widgets[i].removeable != null) ? wi.widgets[i].removeable : true;
-    item.image = wi.widgets[i].image ? wi.widgets[i].image : '';
-    item.content = wi.widgets[i].content ? wi.widgets[i].content : '';
+    item.name = i.name ? i.name : 'widget';
+    item.label = i.label ? i.label : 'widget';
+    item.class = i.class ? i.class : 'widget';
+    item.icon = i.icon ? i.icon : 'widgets';
+    item.svg = i.svg ? i.svg : '';
+    item.group = i.group ? i.group : 'ungrouped';
+    item.formConfig = i.formConfig ? i.formConfig : '';
+    item.draggable = (i.draggable != null) ? i.draggable : '[\'contents\']';
+    item.droppable = (i.droppable != null) ? i.droppable : '[\'default\']';
+    item.removeOnSpill = (i.removeOnSpill != null) ? i.removeOnSpill : true;
+    item.removeable = (i.removeable != null) ? i.removeable : true;
+    item.image = i.image ? i.image : '';
+    item.content = i.content ? i.content : '';
 
-    if ( wi.widgets[i].parent === true ) {
+    if ( i.parent === true ) {
       item.children = [] as any[];
-      if (wi.widgets[i].children) {
-        const wchildren = wi.widgets[i].children;
+      if (i.children) {
+        const wchildren = i.children;
         item.children = mapWidgetItem({widgets: wchildren});
       }
 
-      item.flex =  wi.widgets[i].flex ? wi.widgets[i].flex : 100;
+      item.flex =  i.flex ? i.flex : 100;
     } else {
       item.result = {} as any;
 

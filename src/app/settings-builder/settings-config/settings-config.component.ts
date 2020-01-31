@@ -46,7 +46,7 @@ export class SettingsConfigComponent implements OnInit {
       this._US.getUrl(url)
           .subscribe( result => {
             for (const i of result.items) {
-              this.settingsConfigFiles.push(result.items[i]);
+              this.settingsConfigFiles.push(i);
             }
             this.helpText = result.help;
           },

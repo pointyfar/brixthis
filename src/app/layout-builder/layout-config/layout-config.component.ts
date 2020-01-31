@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
 import { UtilitiesService } from './../../services/utilities.service';
 import { MatDialog } from '@angular/material';
-import { WidgetItem } from './../models/widget.item';
+import { WidgetItem } from './../../shared/models/widget-item';
+//import { WidgetItem } from './../../shared/models/widget-item';
 import { FormComponent } from './../../output-builder/form/form.component';
 import { OutputComponent } from './../../output-builder/output/output.component';
 
@@ -120,8 +121,8 @@ export class LayoutConfigComponent implements OnInit {
     this._US.getUrl(url)
         .subscribe(
           config => {
-            for (const i of config.items.length ) {
-              this.configFiles.push(config.items[i]);
+            for (const i of config.items ) {
+              this.configFiles.push(i);
             }
           },
           err => {console.log('Error getting layoutConfigSource', err); },
@@ -274,24 +275,24 @@ export class LayoutConfigComponent implements OnInit {
     const groups = [];
     const processed = [];
 
-    for (const i of w.length) {
+    for (const i of w) {
       let g = '';
 
-      if (w[i].hasOwnProperty('group')) {
-        g = w[i].group;
+      if (i.hasOwnProperty('group')) {
+        g = i.group;
       } else {
         g = 'ungrouped';
       }
 
       if ( groups.indexOf(g) >= 0 ) {
         for (const j of processed) {
-          if (processed[j].group === g) {
-            processed[j].items.push(w[i]);
+          if (j.group === g) {
+            j.items.push(i);
           }
         }
       } else {
         groups.push(g);
-        const item = [w[i]];
+        const item = [i];
         processed.push({group: g, items: item});
       }
     }
