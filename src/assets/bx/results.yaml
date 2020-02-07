@@ -1,0 +1,49 @@
+languageCode: en-au
+title: 'I Brixed This'
+theme: brixbulma
+params:
+  widgets:
+    -
+      widgetName: one
+      class: 'column is-full row'
+      items:
+        - {widgetName: full, class: 'column is-full', items: [{widgetName: widget-navigation, class: 'widget nav-container', config: {menuName: main, enabled: true, icon: true, label: 'fas fa-search'}, type: widget}, {widgetName: widget-hero, class: widget, config: {background: img/hero-img.png, bgislight: true}, type: widget}], flex: 100, type: section}
+      flex: 100
+      type: section
+    -
+      widgetName: one-two
+      class: 'column is-full row'
+      items:
+        - {
+          widgetName: one-third, 
+          class: 'column is-one-third', 
+          items: [
+            {widgetName: widget-image, class: widget, config: {image: /img.png, alt: 'image alt', caption: 'image caption'}, type: widget},
+            {widgetName: widget-text, class: widget, config: {title: 'This is the title of some text', content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed \ndo eiusmod tempor incididunt ut labore et dolore magna aliqua. "}, type: widget}, 
+            {widgetName: widget-links, class: widget, config: {label: 'Links ', class: list, style: button, list: [{url: '#', text: 'link 1'}, {url: '#', text: link2}]}, type: widget}, 
+            {widgetName: widget-tags, class: widget, config: {label: tagses, taxonomy: tags, threshold: 2}, type: widget}, 
+            {widgetName: widget-social, class: widget, config: {message: 'follow me', list: [{url: '#', icon: 'fas fa-dragon', label: dragon, color: blue}]}, type: widget}, 
+            {widgetName: widget-author, class: widget, config: {usetaxo: true, authortaxo: authors, featured: lorem-ipsum}, type: widget}, 
+            {widgetName: widget-search, class: widget, config: {label: search, icon: 'fas fa-search', text: lookee}, type: widget}, 
+            {widgetName: widget-placeholder, class: widget, type: widget}
+            ], 
+          flex: 25, type: section}
+        - {widgetName: two-third, class: 'column is-two-third', items: [{widgetName: widget-content, class: widget, config: {homepage: {display: [content, title, date, authors], listStyle: ol}, section: {listStyle: ol, display: [date, authors]}, page: {display: [content, title, authors]}, taxonomyTerms: {listStyle: ol}, taxonomy: {listStyle: card, display: [summary, title, date]}}, type: widget}], flex: 75, type: section}
+      flex: 100
+      type: section
+    -
+      widgetName: one-one-one
+      class: 'column is-full row'
+      items:
+        - {widgetName: one-third, class: 'column is-one-third', items: [{widgetName: widget-placeholder, class: widget, type: widget}], flex: 33.3, type: section}
+        - {widgetName: one-third, class: 'column is-one-third', items: [{widgetName: widget-placeholder, class: widget, type: widget}], flex: 33.3, type: section}
+        - {widgetName: one-third, class: 'column is-one-third', items: [{widgetName: widget-placeholder, class: widget, type: widget}], flex: 33.3, type: section}
+      flex: 100
+      type: section
+  options:
+    copyright: '(c) 2020'
+    mainSections:
+      - posts
+    options:
+      enableSearch:
+        enable: true
