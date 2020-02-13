@@ -10,6 +10,7 @@ import { WidgetItem } from '../models/widget.item';
 export class UtilitiesService {
 
   configOrderUrl = 'assets/config-order.json';
+  env = "dev";
 
   constructor(private http: HttpClient) {
 

@@ -55,6 +55,8 @@ export class MainLayoutComponent implements OnInit {
     const abp = bxconfig.assetsBasePath;
     this.assetsBasePath = abp.slice(-1) === '/' ? abp : abp + '/';
 
+    this._US.env = environment.production ? "prod" : "dev" ;
+
     this.helpTextSource = assembleURL(bxconfig.helpTextSource, abp);
     this.getHelpText(this.helpTextSource);
 
