@@ -106,7 +106,9 @@ export class LayoutConfigComponent implements OnInit {
   droppableItemClass = (item: any) => `${item.class}`;
 
   ngOnInit() {
-    this.layoutWidgetsResult.push(this.pw);
+    if(this._US.env === 'dev') {
+      this.layoutWidgetsResult.push(this.pw);
+    }
 
     this.getWidgetsList(this.layoutWidgetsSource);
     this.getLayoutConfigOptions(this.layoutConfigSource);
