@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material';
 import { OutputComponent } from './../output-builder/output/output.component';
 import { DialogComponent } from './../output-builder/dialog/dialog.component';
 import { UtilitiesService } from '../shared/services/utilities.service';
+import { environment } from './../../environments/environment';
 import deepcopy from 'ts-deepcopy';
 
 
@@ -54,16 +55,13 @@ export class MainLayoutComponent implements OnInit {
     const abp = bxconfig.assetsBasePath;
     this.assetsBasePath = abp.slice(-1) === '/' ? abp : abp + '/';
 
-    this.helpTextSource = bxconfig.helpTextSource;
-    this.getHelpText(bxconfig.helpTextSource);
+    this.helpTextSource = assembleURL(bxconfig.helpTextSource, abp);
+    this.getHelpText(this.helpTextSource);
 
-    this.settingsSource = bxconfig.settingsSource;
+    this.settingsSource = assembleURL(bxconfig.settingsSource, abp);
 
-    this.layoutWidgetsSource = bxconfig.layoutWidgetsSource;
-    this.layoutConfigSource = bxconfig.layoutConfigSource;
-
-
-    // this._ss.structuresPath = bxconfig['structuresPath'];
+    this.layoutWidgetsSource = assembleURL(bxconfig.layoutWidgetsSource, abp);
+    this.layoutConfigSource = assembleURL(bxconfig.layoutConfigSource, abp);
 
   }
 
@@ -174,4 +172,17 @@ function mapToKey(key, obj) {
     }
   }
   return result;
+}
+
+function assembleURL(url: string, base: string): string {
+  if(url.startsWith("http")) {
+    return url;
+  } else {
+    let hts = "";
+
+    hts = base.slice(-1) === '/' ? base : base + '/';
+    hts += url.charAt(0) === '/' ? url.slice(1) : url;
+
+    return hts
+  } 
 }

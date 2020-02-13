@@ -33,7 +33,7 @@
     &.row-container {
       border: 1px solid map-get($mat-grey,500);
       background-color: rgba(map-get($mat-grey,500),0.1);
-      background-image: url('/assets/img/maindrop.svg');
+      background-image: url('../assets/img/maindrop.svg');
       background-repeat: no-repeat;
       background-position: center;
       padding: 0; //.25rem;
@@ -202,7 +202,7 @@
       .ngx-dnd-container {
         width: 100%;
         height: 100%;
-        background-image: url('/assets/img/drag.svg');
+        background-image: url('../assets/img/drag.svg');
         background-repeat: no-repeat;
         background-position: center;
       }
