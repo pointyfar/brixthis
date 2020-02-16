@@ -29,7 +29,7 @@ jobs:
       - name: yarn install, yarn build
         run: |
           yarn install
-          yarn build
+          yarn build-release
 
       - name: Release
         uses: fnkr/github-action-ghr@v1
