@@ -32,10 +32,9 @@ jobs:
           yarn build-release
 
       - name: Release
-        uses: fnkr/github-action-ghr@v1
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: dist/brixthis/brixthis-bundle.tgz
         env:
-          GHR_COMPRESS: xz
-          GHR_PATH: dist/brixthis/
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
