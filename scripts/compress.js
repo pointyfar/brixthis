@@ -27,6 +27,7 @@ dirs.forEach(dir => {
                 .on('error', err => console.error(err))
                 .pipe(writeStream)
                 .on('error', err => console.error(err));
+            console.log('compressed ', file)
         }
     })
 });
