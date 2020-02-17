@@ -7,7 +7,7 @@
         },
         {
             "label": "Options", 
-            "key": ["params", "options"], 
+            "key": ["params"], 
             "url": "assets/bx/layouts-config/params-options.json"
         }
     ]

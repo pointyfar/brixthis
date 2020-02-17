@@ -74,12 +74,6 @@ export class UtilitiesService {
   return newObj;
   }
 
-  mapConfigResult(config) {
-
-    console.log('for checking: mapConfigResult', config);
-    return config;
-
-  }
 
   formatWidgetsConfig(widgetConf: any) {
 
