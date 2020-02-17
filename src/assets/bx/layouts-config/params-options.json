@@ -4,15 +4,6 @@
   ],
   "destination" : "",
   "modelJson": {
-    "subtitle": "My Awesome Site",
-    "brandImage": "",
-    "scss": {
-      "brandFont": "'Oswald', sans-serif",
-      "primary": "CadetBlue",
-      "primaryInvert": "#fff",
-      "footnote": "FOOTNOTE: ",
-      "linkColor": "navy"
-    }
   },
   "jsonFields": [
     {
