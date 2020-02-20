@@ -1,0 +1,263 @@
+{
+  "notes" : [
+    "[Docs Reference](https://gohugo.io/content-management/menus/#add-non-content-entries-to-a-menu)",
+    "Add entries to menus that aren’t attached to a piece of content."
+  ],
+  "destination" : "configDir/_default/menus.(json/yaml/toml)",
+  "modelJson": {
+
+  },
+  "jsonFields": [
+    {
+      "key": "taskLists",
+      "type": "checkbox",
+      "templateOptions": {
+        "label": "taskLists",
+        "description": "checkbox"
+      }
+    },
+    {
+      "key": "smartypants",
+      "type": "input",
+      "templateOptions": {
+        "label": "smartypants",
+        "description": "text input"
+      }
+    },
+    {
+      "key" : "description",
+      "type": "textarea",
+      "templateOptions": {
+        "label": "description",
+        "placeholder": "Lorem ipsum etc",
+        "description": "long text input"
+      }
+    },
+    {
+      "key" : "maxAge",
+      "type": "input",
+      "templateOptions": {
+        "label": "maxAge",
+        "type": "number",
+        "placeholder": -1,
+        "description": "number input"
+      }
+    },
+
+    {
+      "key": "extensions",
+      "type": "select",
+      "templateOptions": {
+        "label": "extensions",
+        "multiple": true,
+        "options": [{
+            "label": "noIntraEmphasis",
+            "value": "noIntraEmphasis"
+          },
+          {
+            "label": "tables",
+            "value": "tables"
+          },
+          {
+            "label": "fencedCode",
+            "value": "fencedCode"
+          },
+          {
+            "label": "autolink",
+            "value": "autolink"
+          }
+        ],
+        "description": "multiple selection"
+      }
+    },
+
+    {
+      "key": "anchor",
+      "type": "select",
+      "templateOptions": {
+        "label": "anchor",
+        "multiple": false,
+        "options": [{
+            "label": "Smart",
+            "value": "Smart"
+          },
+          {
+            "label": "Center",
+            "value": "Center"
+          },
+          {
+            "label": "TopLeft",
+            "value": "TopLeft"
+          },
+          {
+            "label": "Top",
+            "value": "Top"
+          },
+          {
+            "label": "TopRight",
+            "value": "TopRight"
+          },
+          {
+            "label": "Left",
+            "value": "Left"
+          },
+          {
+            "label": "Right",
+            "value": "Right"
+          },
+          {
+            "label": "BottomLeft",
+            "value": "BottomLeft"
+          },
+          {
+            "label": "Bottom",
+            "value": "Bottom"
+          },
+          {
+            "label": "BottomRight",
+            "value": "BottomRight"
+          }
+        ],
+        "description": "single selection"
+      }
+    },
+
+    {
+      "key": "key",
+      "type": "radio",
+      "templateOptions": {
+        "label": "output formats",
+        "multiple": false,
+        "options": [{
+            "label": "page",
+            "value": "page"
+          },
+          {
+            "label": "home",
+            "value": "home"
+          },
+          {
+            "label": "section",
+            "value": "section"
+          },
+          {
+            "label": "taxonomyTerm",
+            "value": "taxonomyTerm"
+          },
+          {
+            "label": "taxonomy",
+            "value": "taxonomy"
+          }
+          ],
+        "description": "radio selection",
+        "required": true
+      }
+    },
+
+    
+
+    {
+      "key": "enableSearch",
+      "wrappers": ["panel"],
+      "templateOptions": {
+        "label": "Grouped options"
+      },
+      "fieldGroup": [
+        {
+          "key": "enable",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "Enable search feature ",
+            "description": "checkbox"
+          }
+        }
+        
+      ]
+    },
+    {
+      "key": "extensionsmask",
+      "type": "array",
+      "fieldArray": {
+        "type": "input",
+        "templateOptions": {
+          "label": "Add extensionsmask"
+        }
+      },
+      "templateOptions": {
+        "addText": "Add extensionsmask item",
+        "label": "extensionsmask",
+        "description": "add list items"
+      }
+    },
+    {
+      "key": "values",
+      "type": "array",
+      "templateOptions": {
+        "label": "Menus",
+        "addText": "Add a menu configuration",
+        "description": "Complex list with nested options"
+      },
+      "fieldArray": {
+        "wrappers": ["panel"],
+        "templateOptions": {
+          "label": "Configure Menu",
+          "description": "Configure a Hugo Menu"
+        },
+        "fieldGroup": [{
+            "key": "key",
+            "type": "input",
+            "templateOptions": {
+              "label": "Menu Name",
+              "placeholder": "main",
+              "description": "A menu is a named array of menu entries accessible by name via the .Site.Menus site variable. For example, you can access your site’s main menu via .Site.Menus.main."
+            }
+          },
+          {
+            "key": "value",
+            "type": "array",
+            "templateOptions": {
+              "addText": "Add a Menu Item",
+              "description": "Add and configure menu item"
+            },
+            "fieldArray": {
+              "templateOptions": {
+                "label": "Add menu item"
+
+              },
+              "fieldGroup": [{
+                  "key": "identifier",
+                  "type": "input",
+                  "templateOptions": {
+                    "label": "identifier",
+                    "description": "It is necessary to set a unique identifier manually if two or more menu entries have the same .Name."
+                  }
+                },
+                {
+                  "key": "name",
+                  "type": "input",
+                  "templateOptions": {
+                    "label": "name",
+                    "placeholder": "",
+                    "description": "Name of the menu entry."
+                  }
+                },
+                {
+                  "key": "pre",
+                  "type": "input",
+                  "templateOptions": {
+                    "label": "pre",
+                    "placeholder": "",
+                    "description": "string representing HTML."
+                  }
+                }
+              ]
+            }
+          }
+        ]
+
+      }
+    }
+
+
+  ]
+}
