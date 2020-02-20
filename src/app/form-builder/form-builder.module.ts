@@ -6,6 +6,7 @@ import { FormlyMaterialModule } from '@ngx-formly/material';
 import { MaterialModule } from './../material.module';
 import { ArrayTypeComponent } from './array-type/array-type.component';
 import { PanelWrapperComponent } from './panel-wrapper/panel-wrapper.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { PanelWrapperComponent } from './panel-wrapper/panel-wrapper.component';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    FlexLayoutModule,
     FormlyMaterialModule,
     FormlyModule.forRoot({
       validationMessages: [
