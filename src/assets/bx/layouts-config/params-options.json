@@ -9,6 +9,10 @@
     {
       "key": "mainSections",
       "type": "array",
+      "templateOptions": {
+        "label": "mainSections",
+        "addText": "Add mainSections"
+      },
       "fieldArray": {
         "type": "input",
         "templateOptions": {
@@ -20,7 +24,7 @@
       "key": "options",
       "wrappers": ["panel"],
       "templateOptions": {
-        "label": "Configurable Options"
+        "label": "Custom Configuration Options"
       },
       "fieldGroup": [
         {

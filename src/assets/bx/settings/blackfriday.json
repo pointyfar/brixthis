@@ -183,7 +183,9 @@
         }
       },
       "templateOptions": {
-        "label": "extensionsmask"
+        "addText": "Add extensionsmask item",
+        "label": "extensionsmask",
+        "description": "Disable one or more of Blackfriday's Markdown extensions"
       }
     }
   ]

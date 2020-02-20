@@ -11,8 +11,17 @@
     {
       "key": "values",
       "type": "array",
+      "templateOptions": {
+        "label": "Menus",
+        "addText": "Add a menu configuration",
+        "description": "Add a Hugo Menu configuration"
+      },
       "fieldArray": {
         "wrappers": ["panel"],
+        "templateOptions": {
+          "label": "Configure Menu",
+          "description": "Configure a Hugo Menu"
+        },
         "fieldGroup": [{
             "key": "key",
             "type": "input",
@@ -25,9 +34,14 @@
           {
             "key": "value",
             "type": "array",
+            "templateOptions": {
+              "addText": "Add a Menu Item",
+              "description": "Add and configure menu item"
+            },
             "fieldArray": {
               "templateOptions": {
                 "label": "Add menu item"
+
               },
               "fieldGroup": [{
                   "key": "identifier",
@@ -94,10 +108,8 @@
               ]
             }
           }
-        ],
-        "templateOptions": {
-          "label": "Add menu"
-        }
+        ]
+
       }
     }
 

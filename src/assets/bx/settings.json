@@ -3,6 +3,11 @@
 
   "items" : [
     {
+      "label": "___TEST___",
+      "key" : ["test", "nest"],
+      "url" : "assets/bx/settings/_TEST.json"
+    },
+    {
       "label": "General",
       "key" : [],
       "url" : "assets/bx/settings/config.json"
