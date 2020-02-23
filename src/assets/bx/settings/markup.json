@@ -1,9 +1,9 @@
 {
   "notes" : [
-    "[Docs Reference](https://gohugo.io/getting-started/configuration/#blackfriday-options)",
-    "Configure Blackffriday options."
+    "[Docs Reference](https://gohugo.io/getting-started/configuration-markup)",
+    "Configure markup options."
   ],
-  "destination" : "configDir/_default/blackfriday.(json/yaml/toml)",
+  "destination" : "configDir/_default/markup.(json/yaml/toml)",
   "modelJson": {
 
   },
