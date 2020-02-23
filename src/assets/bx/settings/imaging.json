@@ -78,6 +78,56 @@
           ],
           "description": "Anchor used when cropping pictures. "
         }
+      },
+      {
+        "key": "bgColor",
+        "type": "input",
+        "templateOptions": {
+          "label": "bgColor",
+          "placeholder": "#ffffff",
+          "description": "Default background color."
+        }
+      },
+      {
+        "key": "exif",
+        "wrappers": ["panel"],
+        "templateOptions": {
+          "label": "Exif Options"
+        },
+        "fieldGroup": [
+          {
+            "key": "includeFields",
+            "type": "input",
+            "templateOptions": {
+              "label": "includeFields",
+              "description": "Regexp matching the fields you want to Exclude from the (massive) set of Exif info available."
+            }
+          },
+          {
+            "key": "excludeFields",
+            "type": "input",
+            "templateOptions": {
+              "label": "excludeFields",
+              "description": "Regexp matching the Exif fields you want to exclude."
+            }
+          },
+          {
+            "key": "disableDate",
+            "type": "checkbox",
+            "templateOptions": {
+              "label": "disableDate",
+              "description": "Hugo extracts the \"photo taken\" date/time into .Date by default. Set this to true to turn it off."
+            }
+          },
+          {
+            "key": "disableLatLong",
+            "type": "checkbox",
+            "templateOptions": {
+              "label": "disableLatLong",
+              "description": "Hugo extracts the \"photo taken where\" (GPS latitude and longitude) into .Long and .Lat. Set this to true to turn it off."
+            }
+          }
+        ]
       }
     ]
 }

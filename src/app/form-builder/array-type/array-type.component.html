@@ -1,0 +1,24 @@
+<div class="formly-array">
+<div class="formly-array-card" fxFlex fxLayout="column" fxLayoutAlign="start stretch">
+    <div *ngIf="to.label" class="formly-array-label mat-subheading-1">{{ to.label }}</div>
+    <div class="formly-array-description" *ngIf="to.description">
+        {{to.description}}
+    </div>
+    <div class="formly-array-content" fxFlex="100" fxLayout="column">
+        <div class="formly-array-field-wrapper"
+            *ngFor="let field of field.fieldGroup; let i = index;" 
+            fxLayout="row" fxLayoutAlign="start stretch"
+            >
+            <div fxFlex class="formly-array-field">
+                <formly-field [field]="field"></formly-field>
+            </div>
+            <div fxFlex="initial" fxLayout="column">
+                <button fxFlex title="Remove item" mat-raised-button color="warn" type="button" (click)="remove(i)"><i class="fas fa-2x fa-trash-alt"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="formly-array-footer" fxFlex fxLayout="column" fxLayoutAlign="start center">
+        <button fxFlexFill mat-raised-button color="accent" type="button" (click)="add()">{{to?.addText ? to.addText : "Add"}}</button>
+    </div>
+</div>
+</div>

@@ -2,12 +2,12 @@
     "items" : [
         {
             "label": "Styles", 
-            "key": ["styles"], 
+            "key": ["params", "styles"], 
             "url": "assets/bx/layouts-config/params-styles.json"
         },
         {
             "label": "Options", 
-            "key": ["options"], 
+            "key": ["params"], 
             "url": "assets/bx/layouts-config/params-options.json"
         }
     ]

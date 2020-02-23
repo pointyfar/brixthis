@@ -1,0 +1,76 @@
+.formly-panel {
+    margin: 1rem;
+}
+
+.formly-array {
+    margin: 1rem 0;
+    padding: 1rem 0;
+    
+    .formly-array-card {
+        background-color: map-get($custom-accent, 100);
+        padding: 0rem;
+        
+        .formly-array > .formly-array-card {
+            background-color: white;
+        }
+        
+        .formly-array-label {
+            margin: 1rem;
+            
+        }
+        
+        .formly-array-description {
+            margin: 1rem;
+            
+        }
+        
+        .formly-array-content {
+            margin: 0rem;
+            padding: 0rem;
+            
+            .formly-array-field-wrapper {
+                box-shadow: 0px 0px 1px -1px rgba(0, 0, 0, 0.2), 
+                            0px 0px 1px 0px rgba(0, 0, 0, 0.14), 
+                            0px 0px 3px 0px rgba(0, 0, 0, 0.12);
+                &:last-of-type {
+                    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 
+                                0px 1px 1px 0px rgba(0, 0, 0, 0.14), 
+                                0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+                }
+                padding: 1rem;
+                margin: 0rem;
+                .formly-array-field {
+                    margin: 0 1rem 0 0;
+                }
+                
+            }
+        }
+
+        .mat-button,
+        .mat-flat-button,
+        .mat-stroked-button,
+        .mat-raised-button
+        {
+            padding: 0 .5rem;
+            width: auto;
+            min-width: 2rem;
+            border-radius: 0;
+        }
+
+        .formly-array-footer {
+            margin: 0;
+
+        }
+
+    }
+}
+
+mat-form-field {
+    margin: 1rem 0;
+}
+
+formly-field-mat-radio {
+    mat-radio-button {
+        margin: 0 1rem;
+    }
+}

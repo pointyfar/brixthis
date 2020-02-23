@@ -31,7 +31,7 @@ export class MainLayoutComponent implements OnInit {
 
   hasResults = false;
 
-  configResult: any = {};
+  settingsConfigResult: any = {};
   layoutWidgetsResult: any = [];
   layoutConfigResult: any = {};
 
@@ -80,18 +80,19 @@ export class MainLayoutComponent implements OnInit {
      * result = top-level / Hugo options
      * params = {widgets, styles, options}
      */
-    const result = deepcopy(this.configResult);
-    let params = {};
-    params['widgets'] = this._US.formatWidgetsConfig(this.layoutWidgetsResult);
 
-    params = {...params, ...this.layoutConfigResult};
+    let result = {};
+    let sr = deepcopy(this.settingsConfigResult);
+    let wlr = this._US.formatWidgetsConfig(this.layoutWidgetsResult);
+    let wcf = this.layoutConfigResult;
+    
+    result = this._US.mergeObjects([sr, {params: {widgets: wlr}}, wcf])
 
     this.dialog.open(OutputComponent, {
       width: '1000px',
       height: '500px',
       data: {
         site: result,
-        params,
         file: '',
         note: 'Notes'
       }
@@ -136,9 +137,8 @@ export class MainLayoutComponent implements OnInit {
    * @return     description
    */
   processSettingsResult(sr) {
-
-    const config = mapToKey(sr.key, sr.config);
-    this.configResult = {... this.configResult, ...config};
+    const config = this._US.mapToKey(sr.key, sr.config);
+    this.settingsConfigResult = {... this.settingsConfigResult, ...config};
 
   }
 
@@ -154,27 +154,6 @@ export class MainLayoutComponent implements OnInit {
   }
 }
 
-
-/**
- * Takes (key, object), and returns { key: object }
- */
-function mapToKey(key, obj) {
-  let result = {};
-  /**
-   * If no key value: top level object
-   * therefore return copy of object
-   * Otherwise return result.
-   */
-  if (key.length === 0) {
-    result = deepcopy(obj);
-  } else {
-    for (const i of key ) {
-      result[key[i]] = {};
-      result[key[i]] = deepcopy(obj);
-    }
-  }
-  return result;
-}
 
 function assembleURL(url: string, base: string): string {
   if(url.startsWith("http")) {

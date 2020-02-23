@@ -2,8 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 /*import { FormlyFieldConfig } from '@ngx-formly/core';*/
 import { Observable, forkJoin, throwError } from 'rxjs';
-import { map, mergeMap, switchMap } from 'rxjs/operators';
+import { map, mergeMap, switchMap, mergeAll } from 'rxjs/operators';
 import { WidgetItem } from '../models/widget.item';
+import deepcopy from 'ts-deepcopy';
+import * as merge from 'deepmerge';
 
 
 @Injectable({providedIn: 'root'})
@@ -72,12 +74,6 @@ export class UtilitiesService {
   return newObj;
   }
 
-  mapConfigResult(config) {
-
-    console.log('for checking: mapConfigResult', config);
-    return config;
-
-  }
 
   formatWidgetsConfig(widgetConf: any) {
 
@@ -106,6 +102,41 @@ export class UtilitiesService {
     return list;
 
   }
+
+  /**
+   * Takes ([keys], object), and returns {key1: {key2: { keyn: object }}}
+   */
+  mapToKey(key, obj) {
+    let result = {};
+    /**
+     * If no key value: top level object
+     * therefore return copy of object
+     * Otherwise return result.
+     */
+    if (key.length === 0) {
+      result = deepcopy(obj);
+    } else {
+      
+      let f = function(key, obj){
+        if(key.length === 0) {
+          return obj
+        } else {
+          let tmp = {};
+          tmp[key[key.length - 1]] = deepcopy(obj);
+          const newkey = key.slice(0,-1)
+          return f(newkey, tmp)
+        }
+      }
+      result = f(key, obj)
+    }
+    return result;
+  }
+
+  mergeObjects(obj: any) {
+    return merge.all(obj)
+  };
+
+
 
 }
 

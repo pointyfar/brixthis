@@ -101,7 +101,7 @@ export class SettingsItemComponent implements OnInit {
 
     e.key = this.configFile.key;
     if (c) {
-      this.itemResult.emit(this._US.mapConfigResult(e));
+      this.itemResult.emit(e);
     }
   }
 
@@ -118,8 +118,7 @@ export class SettingsItemComponent implements OnInit {
 
   saveConfig() {
 
-    const out = this.configFile.dynamic ? this.transformDynamic(this.configResult) : this.configResult;
-    const result = this._US.mapConfigResult(out);
+    const result = this.configFile.dynamic ? this.transformDynamic(this.configResult) : this.configResult;
 
     const dialogRef = this.dialog.open(OutputComponent, {
       width: '1000px',

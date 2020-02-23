@@ -5,6 +5,7 @@ import { WidgetItem } from '../../shared/models/widget.item';
 //import { WidgetItem } from './../../shared/models/widget-item';
 import { FormComponent } from './../../output-builder/form/form.component';
 import { OutputComponent } from './../../output-builder/output/output.component';
+import deepcopy from 'ts-deepcopy';
 
 
 @Component({
@@ -27,6 +28,7 @@ export class LayoutConfigComponent implements OnInit {
 
   @Input() public layoutWidgetsResult: any[] = [];
   @Input() public layoutConfigResult: any = {};
+  @Output() public layoutConfigResultChange = new EventEmitter();
 
 
   @Output() removeWidget = new EventEmitter<any>();
@@ -51,6 +53,8 @@ export class LayoutConfigComponent implements OnInit {
 
   containerWidgetConfig = {};
   containerWidgetForm = '';
+
+  notest = true;
 
   pw = {
     name: 'one',
@@ -106,7 +110,7 @@ export class LayoutConfigComponent implements OnInit {
   droppableItemClass = (item: any) => `${item.class}`;
 
   ngOnInit() {
-    if(this._US.env === 'dev') {
+    if(this._US.env === 'dev' && this.notest !== true ) {
       this.layoutWidgetsResult.push(this.pw);
     }
 
@@ -135,19 +139,12 @@ export class LayoutConfigComponent implements OnInit {
   }
 
   configResult(e) {
-    if (e.key) {
-      this.params[e.key] = e.config;
-      this.layoutConfigResult[e.key] = e.config;
-    } else {
-      for (const key in e.config) {
-        if ( e.config.hasOwnProperty(key) ) {
-          this.params[key] = e.config[key];
-          this.layoutConfigResult[key] = e.config[key];
-        }
-      }
+    let result = {};
+    if(e.key){
+      result = this._US.mapToKey(e.key, e.config)
     }
-    this.emitlayoutWidgetsResult(this.params);
-
+    this.layoutConfigResult = this._US.mergeObjects([this.layoutConfigResult, result])
+    this.layoutConfigResultChange.emit(this.layoutConfigResult);
   }
 
   getWidgetsList(url: string) {

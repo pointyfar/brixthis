@@ -4,38 +4,15 @@
   ],
   "destination" : "",
   "modelJson": {
-    "subtitle": "My Awesome Site",
-    "brandImage": "",
-    "scss": {
-      "brandFont": "'Oswald', sans-serif",
-      "primary": "CadetBlue",
-      "primaryInvert": "#fff",
-      "footnote": "FOOTNOTE: ",
-      "linkColor": "navy"
-    }
   },
   "jsonFields": [
     {
-      "key": "copyright",
-      "type": "input",
-      "templateOptions": {
-        "label": "Copyright",
-        "placeholder": "© 2018 Myself",
-        "description": "Copyright note"
-      }
-    },
-    {
-      "key": "subtitle",
-      "type": "input",
-      "templateOptions": {
-        "label": "Subtitle",
-        "placeholder": "My Awesome Site",
-        "description": "Site subtitle"
-      }
-    },
-    {
       "key": "mainSections",
       "type": "array",
+      "templateOptions": {
+        "label": "mainSections",
+        "addText": "Add mainSections"
+      },
       "fieldArray": {
         "type": "input",
         "templateOptions": {
@@ -47,9 +24,27 @@
       "key": "options",
       "wrappers": ["panel"],
       "templateOptions": {
-        "label": "Configurable Options"
+        "label": "Custom Configuration Options"
       },
       "fieldGroup": [
+        {
+          "key": "copyright",
+          "type": "input",
+          "templateOptions": {
+            "label": "Copyright",
+            "placeholder": "© 2018 Myself",
+            "description": "Copyright note"
+          }
+        },
+        {
+          "key": "subtitle",
+          "type": "input",
+          "templateOptions": {
+            "label": "Subtitle",
+            "placeholder": "My Awesome Site",
+            "description": "Site subtitle"
+          }
+        },
         {
           "key": "brandImage",
           "type": "input",
