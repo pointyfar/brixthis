@@ -1,19 +1,5 @@
 .formly-panel {
-    background-color: map-get($custom-accent, 100);
-    margin: 1rem 0;
-    .formly-panel-card {
-        padding: 1rem;
-        .formly-panel-label {
-            margin: 0;
-        }
-        .formly-panel-description {
-
-        }
-        .formly-panel-component {
-
-            padding: 0
-        }
-    }
+    margin: 1rem;
 }
 
 .formly-array {
@@ -39,7 +25,8 @@
         }
         
         .formly-array-content {
-            margin: 1rem;
+            margin: 0rem;
+            padding: 0rem;
             
             .formly-array-field-wrapper {
                 box-shadow: 0px 0px 1px -1px rgba(0, 0, 0, 0.2), 
@@ -50,10 +37,10 @@
                                 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 
                                 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
                 }
-                padding: 0rem;
+                padding: 1rem;
+                margin: 0rem;
                 .formly-array-field {
                     margin: 0 1rem 0 0;
-                    margin: 1rem;
                 }
                 
             }

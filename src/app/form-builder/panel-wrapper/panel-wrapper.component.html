@@ -1,15 +1,20 @@
-<div class="formly-panel">
-  <div class="formly-panel-card">
-    <div class="formly-panel-label mat-subheading-1">{{ to.label }}</div>
-    <div class="formly-panel-description" *ngIf="to.description">{{to.description}}</div>
-    <div class="formly-panel-description" *ngIf="to.multiline">
-      <div *ngFor="let line of to.multiline">
-        {{line}}
-      </div>
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{ to.label }}
+    </mat-panel-title>
+    <mat-panel-description
+      *ngIf="to.description">
+      {{to.description}}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  
+  <div class="formly-panel-description" *ngIf="to.multiline">
+    <div *ngFor="let line of to.multiline">
+      {{line}}
     </div>
-    <div class="formly-panel-component">
-      <ng-container #fieldComponent></ng-container>
-    </div>
-
   </div>
-</div>
+  <div class="formly-panel">
+    <ng-container #fieldComponent></ng-container>
+  </div>
+</mat-expansion-panel>
