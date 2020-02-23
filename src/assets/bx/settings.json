@@ -8,9 +8,9 @@
       "url" : "assets/bx/settings/config.json"
     },
     {
-      "label": "Blackfriday",
-      "key" : ["blackfriday"],
-      "url" : "assets/bx/settings/blackfriday.json"
+      "label": "Markup",
+      "key" : ["markup"],
+      "url" : "assets/bx/settings/markup.json"
     },
     {
       "label": "Caches",

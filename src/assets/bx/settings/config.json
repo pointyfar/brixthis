@@ -292,7 +292,6 @@
         "description": "If true, auto-detect Chinese/Japanese/Korean Languages in the content. This will make .Summary and .WordCount behave correctly for CJK languages."
       }
     },
-    
     {
       "key": "disableLanguages",
       "type": "array",
@@ -381,56 +380,6 @@
         "label": "publishDir",
         "placeholder": "public",
         "description": "The directory to where Hugo will write the final static site (the HTML files etc.)."
-      }
-    },
-    {
-      "key" : "pygmentsOptions",
-      "type": "input",
-      "templateOptions": {
-        "label": "pygmentsOptions",
-        "placeholder": "",
-        "description": "A comma separated list of options for syntax highlighting. See the [Syntax Highlighting Options](https://gohugo.io/content-management/syntax-highlighting/#options) for the full list of available options."
-      }
-    },
-    {
-      "key" : "pygmentsCodeFences",
-      "type": "checkbox",
-      "templateOptions": {
-        "label": "pygmentsCodeFences",
-        "description": "Enables syntax highlighting in code fences with a language tag in markdown."
-      }
-    },
-    {
-      "key" : "pygmentsCodeFencesGuessSyntax",
-      "type": "checkbox",
-      "templateOptions": {
-        "label": "pygmentsCodeFencesGuessSyntax",
-        "description": "Enable syntax guessing for code fences without specified language."
-      }
-    },
-    {
-      "key" : "pygmentsStyle",
-      "type": "input",
-      "templateOptions": {
-        "label": "pygmentsStyle",
-        "placeholder": "monokai",
-        "description": "Color-theme or style for syntax highlighting"
-      }
-    },
-    {
-      "key" : "pygmentsUseClasses",
-      "type": "checkbox",
-      "templateOptions": {
-        "label": "pygmentsUseClasses",
-        "description": "Enable using external CSS for syntax highlighting."
-      }
-    },
-    {
-      "key" : "pygmentsUseClassic",
-      "type": "checkbox",
-      "templateOptions": {
-        "label": "pygmentsUseClassic",
-        "description": "Enable using Pygments instead of the much faster Chroma for syntax highlighting."
       }
     },
     {

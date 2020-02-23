@@ -1,0 +1,431 @@
+{
+  "notes" : [
+    "[Docs Reference](https://gohugo.io/getting-started/configuration/#blackfriday-options)",
+    "Configure Blackffriday options."
+  ],
+  "destination" : "configDir/_default/blackfriday.(json/yaml/toml)",
+  "modelJson": {
+
+  },
+  "jsonFields": [
+    {
+      "key": "defaultMarkdownHandler",
+      "type": "select",
+      "templateOptions": {
+        "label": "defaultMarkdownHandler",
+        "multiple": false,
+        "options": [{
+            "label": "goldmark",
+            "value": "goldmark"
+          },
+          {
+            "label": "blackfriday",
+            "value": "blackfriday"
+          }
+        ]
+      }
+    },
+
+    {
+      "key": "highlight",
+      "wrappers": ["panel"],
+      "templateOptions": {
+        "label": "Highlight Options"
+      },
+      "fieldGroup": [
+        {
+          "key": "codeFences",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "codeFences",
+            "description": "Enables syntax highlighting in code fences with a language tag in markdown."
+          }
+        },
+        {
+          "key": "guessSyntax",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "guessSyntax",
+            "description": "Enable syntax guessing for code fences without specified language."
+          }
+        },
+        {
+          "key" : "hl_Lines",
+          "type": "input",
+          "templateOptions": {
+            "label": "hl_Lines",
+            "placeholder": "8,5-17",
+            "description": "lists a set of line numbers or line number ranges to be highlighted."
+          }
+        },
+        {
+          "key" : "lineNoStart",
+          "type": "input",
+          "templateOptions": {
+            "label": "lineNoStart",
+            "type": "number",
+            "placeholder": 10,
+            "description": "starts the line number count from this number"
+          }
+        },
+        {
+          "key": "lineNos",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "lineNos",
+            "description": "Use line numbers"
+          }
+        },
+        {
+          "key": "lineNumbersInTable",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "lineNumbersInTable",
+            "description": "separate the line numbers and code in table td"
+          }
+        },
+        {
+          "key": "noClasses",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "noClasses",
+            "description": "Use inline styles instead of CSS classes"
+          }
+        },
+        {
+          "key" : "style",
+          "type": "input",
+          "templateOptions": {
+            "label": "style",
+            "placeholder": "monokai",
+            "description": "Color-theme or style for syntax highlighting"
+          }
+        },
+        {
+          "key" : "tabWidth",
+          "type": "input",
+          "templateOptions": {
+            "label": "tabWidth",
+            "type": "number",
+            "placeholder": 4
+          }
+        }
+      ]
+    },
+
+
+    {
+      "key": "tableOfContents",
+      "wrappers": ["panel"],
+      "templateOptions": {
+        "label": "Table of Contents Options"
+      },
+      "fieldGroup": [
+        {
+          "key": "endLevel",
+          "type": "input",
+          "templateOptions": {
+            "label": "angledQuotes",
+            "type": "number",
+            "description": "The heading level, inclusive, to stop render the table of contents."
+          }
+        },
+        {
+          "key": "ordered",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "angledQuotes",
+            "description": "Whether or not to generate an ordered list instead of an unordered list."
+          }
+        },
+        {
+          "key": "startLevel",
+          "type": "input",
+          "templateOptions": {
+            "label": "angledQuotes",
+            "type": "number",
+            "description": "The heading level, values starting at 1 (h1), to start render the table of contents."
+          }
+        }
+      ]
+    },
+
+
+
+    {
+      "key": "blackfriday",
+      "wrappers": ["panel"],
+      "templateOptions": {
+        "label": "Blackfriday Options"
+      },
+      "fieldGroup": [
+        {
+          "key": "angledQuotes",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "angledQuotes",
+            "description": "Blackfriday flag: HTML_SMARTYPANTS_ANGLED_QUOTES"
+          }
+        },
+        {
+          "key": "footnoteAnchorPrefix",
+          "type": "input",
+          "templateOptions": {
+            "label": "footnoteAnchorPrefix",
+            "description": "footnote anchor prefix"
+          }
+        },
+        {
+          "key": "footnoteReturnLinkContents",
+          "type": "input",
+          "templateOptions": {
+            "label": "footnoteReturnLinkContents",
+            "description": "Footnote return link contents"
+          }
+        },        
+        {
+          "key": "fractions",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "fractions",
+            "description": "Blackfriday flag: HTML_SMARTYPANTS_FRACTIONS"
+          }
+        },
+        {
+          "key": "hrefTargetBlank",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "hrefTargetBlank",
+            "description": "Blackfriday flag: HTML_HREF_TARGET_BLANK"
+          }
+        },
+        {
+          "key": "latexDashes",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "latexDashes",
+            "description": "Blackfriday flag: HTML_SMARTYPANTS_LATEX_DASHES"
+          }
+        },
+        {
+          "key": "nofollowLinks",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "nofollowLinks",
+            "description": "Blackfriday flag: HTML_NOFOLLOW_LINKS"
+          }
+        },
+        {
+          "key": "noreferrerLinks",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "noreferrerLinks",
+            "description": "Blackfriday flag: HTML_NOREFERRER_LINKS"
+          }
+        },
+        {
+          "key": "plainIDAnchors",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "plainIDAnchors",
+            "description": "Blackfriday flag: FootnoteAnchorPrefix and HeaderIDSuffix"
+          }
+        },
+        {
+          "key": "skipHTML",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "skipHTML"
+          }
+        },
+        {
+          "key": "smartDashes",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "smartDashes",
+            "description": "Blackfriday flag: HTML_SMARTY_DASHES"
+          }
+        },
+        {
+          "key": "smartypants",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "smartypants",
+            "description": "Blackfriday flag: HTML_USE_SMARTYPANTS"
+          }
+        },
+        {
+          "key": "smartypantsQuotesNBSP",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "smartypantsQuotesNBSP",
+            "description": "Blackfriday flag: HTML_SMARTYPANTS_QUOTES_NBSP"
+          }
+        },
+        {
+          "key": "taskLists",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "taskLists"
+          }
+        }
+
+
+      ]
+    },
+
+    {
+      "key": "goldmark",
+      "wrappers": ["panel"],
+      "templateOptions": {
+        "label": "Goldmark Options"
+      },
+      "fieldGroup": [
+        {
+          "key": "extensions",
+          "wrappers": ["panel"],
+          "templateOptions": {
+            "label": "Goldmark Extensions"
+          },
+          "fieldGroup": [
+            {
+              "key": "definitionList",
+              "type": "checkbox",
+              "templateOptions": {
+                "label": "definitionList"
+              }
+            },
+            {
+              "key": "footnote",
+              "type": "checkbox",
+              "templateOptions": {
+                "label": "footnote"
+              }
+            },
+            {
+              "key": "linkify",
+              "type": "checkbox",
+              "templateOptions": {
+                "label": "linkify",
+                "description": "Blackfriday flag: HTML_USE_SMARTYPANTS"
+              }
+            },
+            {
+              "key": "strikethrough",
+              "type": "checkbox",
+              "templateOptions": {
+                "label": "strikethrough",
+                "description": "Blackfriday flag: HTML_SMARTYPANTS_QUOTES_NBSP"
+              }
+            },
+            {
+              "key": "table",
+              "type": "checkbox",
+              "templateOptions": {
+                "label": "table"
+              }
+            },
+            {
+              "key": "taskLists",
+              "type": "checkbox",
+              "templateOptions": {
+                "label": "taskLists"
+              }
+            },
+            {
+              "key": "typographer",
+              "type": "checkbox",
+              "templateOptions": {
+                "label": "typographer",
+                "description": "This extension substitutes punctuations with typographic entities like smartypants."
+              }
+            }
+          ]
+        },
+        {
+          "key": "parser",
+          "wrappers": ["panel"],
+          "templateOptions": {
+            "label": "Goldmark Parser"
+          },
+          "fieldGroup": [
+            {
+              "key": "attribute",
+              "type": "checkbox",
+              "templateOptions": {
+                "label": "attribute"
+              }
+            },
+            {
+              "key": "autoHeadingID",
+              "type": "select",
+              "templateOptions": {
+                "label": "autoHeadingID",
+                "multiple": false,
+                "options": [{
+                    "label": "github",
+                    "value": "github"
+                  },
+                  {
+                    "label": "github-ascii",
+                    "value": "github-ascii"
+                  },
+                  {
+                    "label": "blackfriday",
+                    "value": "blackfriday"
+                  }
+                ]
+              }
+            },
+            {
+              "key": "autoHeadingIDType",
+              "type": "input",
+              "templateOptions": {
+                "label": "autoHeadingIDType",
+                "placeholder": "github"
+              }
+            }
+
+            
+
+          ]
+        },
+        {
+          "key": "renderer",
+          "wrappers": ["panel"],
+          "templateOptions": {
+            "label": "Goldmark Renderer"
+          },
+          "fieldGroup": [
+            {
+              "key": "hardWraps",
+              "type": "checkbox",
+              "templateOptions": {
+                "label": "hardWraps"
+              }
+            },
+            {
+              "key": "unsafe",
+              "type": "checkbox",
+              "templateOptions": {
+                "label": "unsafe",
+                "description": "By default, Goldmark does not render raw HTMLs and potentially dangerous links. If you have lots of inline HTML and/or JavaScript, you may need to turn this on."
+              }
+            },
+            {
+              "key": "xHTML",
+              "type": "checkbox",
+              "templateOptions": {
+                "label": "xHTML"
+              }
+            }
+          ]
+        }
+
+
+
+
+      ]
+    }
+  ]
+}

@@ -11,15 +11,19 @@
     {
       "key": "values",
       "type": "array",
+      "templateOptions": {
+        "label": "Media Types",
+        "description": "Add or Configure Media Type"
+      },
       "fieldArray": {
         "wrappers": ["panel"],
         "fieldGroup": [{
             "key": "key",
             "type": "input",
             "templateOptions": {
-              "label": "Custom Output Format",
+              "label": "type",
               "placeholder": "text/enriched",
-              "description": "Every Page has a Kind attribute, and the default Output Formats are set based on that.",
+              "description": "A media type (also known as MIME type and content type) is a two-part identifier for file formats and format contents transmitted on the Internet.",
               "required": true
             }
           },
@@ -36,17 +40,14 @@
                 "type": "input",
                 "templateOptions": {
                   "label": "suffix",
-                  "placeholder": "",
-                  "description": "suffix"
+                  "placeholder": "enr",
+                  "description": "The value that will be used for URLs and filenames for that media type in Hugo."
                 }
               }
               
             ]
           }
-        ],
-        "templateOptions": {
-          "label": "Add or Configure Media Type"
-        }
+        ]
       }
     }
   ]

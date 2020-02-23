@@ -65,6 +65,14 @@
             "placeholder":"2006",
             "description": "This is currently only relevant for dates. When listing related content, we may want to list content that is also close in time. Setting “2006”"
           }
+        },
+        {
+          "key" : "toLower",
+          "type": "checkbox",
+          "templateOptions": {
+            "label": "toLower",
+            "description": "Set to true to lower case keywords in both the indexes and the queries. This may give more accurate results at a slight performance penalty. Note that this can also be set per index."
+          }
         }
         
         
