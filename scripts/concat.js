@@ -18,4 +18,4 @@ if (!fs.existsSync(outdir)){
 const out = `${outdir}/brixthis.${version}.js`;
 concat(files, out)
 
-console.log("concat done.")
+console.log(`concat done: ${outdir}/brixthis.${version}.js`)

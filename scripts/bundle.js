@@ -9,6 +9,7 @@ var assets = fs.readdirSync(indir).filter(fn => { return (!fn.endsWith('.js') &&
 var bx = fs.readdirSync(indir).filter(fn => { return fn.startsWith('brixthis')});
 
 var files = assets.concat(bx);
+console.log(files)
 
 if (!fs.existsSync(outdir)){
     fs.mkdirSync(outdir);
@@ -27,7 +28,10 @@ files.forEach(file => {
 
 tar.c(
     {
-      gzip: true
+      gzip: true,
+      file: `${indir}/brixthis-bundle.tgz`
     },
     [outdir]
-  ).pipe(fs.createWriteStream(`${indir}/brixthis-bundle.tgz`))
+  ).then(() => {
+    console.log( 'Tarball has been created')
+    })
