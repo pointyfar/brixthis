@@ -1,12 +1,9 @@
 const fs = require('fs-extra');
 const tar = require('tar');
-const pj = require('./../package.json');
-const version = pj.version;
-
 
 const indir = './dist/brixthis';
 const bundleDir = './dist/brixthis-bundle';
-const tarDest = `${indir}/brixthis-bundle.${version}.tgz`
+const tarDest = `${indir}/brixthis-bundle.tgz`
 
 var assets = fs.readdirSync(indir).filter(fn => { return (!fn.endsWith('.js') && (!fn.endsWith('.html')))});
 var bx = fs.readdirSync(indir).filter(fn => { return fn.startsWith('brixthis')});
