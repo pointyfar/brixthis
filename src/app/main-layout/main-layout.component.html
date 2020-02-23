@@ -41,24 +41,24 @@
 <!--      <mat-tab label="About">
         
       </mat-tab>-->
+      <mat-tab label="Build Layout">
+        <bx-layout-config
+         [helpTextSource]="helpTextSource"
+         [layoutWidgetsSource]="layoutWidgetsSource"
+         [layoutConfigSource]="layoutConfigSource"
+         [layoutWidgetsResult]="layoutWidgetsResult"
+         [(layoutConfigResult)]="layoutConfigResult"
+         (removeWidget)="removeFromLayout($event)"
+         >
+        </bx-layout-config>
+      </mat-tab>
       <mat-tab label="Configure Settings">
         <bx-settings-config
-        [settingsSource]="settingsSource"
-        (settingsResult)="processSettingsResult($event)"
-        >
-      </bx-settings-config>
-    </mat-tab>
-                    <mat-tab label="Build Layout">
-                      <bx-layout-config
-                       [helpTextSource]="helpTextSource"
-                       [layoutWidgetsSource]="layoutWidgetsSource"
-                       [layoutConfigSource]="layoutConfigSource"
-                       [layoutWidgetsResult]="layoutWidgetsResult"
-                       [(layoutConfigResult)]="layoutConfigResult"
-                       (removeWidget)="removeFromLayout($event)"
-                       >
-                      </bx-layout-config>
-                    </mat-tab>
+          [settingsSource]="settingsSource"
+          (settingsResult)="processSettingsResult($event)"
+          >
+        </bx-settings-config>
+      </mat-tab>
     </mat-tab-group>
 
   </mat-sidenav-content>
