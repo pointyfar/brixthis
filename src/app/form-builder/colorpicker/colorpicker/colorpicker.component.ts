@@ -37,8 +37,8 @@ export class ColorpickerComponent{
 
 export function setContrastColor(color: string):string {
   
-  function hexToLuma(colour) {
-    const hex   = colour.replace(/#/, '');
+  function hexToLuma(color) {
+    const hex   = color.replace(/#/, '');
     const r     = parseInt(hex.substr(0, 2), 16);
     const g     = parseInt(hex.substr(2, 2), 16);
     const b     = parseInt(hex.substr(4, 2), 16);
