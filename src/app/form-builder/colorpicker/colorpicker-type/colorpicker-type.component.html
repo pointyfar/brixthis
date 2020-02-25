@@ -1,0 +1,31 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header [ngStyle]="{'background': colorVal}">
+    <mat-panel-title [ngStyle]="{'color': textColor}">
+      {{ to.label }}
+    </mat-panel-title>
+    <mat-panel-description [ngStyle]="{'color': textColor}">
+      {{ colorVal | uppercase }} {{ colorName }}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+
+  <mat-form-field [ngClass]="{'colorpicker-input': true, 'show-picker-input': allowCustom}">
+    <mat-label>Custom Color Code</mat-label>
+    <input type="input" [formControl]="formControl" [formlyAttributes]="field" matInput #paintInput
+      (keyup)="changeColorManual(paintInput.value)">
+    <mat-error *ngIf="showErrorMsg">
+      Invalid color value.
+    </mat-error>
+  </mat-form-field>
+
+
+  <div>
+    <bx-colorpicker 
+        [palette]="to.options" 
+        [allowCustom]="to.allowcustom"
+        (event)="receiveColor($event)"
+        >
+    </bx-colorpicker>
+  </div>
+
+</mat-expansion-panel>
