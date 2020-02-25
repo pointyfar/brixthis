@@ -23,7 +23,7 @@
         "label": "Background Color",
         "allowcustom": true,
         "options": [{
-          "label": "Fiery",
+          "label": "Fiery Fiery Fiery",
           "value": "#e4572e"
         },
         {
@@ -41,10 +41,29 @@
         {
           "label": "Leafy",
           "value": "#76b041"
+        },
+        {
+          "label": "Boysenberryberry",
+          "value": "#7D2E68"
+        },
+        {
+          "label": "Rosy",
+          "value": "#C97B84"
         }
+        
+        
         ]
       }
       
+    },
+    {
+      "key": "textareatest",
+      "type": "textarea",
+      "templateOptions": {
+        "label": "Textarea with specified rows",
+        "placeholder": "This has 10 rows",
+        "rows": 10
+      }
     },
     {
       "key": "taskLists",

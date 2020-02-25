@@ -48,6 +48,14 @@ import { ColorpickerTypeComponent } from './colorpicker/colorpicker-type/colorpi
         },
         { name: 'object', extends: 'formly-group' },
         { name: 'boolean', extends: 'checkbox' },
+        {
+          name: 'textarea',
+          defaultOptions: {
+            templateOptions: {
+              rows: 5
+            }
+          }
+        },
         { name: 'array', component: ArrayTypeComponent },
         { name: 'enum', extends: 'select' },
         { 
