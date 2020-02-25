@@ -9,6 +9,8 @@ import {
   MatTooltipModule,
   MatSidenavModule,
   MatFormFieldModule,
+  MatMenuModule,
+  MatInputModule,
   MatExpansionModule
   /*
   MatIconModule
@@ -19,9 +21,7 @@ import {
   MatChipsModule,
   MatDatepickerModule,
   MatGridListModule,
-  MatInputModule,
   MatListModule,
-  MatMenuModule,
   MatProgressBarModule,
   MatProgressSpinnerModule,
   MatRadioModule,
@@ -46,6 +46,8 @@ import {
     MatTooltipModule,
     MatSidenavModule,
     MatFormFieldModule,
+    MatMenuModule,
+    MatInputModule,
     MatExpansionModule
     /*
     MatIconModule
@@ -55,9 +57,7 @@ import {
     MatChipsModule,
     MatDatepickerModule,
     MatGridListModule,
-    MatInputModule,
     MatListModule,
-    MatMenuModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatRadioModule,
