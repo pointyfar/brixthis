@@ -1,4 +1,24 @@
-<div fxFlex="40px" (click)="changeColor(paint)" *ngFor="let paint of palette"
-    [ngStyle]="{'background': paint.value}" [title]="paint.label">
-    &nbsp;
+<div
+    class="picker-wrapper"
+    fxFlexFill 
+    fxLayout="row wrap" 
+    style="padding-top: 1rem;"
+    fxLayoutAlign="start stretch" 
+>
+    <div 
+        class="picker-paint"
+        fxFlex="initial"
+        *ngFor="let paint of palette"
+        [title]="paint.label"
+        [ngStyle]="{'background': paint.value}" 
+        (click)="changeColor(paint)" 
+        >
+        <div  
+            class="picker-paint-label"
+            [ngStyle]="{'color': getContrastColor(paint.value)}" 
+            >
+            {{ paint.label }}
+        </div>
+    </div>
+
 </div>

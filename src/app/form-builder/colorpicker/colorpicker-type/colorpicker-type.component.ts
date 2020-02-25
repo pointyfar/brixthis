@@ -1,15 +1,15 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FieldType } from '@ngx-formly/core';
 import { Validators } from '@angular/forms';
+import { setContrastColor } from './../colorpicker/colorpicker.component';
 
 @Component({
   selector: 'bx-colorpicker-type',
   templateUrl: './colorpicker-type.component.html',
+  styleUrls: ['./colorpicker-type.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class ColorpickerTypeComponent extends FieldType {
-  
-
   
   colorVal: string = "#FFFFFF"
   colorName: string = ""
@@ -23,7 +23,6 @@ export class ColorpickerTypeComponent extends FieldType {
   ngOnInit(){
     this.formControl.setValidators(Validators.pattern(/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i))
     this.allowCustom = this.to.allowcustom ? true : false;
-    console.log(this.allowCustom)
   }
 
   changeColorManual(color){
@@ -37,7 +36,7 @@ export class ColorpickerTypeComponent extends FieldType {
         }).join('')
       }
 
-      this.setColor(colorfix)
+      this.setColor(colorfix, colorfix)
       this.showErrorMsg = false;
     } else {
       this.showErrorMsg = true;
@@ -46,37 +45,16 @@ export class ColorpickerTypeComponent extends FieldType {
   }
 
   receiveColor(color){
-    this.setColor(color.value, color.label)
+    this.setColor(color.value, color.label, color.contrast)
   }
 
-  setColor(value, label?){
+  setColor(value, label, contrast?){
 
     this.colorVal = value
-    this.colorName = label
-    this.textColor = this.setContrastColor(value)
+    this.colorName = label ? label : value
+    this.textColor = contrast? contrast : setContrastColor(value)
 
     this.formControl.setValue(value)
   }
 
-  setContrastColor(color: string) {
-    let luma = this.hexToLuma(color)
-    if(luma <= 0.5 ) {
-      return "#FFFFFF"
-    } else {
-      return "#000000"
-    }
-  }
-
-  hexToLuma(colour) {
-    const hex   = colour.replace(/#/, '');
-    const r     = parseInt(hex.substr(0, 2), 16);
-    const g     = parseInt(hex.substr(2, 2), 16);
-    const b     = parseInt(hex.substr(4, 2), 16);
-
-    return [
-        0.299 * r,
-        0.587 * g,
-        0.114 * b
-    ].reduce((a, b) => a + b) / 255;
-  }
 }
