@@ -7,11 +7,15 @@ import { MaterialModule } from './../material.module';
 import { ArrayTypeComponent } from './array-type/array-type.component';
 import { PanelWrapperComponent } from './panel-wrapper/panel-wrapper.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ColorpickerComponent } from './colorpicker/colorpicker/colorpicker.component';
+import { ColorpickerTypeComponent } from './colorpicker/colorpicker-type/colorpicker-type.component';
 
 @NgModule({
   declarations: [
     ArrayTypeComponent,
-    PanelWrapperComponent
+    PanelWrapperComponent,
+    ColorpickerComponent,
+    ColorpickerTypeComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +49,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         { name: 'object', extends: 'formly-group' },
         { name: 'boolean', extends: 'checkbox' },
         { name: 'array', component: ArrayTypeComponent },
-        { name: 'enum', extends: 'select' }
+        { name: 'enum', extends: 'select' },
+        { 
+          name: 'colorpicker', 
+          component: ColorpickerTypeComponent
+        }
       ],
       wrappers: [
         { name: 'panel', component: PanelWrapperComponent },

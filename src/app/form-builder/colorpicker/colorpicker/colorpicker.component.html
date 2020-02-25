@@ -1,0 +1,4 @@
+<div fxFlex="40px" (click)="changeColor(paint)" *ngFor="let paint of palette"
+    [ngStyle]="{'background': paint.value}" [title]="paint.label">
+    &nbsp;
+</div>

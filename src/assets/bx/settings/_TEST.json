@@ -9,6 +9,44 @@
   },
   "jsonFields": [
     {
+      "key": "mac",
+      "type": "input",
+      "templateOptions": {
+        "label": "Mac Address",
+        "pattern": "/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/"
+      }
+    },
+    {
+      "key": "bgcolor",
+      "type": "colorpicker",
+      "templateOptions": {
+        "label": "Background Color",
+        "allowcustom": true,
+        "options": [{
+          "label": "Fiery",
+          "value": "#e4572e"
+        },
+        {
+          "label": "Tiffany",
+          "value": "#17bebb"
+        },
+        {
+          "label": "Sunny",
+          "value": "#ffc914"
+        },
+        {
+          "label": "Woody",
+          "value": "#2e282a"
+        },
+        {
+          "label": "Leafy",
+          "value": "#76b041"
+        }
+        ]
+      }
+      
+    },
+    {
       "key": "taskLists",
       "type": "checkbox",
       "templateOptions": {
@@ -150,7 +188,7 @@
           }
           ],
         "description": "radio selection",
-        "required": true
+        "required": false
       }
     },
 
