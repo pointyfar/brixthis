@@ -44,7 +44,6 @@
     },
     {
       "key" : "authorblurb",
-      "type": "input",
       "hideExpression": "model.usetaxo",
       "type": "textarea",
       "templateOptions": {
@@ -55,7 +54,7 @@
       }
     },
     {
-      "key" : "authorimg",
+      "key" : "authorimage",
       "type": "input",
       "hideExpression": "model.usetaxo",
       "templateOptions": {

@@ -4,11 +4,24 @@
   },
   "jsonFields": [
     {
-      "key" : "message",
-      "type": "input",
+      "key": "color",
+      "type": "select",
       "templateOptions": {
-        "label": "Message",
-        "placeholder": "Follow me!"
+        "label": "color",
+        "multiple": false,
+        "options": [{
+            "label": "dark",
+            "value": "dark"
+          },
+          {
+            "label": "light",
+            "value": "light"
+          },
+          {
+            "label": "primary",
+            "value": "primary"
+          }
+        ]
       }
     },
     {
@@ -19,11 +32,38 @@
       "templateOptions": {
         "label": "Add Social Button"
       },
-      "fieldGroup": [{
-          "key": "url",
-          "type": "input",
+      "fieldGroup": [
+        {
+          "key": "itemType",
+          "type": "select",
           "templateOptions": {
-            "label": "URL"
+            "label": "itemType",
+            "multiple": false,
+            "options": [{
+                "label": "brand",
+                "value": "Brand"
+              },
+              {
+                "label": "search",
+                "value": "Search"
+              },
+              {
+                "label": "menuButton",
+                "value": "menuButton"
+              },
+              {
+                "label": "logo",
+                "value": "logo"
+              },
+              {
+                "label": "links",
+                "value": "links"
+              },
+              {
+                "label": "spacer",
+                "value": "spacer"
+              }
+            ]
           }
         },
         {

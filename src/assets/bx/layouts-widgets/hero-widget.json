@@ -19,6 +19,163 @@
         "label" : "Is hero image light-colored?",
         "description": "This information is used to determine color of text overlay."
       }
+    },
+    {
+      "key": "isOnHome",
+      "type": "checkbox",
+      "templateOptions": {
+        "label" : "Show hero feature on homepage",
+        "description": "Check if hero feature should be included on homepage"
+      }
+    },
+    {
+      "key": "sizeOnHome",
+      "type": "select",
+      "hideExpression": "!model.isOnHome",
+      "templateOptions": {
+        "label": "size",
+        "description": "Size of the hero feature on the homepage",
+        "multiple": false,
+        "options": [{
+            "label": "Small",
+            "value": "is-small"
+          },
+          {
+            "label": "Medium",
+            "value": "is-medium"
+          },
+          {
+            "label": "Large",
+            "value": "is-large"
+          }
+        ]
+      }
+    },
+    {
+      "key": "isOnNode",
+      "type": "checkbox",
+      "templateOptions": {
+        "label" : "Show hero feature on list pages",
+        "description": "Check if hero feature should be included on list pages"
+      }
+    },
+    {
+      "key": "sizeOnNode",
+      "type": "select",
+      "hideExpression": "!model.isOnNode",
+      "templateOptions": {
+        "label": "size",
+        "description": "Size of the hero feature on the list pages",
+        "multiple": false,
+        "options": [{
+            "label": "Small",
+            "value": "is-small"
+          },
+          {
+            "label": "Medium",
+            "value": "is-medium"
+          },
+          {
+            "label": "Large",
+            "value": "is-large"
+          }
+        ]
+      }
+    },
+    {
+      "key": "isOnPage",
+      "type": "checkbox",
+      "templateOptions": {
+        "label" : "Show hero feature on regular pages",
+        "description": "Check if hero feature should be included on regular pages"
+      }
+    },
+    {
+      "key": "sizeOnHome",
+      "type": "select",
+      "hideExpression": "!model.isOnPage",
+      "templateOptions": {
+        "label": "size",
+        "description": "Size of the hero feature on the regular pages",
+        "multiple": false,
+        "options": [{
+            "label": "Small",
+            "value": "is-small"
+          },
+          {
+            "label": "Medium",
+            "value": "is-medium"
+          },
+          {
+            "label": "Large",
+            "value": "is-large"
+          },
+          {
+            "label": "Full Height",
+            "value": "is-fullheight"
+          }
+        ]
+      }
+    },
+    {
+      "key": "applyImage",
+      "type": "select",
+      "templateOptions": {
+        "label": "applyImage",
+        "description": "Which pages to use hero image on",
+        "multiple": true,
+        "options": [{
+            "label": "Homepage",
+            "value": "homepage"
+          },
+          {
+            "label": "Regular Page",
+            "value": "page"
+          },
+          {
+            "label": "List Page",
+            "value": "section"
+          }
+        ]
+      }
+    },
+    {
+      "key": "frontmatter",
+      "type": "input",
+      "templateOptions": {
+        "label" : "Allow frontmatter override",
+        "placeholder": "hero",
+        "description": "Specify frontmatter key to use"
+      }
+    },
+    {
+      "key": "fallbackColor",
+      "type": "colorpicker",
+      "templateOptions": {
+        "label": "Fallback Color",
+        "options": [{
+          "label": "Fiery Fiery Fiery",
+          "value": "#e4572e"
+        },
+        {
+          "label": "Tiffany",
+          "value": "#17bebb"
+        },
+        {
+          "label": "Sunny",
+          "value": "#ffc914"
+        },
+        {
+          "label": "Jet",
+          "value": "#333333"
+        },
+        {
+          "label": "Cloud",
+          "value": "#F4F4F4"
+        }
+      ]
+        
+      }
     }
   ]
 }

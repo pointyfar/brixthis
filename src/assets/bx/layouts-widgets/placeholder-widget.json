@@ -1,9 +1,7 @@
 {
   "description": "Placeholder widget. Recommend configuring different background colors for each placeholder to visualize more easily.",
   "modelJson" : {
-    "label": "Placeholder Label",
-    "background": "#FFBB00",
-    "color": "black"
+    "label": "Placeholder Label"
   },
   "jsonFields" : [
     {
@@ -14,17 +12,63 @@
       }
     },
     {
-      "key" : "background",
-      "type": "input",
+      "key": "background",
+      "type": "colorpicker",
       "templateOptions": {
-        "label": "Background Color"
+        "label": "Navbar Color",
+        "allowcustom": true,
+        "options": [{
+          "label": "Fiery Fiery Fiery",
+          "value": "#e4572e"
+        },
+        {
+          "label": "Tiffany",
+          "value": "#17bebb"
+        },
+        {
+          "label": "Sunny",
+          "value": "#ffc914"
+        },
+        {
+          "label": "Jet",
+          "value": "#333333"
+        },
+        {
+          "label": "Cloud",
+          "value": "#F4F4F4"
+        }
+      ]
+        
       }
     },
     {
-      "key" : "color",
-      "type": "input",
+      "key": "color",
+      "type": "colorpicker",
       "templateOptions": {
-        "label": "Text Color"
+        "label": "Navbar Color",
+        "allowcustom": true,
+        "options": [{
+          "label": "Fiery Fiery Fiery",
+          "value": "#e4572e"
+        },
+        {
+          "label": "Tiffany",
+          "value": "#17bebb"
+        },
+        {
+          "label": "Sunny",
+          "value": "#ffc914"
+        },
+        {
+          "label": "Jet",
+          "value": "#333333"
+        },
+        {
+          "label": "Cloud",
+          "value": "#F4F4F4"
+        }
+      ]
+        
       }
     }
   ]

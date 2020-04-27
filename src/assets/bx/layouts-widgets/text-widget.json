@@ -17,6 +17,24 @@
         "label": "Content",
         "rows": 5
       }
+    },
+    {
+      "key" : "markdownify",
+      "type": "checkbox",
+      "templateOptions": {
+        "label": "Use Markdown syntax",
+        "description": "Configure whether to use markdown syntax.",
+        "default": false
+      }
+    },
+    {
+      "key" : "box",
+      "type": "checkbox",
+      "templateOptions": {
+        "label": "Put inside box",
+        "description": "Configure whether to have the text inside a box.",
+        "default": false
+      }
     }
   ]
 }

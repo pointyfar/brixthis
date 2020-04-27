@@ -46,6 +46,15 @@
           }
         },
         {
+          "key": "brand",
+          "type": "input",
+          "templateOptions": {
+            "label": "Branding",
+            "placeholder": "Brand",
+            "description": "Your brand"
+          }
+        },
+        {
           "key": "brandImage",
           "type": "input",
           "templateOptions": {
@@ -55,7 +64,7 @@
           }
         },
         {
-          "key": "enableSearch",
+          "key": "search",
           "wrappers": ["panel"],
           "templateOptions": {
             "label": "Configure search feature"
@@ -71,7 +80,145 @@
             }
             
           ]
+          
+        },
+        {
+          "key": "sharing",
+          "wrappers": ["panel"],
+          "templateOptions": {
+            "label": "Configure sharing options"
+          },
+          "fieldGroup": [
+            {
+              "key": "enable",
+              "type": "checkbox",
+              "templateOptions": {
+                "label": "Enable sharing feature ",
+                "description": "Select platforms to share on below."
+              }
+            },
+            {
+              "key": "label",
+              "type": "input",
+              "templateOptions": {
+                "label": "Label",
+                "placeholder": "Share on: ",
+                "description": "Optional text label. Only applied if 'Large' size selected."
+              },
+              "hideExpression": "!(field.parent.model ? (field.parent.model.size ? (field.parent.model.size === 'large') : false ) : false)"
+            },
+            {
+              "key": "size",
+              "type": "radio",
+              "templateOptions": {
+                "label": "Size",
+                "multiple": false,
+                "options": [{
+                    "label": "small",
+                    "value": "small"
+                  },
+                  {
+                    "label": "large",
+                    "value": "large"
+                  }
+                  ],
+                "description": "radio selection"
+              },
+              "hideExpression": "field.parent.model ? !(field.parent.model.enable) : false"
+            },
+            {
+              "key": "style",
+              "type": "radio",
+              "templateOptions": {
+                "label": "Style",
+                "multiple": false,
+                "options": [
+                  {
+                    "label": "normal",
+                    "value": "normal"
+                  },
+                  {
+                    "label": "solid",
+                    "value": "solid"
+                  },
+                  {
+                    "label": "solidcircle",
+                    "value": "solidcircle"
+                  }
+                  ],
+                "description": "Select style"
+              },
+              "hideExpression": "field.parent.model ? !(field.parent.model.enable) : false"
+            },
+            {
+              "key": "platforms",
+              "type": "select",
+              "templateOptions": {
+                "label": "platforms",
+                "multiple": true,
+                "options": [{
+                    "label": "facebook",
+                    "value": "facebook"
+                  },
+                  {
+                    "label": "twitter",
+                    "value": "twitter"
+                  },
+                  {
+                    "label": "googleplus",
+                    "value": "googleplus"
+                  },
+                  {
+                    "label": "tumblr",
+                    "value": "tumblr"
+                  },
+                  {
+                    "label": "email",
+                    "value": "email"
+                  },
+                  {
+                    "label": "pinterest",
+                    "value": "pinterest"
+                  },
+                  {
+                    "label": "linkedin",
+                    "value": "linkedin"
+                  },
+                  {
+                    "label": "reddit",
+                    "value": "reddit"
+                  },
+                  {
+                    "label": "xing",
+                    "value": "xing"
+                  },
+                  {
+                    "label": "whatsapp",
+                    "value": "whatsapp"
+                  },
+                  {
+                    "label": "hackernews",
+                    "value": "hackernews"
+                  },
+                  {
+                    "label": "vk",
+                    "value": "vk"
+                  },
+                  {
+                    "label": "telegram",
+                    "value": "telegram"
+                  }
+                ],
+                "description": "Select sharing platforms"
+              },
+              "hideExpression": "field.parent.model ? !(field.parent.model.enable) : false"
+            }
+            
+          ]
+          
         }
+
+        
         
         
       ]

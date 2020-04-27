@@ -4,14 +4,301 @@
   },
   "jsonFields" : [
     {
+      "key": "alignment",
+      "type": "select",
+      "templateOptions": {
+        "label": "Alignment",
+        "description": "Alignment",
+        "options": [{
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "center",
+          "value": "center"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        }
+      ]
+        
+      }
+    },
+    {
+      "key" : "isMainNav",
+      "type": "checkbox",
+      "templateOptions": {
+        "label": "Main navigation",
+        "description": "Select if this is the main navigation bar"
+      }
+    },
+    {
+      "key" : "showHugoMenu",
+      "type": "checkbox",
+      "templateOptions": {
+        "label": "Include Hugo menu",
+        "description": "Include Hugo-populated Menu"
+      }
+    },
+    {
       "key" : "menuName",
       "type": "input",
       "templateOptions": {
         "label": "Menu name",
         "placeholder": "main",
-        "description": "Name of menu to use on main navbar"
+        "description": "Name of Hugo menu to use on main navbar"
+      },
+      "hideExpression": "!model.showHugoMenu"
+      
+    },
+    {
+      "key": "backcolor",
+      "type": "colorpicker",
+      "templateOptions": {
+        "label": "Navbar Color",
+        "options": [{
+          "label": "Fiery Fiery Fiery",
+          "value": "#e4572e"
+        },
+        {
+          "label": "Tiffany",
+          "value": "#17bebb"
+        },
+        {
+          "label": "Sunny",
+          "value": "#ffc914"
+        },
+        {
+          "label": "Jet",
+          "value": "#333333"
+        },
+        {
+          "label": "Cloud",
+          "value": "#F4F4F4"
+        }
+      ]
+        
       }
     },
+    {
+      "key": "forecolor",
+      "type": "colorpicker",
+      "templateOptions": {
+        "label": "Navbar Text Color",
+        "options": [{
+          "label": "Jet",
+          "value": "#333333"
+        },
+        {
+          "label": "Cloud",
+          "value": "#F4F4F4"
+        }
+      ]
+        
+      }
+    },
+    
+    {
+      "key": "navitems",
+      "type": "array",
+      "templateOptions": {
+        "addText": "Add nav item",
+        "label": "Navbar Items"
+      },
+      "fieldArray": {
+        "fieldGroupClassName": "row",
+        "templateOptions": {
+          "label": "Add Navbar Items"
+        },
+        "fieldGroup": [
+          {
+            "key": "itemType",
+            "type": "select",
+            "templateOptions": {
+              "label": "itemType",
+              "multiple": false,
+              "options": [{
+                  "label": "Brand",
+                  "value": "brand"
+                },
+                {
+                  "label": "Search",
+                  "value": "search"
+                },
+                {
+                  "label": "Hugo Menu",
+                  "value": "menu"
+                },
+                {
+                  "label": "Links",
+                  "value": "links"
+                },
+                {
+                  "label": "Spacer",
+                  "value": "spacer"
+                }
+              ]
+            }
+          },
+          {
+            "key": "brandText",
+            "type": "input",
+            "templateOptions": {
+              "label": "Text"
+            },
+            "hideExpression": "!(field.parent.model ? (field.parent.model.itemType ? (field.parent.model.itemType == 'brand' ) : false ) : false)"
+          },
+          {
+            "key": "brandLogo",
+            "type": "input",
+            "templateOptions": {
+              "label": "Logo"
+            },
+            "hideExpression": "!(field.parent.model ? (field.parent.model.itemType ? (field.parent.model.itemType == 'brand' ) : false ) : false)"
+          },
+          {
+            "key" : "menuName",
+            "type": "input",
+            "templateOptions": {
+              "label": "Menu name",
+              "placeholder": "main",
+              "description": "Name of menu to use on main navbar"
+            },
+            "hideExpression": "!(field.parent.model ? (field.parent.model.itemType ? (field.parent.model.itemType == 'menu' ) : false ) : false)"
+            
+          },
+          {
+            "key" : "menuLabel",
+            "type": "input",
+            "templateOptions": {
+              "label": "Menu label",
+              "placeholder": "main",
+              "description": "Name of menu to display on navbar"
+            },
+            "hideExpression": "!(field.parent.model ? (field.parent.model.itemType ? (field.parent.model.itemType == 'menu' ) : false ) : false)"
+            
+          },
+          {
+            "key" : "searchLabel",
+            "type": "input",
+            "templateOptions": {
+              "label": "Search button label",
+              "placeholder": "fas fa-search",
+              "description": "Icon or text label to use for search button."
+            },
+            "hideExpression": "!(field.parent.model ? (field.parent.model.itemType ? (field.parent.model.itemType == 'search' ) : false ) : false)"
+          },
+          {
+            "key" : "searchIcon",
+            "type": "checkbox",
+            "templateOptions": {
+              "label": "Use icon on search button",
+              "description": "Use icon on search button."
+            },
+            "hideExpression": "!(field.parent.model ? (field.parent.model.itemType ? (field.parent.model.itemType == 'search' ) : false ) : false)"
+          },
+          {
+            "key" : "linksListDropdown",
+            "type": "checkbox",
+            "templateOptions": {
+              "label": "Dropdown links menu",
+              "description": "Check if links appear in a dropdown"
+            },
+            "hideExpression": "!(field.parent.model ? (field.parent.model.itemType ? (field.parent.model.itemType == 'links' ) : false ) : false)"
+            
+          },
+          {
+            "key" : "linksListLabel",
+            "type": "input",
+            "templateOptions": {
+              "label": "Links menu label",
+              "placeholder": "Links",
+              "description": "Menu label"
+            },
+            "hideExpression": "!(field.parent.model ? (field.parent.model.itemType ? (field.parent.model.itemType == 'links' ) : false ) : false)"
+            
+          },
+          {
+            "key": "linksListItems",
+            "type": "array",
+            "templateOptions": {
+              "addText": "Add link list item"
+            },
+            "hideExpression": "!(field.parent.model ? (field.parent.model.itemType ? (field.parent.model.itemType == 'links' ) : false ) : false)",
+            "fieldArray": {
+              "fieldGroupClassName": "row",
+              "templateOptions": {
+                "label": "Add List Item"
+              },
+              "fieldGroup": [{
+                  "key": "url",
+                  "type": "input",
+                  "templateOptions": {
+                    "label": "URL"
+                  }
+                },
+                {
+                  "key": "label",
+                  "type": "input",
+                  "templateOptions": {
+                    "label": "Link Text"
+                  }
+                },
+                {
+                  "key" : "icon",
+                  "type": "input",
+                  "templateOptions": {
+                    "label": "Icon",
+                    "placeholder": "fas fa-dragon"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+    "key": "list",
+    "type": "array",
+    "fieldArray": {
+      "fieldGroupClassName": "row",
+      "templateOptions": {
+        "label": "Add Social Button"
+      },
+      "fieldGroup": [{
+          "key": "url",
+          "type": "input",
+          "templateOptions": {
+            "label": "URL"
+          }
+        },
+        {
+          "key": "icon",
+          "type": "input",
+          "templateOptions": {
+            "label": "Icon"
+          }
+        },
+        {
+          "key": "label",
+          "type": "input",
+          "templateOptions": {
+            "label": "Label"
+          }
+        },
+        {
+          "key": "color",
+          "type": "input",
+          "templateOptions": {
+            "label": "Color"
+          }
+        }
+      ]
+    }
+  },
+    
     {
       "key" : "enabled",
       "type": "checkbox",

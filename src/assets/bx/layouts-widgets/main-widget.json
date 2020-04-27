@@ -1,5 +1,5 @@
 {
-  "description": "Main Content widget. Use this to configure how to render the main content section of your page. Configure homepage, section list pages (`example.com/posts/`), regular pages (`example.com/posts/lorem-ipsum/`), taxonomy terms list pages (`example.com/tags/`), taxonomy list pages (`example.com/tags/foo/`).",
+  "description": "FOOO Main Content widget. Use this to configure how to render the main content section of your page. \n xConfigure homepage, section list pages (`example.com/posts/`), regular pages (`example.com/posts/lorem-ipsum/`), taxonomy terms list pages (`example.com/tags/`), taxonomy list pages (`example.com/tags/foo/`).",
   "modelJson" : {
   },
   "jsonFields": [
@@ -22,7 +22,8 @@
               {"label":"Content", "value":"content"},
               {"label":"Title", "value":"title"},
               {"label":"Date", "value":"date"},
-              {"label":"Authors", "value":"authors"}
+              {"label":"Authors", "value":"authors"},
+              {"label":"Section", "value":"section"}
             ]
           }
         },
@@ -50,7 +51,18 @@
               "placeholder": "posts"
             }
           }
+        },
+        {
+          "key" : "dateFormat",
+          "type": "input",
+          "templateOptions": {
+            "label": "Date Display Format",
+            "placeholder": "2 Jan 2006",
+            "description": "Refer to gohugo.io/functions/format/ for details."
+          },
+          "hideExpression": "console.log(field.parent.model.display) ; !(field.parent.model ? (field.parent.model.display ? (field.parent.model.display.indexOf('search') > -1 ) : false ) : false)"
         }
+        
       ]
     },
     {
