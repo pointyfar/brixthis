@@ -11,8 +11,7 @@
 
   <mat-form-field [ngClass]="{'colorpicker-input': true, 'show-picker-input': allowCustom}">
     <mat-label>Custom Color Code</mat-label>
-    <input type="input" [formControl]="formControl" [formlyAttributes]="field" matInput #paintInput
-      (keyup)="changeColorManual(paintInput.value)">
+    <input type="input" [formControl]="formControl" [formlyAttributes]="field" matInput #paintInput>
     <mat-error *ngIf="showErrorMsg">
       Invalid color value.
     </mat-error>
@@ -21,7 +20,9 @@
 
   <div>
     <bx-colorpicker 
-        [palette]="to.options" 
+
+        [palette]=" to.options ? to.options : rainbow " 
+
         [allowCustom]="to.allowcustom"
         (event)="receiveColor($event)"
         >
