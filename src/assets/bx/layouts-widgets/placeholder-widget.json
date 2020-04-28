@@ -15,37 +15,15 @@
       "key": "background",
       "type": "colorpicker",
       "templateOptions": {
-        "label": "Navbar Color",
-        "allowcustom": true,
-        "options": [{
-          "label": "Fiery Fiery Fiery",
-          "value": "#e4572e"
-        },
-        {
-          "label": "Tiffany",
-          "value": "#17bebb"
-        },
-        {
-          "label": "Sunny",
-          "value": "#ffc914"
-        },
-        {
-          "label": "Jet",
-          "value": "#333333"
-        },
-        {
-          "label": "Cloud",
-          "value": "#F4F4F4"
-        }
-      ]
-        
+        "label": "Placeholder Background Color",
+        "allowcustom": true        
       }
     },
     {
       "key": "color",
       "type": "colorpicker",
       "templateOptions": {
-        "label": "Navbar Color",
+        "label": "Placeholder Text Color",
         "allowcustom": true,
         "options": [{
           "label": "Fiery Fiery Fiery",

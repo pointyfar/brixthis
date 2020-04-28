@@ -4,91 +4,50 @@
   },
   "jsonFields": [
     {
-      "key": "color",
-      "type": "select",
+      "key" : "message",
+      "type": "input",
       "templateOptions": {
-        "label": "color",
-        "multiple": false,
-        "options": [{
-            "label": "dark",
-            "value": "dark"
-          },
-          {
-            "label": "light",
-            "value": "light"
-          },
-          {
-            "label": "primary",
-            "value": "primary"
-          }
-        ]
+        "label": "Box label"
       }
     },
     {
-    "key": "list",
-    "type": "array",
-    "fieldArray": {
-      "fieldGroupClassName": "row",
-      "templateOptions": {
-        "label": "Add Social Button"
-      },
-      "fieldGroup": [
-        {
-          "key": "itemType",
-          "type": "select",
-          "templateOptions": {
-            "label": "itemType",
-            "multiple": false,
-            "options": [{
-                "label": "brand",
-                "value": "Brand"
-              },
-              {
-                "label": "search",
-                "value": "Search"
-              },
-              {
-                "label": "menuButton",
-                "value": "menuButton"
-              },
-              {
-                "label": "logo",
-                "value": "logo"
-              },
-              {
-                "label": "links",
-                "value": "links"
-              },
-              {
-                "label": "spacer",
-                "value": "spacer"
-              }
-            ]
-          }
+      "key": "list",
+      "type": "array",
+      "fieldArray": {
+        "fieldGroupClassName": "row",
+        "templateOptions": {
+          "label": "Add Social Button"
         },
-        {
-          "key": "icon",
-          "type": "input",
-          "templateOptions": {
-            "label": "Icon"
+        "fieldGroup": [{
+            "key": "url",
+            "type": "input",
+            "templateOptions": {
+              "label": "URL"
+            }
+          },
+          {
+            "key": "icon",
+            "type": "input",
+            "templateOptions": {
+              "label": "Icon"
+            }
+          },
+          {
+            "key": "label",
+            "type": "input",
+            "templateOptions": {
+              "label": "Label"
+            }
+          },
+          {
+            "key": "color",
+            "type": "input",
+            "templateOptions": {
+              "label": "Color"
+            }
           }
-        },
-        {
-          "key": "label",
-          "type": "input",
-          "templateOptions": {
-            "label": "Label"
-          }
-        },
-        {
-          "key": "color",
-          "type": "input",
-          "templateOptions": {
-            "label": "Color"
-          }
-        }
-      ]
+        ]
+      }
     }
-  }
 ]
 }
