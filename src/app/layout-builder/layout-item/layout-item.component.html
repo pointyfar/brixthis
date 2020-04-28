@@ -3,8 +3,8 @@
   <mat-card-content>
     <div *ngIf="model">
       <markdown>{{description}}</markdown>
-      <div class="widget-model">
-        <pre>{{model | json}}</pre>
+      <div class="widget-model" *ngIf="hasModel">
+        <pre>{{ model | json }}</pre>
       </div>
     </div>
   </mat-card-content>

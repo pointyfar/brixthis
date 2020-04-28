@@ -28,6 +28,8 @@ export class LayoutItemComponent implements OnInit {
   res: any = {};
   hasResult = false;
 
+  hasModel = false;
+
   constructor(
     private _US: UtilitiesService,
     public dialog: MatDialog
@@ -62,6 +64,7 @@ export class LayoutItemComponent implements OnInit {
               result = x;
               this.res = x;
               this.model = this._US.stripNulls(this.model);
+              this.hasModel = true;
               },
               err => {console.log(err); },
               () => {
