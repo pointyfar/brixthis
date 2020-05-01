@@ -44,7 +44,8 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              { "glob": "**/*", "input": "src/assets/", "ignore": ["fonts/**/*"], "output": "/assets/" }
+
             ],
             "styles": [
 

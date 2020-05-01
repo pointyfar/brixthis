@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --aot --base-href='/brixthis/' --outputHashing none",
+    "build": "ng build --prod --aot --base-href='/brixthis/' --outputHashing none --extractLicenses=true",
     "bundle": "node ./scripts/bundle.js",
     "clean": "rimraf dist/",
     "copy-assets": "node ./scripts/copy-assets.js",
