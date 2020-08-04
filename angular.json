@@ -44,6 +44,7 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
+              "src/_redirects",
               { "glob": "**/*", "input": "src/assets/", "output": "/assets/" }
 
             ],
@@ -115,6 +116,7 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
+              "src/_redirects",
               "src/assets"
             ],
             "styles": [
@@ -191,6 +193,7 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
+              "src/_redirects",
               { "glob": "**/*", "input": "src/assets/", "ignore": ["fonts/**/*"], "output": "/assets/" }
 
             ],
@@ -262,6 +265,7 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
+              "src/_redirects",
               "src/assets"
             ],
             "styles": [
